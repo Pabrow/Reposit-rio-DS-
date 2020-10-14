@@ -7,6 +7,7 @@ package Formularios;
 
 import DAO.FuncionarioDAO;
 import Objetos.Funcionario;
+import Objetos.Mensagens;
 import Objetos.Usuario;
 import static java.lang.System.exit;
 
@@ -68,7 +69,7 @@ public class FLogin extends javax.swing.JFrame {
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Formularios/sherek motos.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sherek motos.png")));
 
         try {
             edCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
