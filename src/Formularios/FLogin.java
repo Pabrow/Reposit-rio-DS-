@@ -10,6 +10,8 @@ import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Usuario;
 import static java.lang.System.exit;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 /**
  *
@@ -161,7 +163,7 @@ public class FLogin extends javax.swing.JFrame {
             Menu.setVisible(true);
             this.dispose();
         }else{
-            System.out.println("Não foi possível encontrar o usuario.");
+            JOptionPane.showMessageDialog(null,"Usuário ou senha incorretos.", "Acessar Login", ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btLoginActionPerformed
 
