@@ -1,6 +1,7 @@
 package DAO;
 import Conexao.ConexaoSQL;
 import Objetos.Funcionario;
+import Objetos.Mensagens;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 public class FuncionarioDAO {
     private Connection con = null;
-    private ResultSet rsDados;  
+    Mensagens m = new Mensagens();
     
     
     public void cadastrarFuncionario(Funcionario p){
@@ -27,9 +28,9 @@ public class FuncionarioDAO {
           stm.setString(9, p.getFuncao());
           stm.execute();
           stm.close();
-          System.out.println("CADASTRADO COM SUCESSO");
+          m.mensagemInformacao("CADASTRADO COM SUCESSO");
         } catch (Exception e) {
-            System.out.println("ERRO AO CADASTRAR"+e.getMessage());
+            m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   
     }
     
@@ -48,10 +49,10 @@ public class FuncionarioDAO {
             stm.setString(9, p.getFuncao());
             stm.setInt(10, p.getId_funcionario());
             stm.execute();
-            System.out.println("EDITADO COM SUCESSO");
+            m.mensagemInformacao("EDITADO COM SUCESSO");
             stm.close();
         } catch (Exception e) {
-            System.out.println("ERRO AO EDITAR"+e.getMessage());
+            m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
     }
     
@@ -64,12 +65,12 @@ public class FuncionarioDAO {
                 stm.setInt(1,id);
                 stm.execute(); 
                 stm.close();
-                System.out.println("DELETADO COM SUCESSO");
+                m.mensagemInformacao("DELETADO COM SUCESSO");
             }catch (Exception e){
                 throw new RuntimeException(e.getMessage());
             }   
         }else{
-            System.out.println("Operação cancelada");
+            m.mensagemWarning("Operação cancelada");
         }
     }
     public List<Funcionario> listarTodos() {
@@ -119,13 +120,12 @@ public class FuncionarioDAO {
                 p.setSalario(Resultado.getDouble("salario_func"));
                 p.setFuncao(Resultado.getString("funcao_func"));
             }else{
-                System.out.println("Não foi possível encontrar o usuario.");
+                m.mensagemWarning("Não foi possível encontrar o usuario.");
             }
             stm.close();
             con.close();
         } catch (Exception e) {
-            System.out.println("Erro:");
-            throw new RuntimeException(e);
+            m.mensagemErro("Erro:"+e.getMessage());
         }
         return p;
     }
@@ -137,10 +137,10 @@ public class FuncionarioDAO {
             stm.setString(1, novaSenha);
             stm.setInt(2, p.getId_funcionario());
             stm.execute();
-            System.out.println("SENHA EDITADA COM SUCESSO");
+            m.mensagemInformacao("SENHA EDITADA COM SUCESSO");
             stm.close();
         } catch (Exception e) {
-            System.out.println("ERRO AO EDITAR"+e.getMessage());
+            m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
     }
 }

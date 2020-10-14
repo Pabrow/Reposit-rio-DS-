@@ -7,6 +7,7 @@ package Formularios;
 
 import DAO.FuncionarioDAO;
 import Objetos.Funcionario;
+import Objetos.Mensagens;
 import Objetos.Usuario;
 import java.util.List;
 import javax.swing.JLabel;
@@ -24,6 +25,7 @@ public class FrameCadastroFuncionario extends javax.swing.JFrame {
 
 private int mode = 0;//0 = Cadastrar, 1 = Editar
 private int id_edit = 0;//id para auxilar na edição
+Mensagens m = new Mensagens();
     /**
      * Creates new form FrameCadastroCliente
      */
@@ -536,10 +538,10 @@ private int id_edit = 0;//id para auxilar na edição
                 pDAO.deletar(id);
                 gerarTabela();
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma única linha");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja deletar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btDeletarActionPerformed
 
@@ -564,10 +566,10 @@ private int id_edit = 0;//id para auxilar na edição
                 }
                 paneCadastrar.setSelectedIndex(0);
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma única linha");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btEditarActionPerformed
 
@@ -606,7 +608,7 @@ private int id_edit = 0;//id para auxilar na edição
                 String novaSenha = password.getText();
                 pDAO.editarSenha(p, novaSenha);
             }else{
-                System.out.println("Senha ou CPF incorretos");
+                m.mensagemErro("Senha ou CPF incorretos");
             }
         }
         // Cria campo onde o usuario entra com a senha

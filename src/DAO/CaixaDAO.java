@@ -1,6 +1,7 @@
 package DAO;
 import Conexao.ConexaoSQL;
 import Objetos.Caixa;
+import Objetos.Mensagens;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 public class CaixaDAO {
     private Connection con = null;
-    
+    Mensagens m = new Mensagens();
     
     public void cadastrarCaixa(Caixa p){
         con = ConexaoSQL.conectar();
@@ -24,9 +25,9 @@ public class CaixaDAO {
           stm.setInt(7, p.getId_funcionario_fk());
           stm.execute();
           stm.close();
-          System.out.println("CADASTRADO COM SUCESSO");
+          m.mensagemInformacao("CADASTRADO COM SUCESSO");
         } catch (Exception e) {
-            System.out.println("ERRO AO CADASTRAR"+e.getMessage());
+            m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   
     }
     
@@ -43,10 +44,10 @@ public class CaixaDAO {
             stm.setInt(7, p.getId_funcionario_fk());
             stm.setInt(8, p.getId_caixa());
             stm.execute();
-            JOptionPane.showMessageDialog(null, "EDITADO COM SUCESSO");
+            m.mensagemInformacao("EDITADO COM SUCESSO");
             stm.close();
         } catch (Exception e) {
-            System.out.println("ERRO AO EDITAR"+e.getMessage());
+            m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
     }
     
@@ -59,12 +60,12 @@ public class CaixaDAO {
                 stm.setInt(1,id);
                 stm.execute(); 
                 stm.close();
-                System.out.println("DELETADO COM SUCESSO");
+                m.mensagemInformacao("DELETADO COM SUCESSO");
             }catch (Exception e){
                 throw new RuntimeException(e.getMessage());
             }   
         }else{
-            System.out.println("Operação cancelada");
+            m.mensagemWarning("Operação cancelada");
         }
     }
     

@@ -6,6 +6,7 @@
 package Formularios;
 
 import DAO.ProdutoDAO;
+import Objetos.Mensagens;
 import Objetos.Produto;
 import Objetos.Usuario;
 import java.util.List;
@@ -21,6 +22,7 @@ public class FrameCadastroProduto extends javax.swing.JFrame {
 
 private int mode = 0;//0 = Cadastrar, 1 = Editar
 private int id_edit = 0;//id para ajudar na edição
+Mensagens m = new Mensagens();
     /**
      * Creates new form FrameCadastroCliente
      */
@@ -401,10 +403,10 @@ private int id_edit = 0;//id para ajudar na edição
                 pDAO.deletar(id);
                 gerarTabela();
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma única linha ");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btDeletarActionPerformed
 
@@ -430,10 +432,10 @@ private int id_edit = 0;//id para ajudar na edição
                 }
                 paneCadastrar.setSelectedIndex(0);
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, SÓ SELECIONE UM");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btEditarActionPerformed
 

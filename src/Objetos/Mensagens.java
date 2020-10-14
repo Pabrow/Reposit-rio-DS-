@@ -25,4 +25,12 @@ public class Mensagens {
     public void mensagemInformacao(String Mensagem){
         JOptionPane.showMessageDialog(null, Mensagem, "Mensagem", INFORMATION_MESSAGE);
     }
+    
+    public void mensagemPadrão1(){
+        JOptionPane.showMessageDialog(null, "Por favor, selecione uma única linha", "Mensagem", INFORMATION_MESSAGE);
+    }
+    
+    public void mensagemPadrão2(){
+        JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha se deseja deletar", "Mensagem", INFORMATION_MESSAGE);
+    }
 }

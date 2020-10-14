@@ -7,6 +7,7 @@ package Formularios;
 
 import DAO.DespesaDAO;
 import Objetos.Despesa;
+import Objetos.Mensagens;
 import Objetos.Usuario;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -21,6 +22,7 @@ public class FrameCadastroDespesa extends javax.swing.JFrame {
 
 private int mode = 0;//0 = Cadastrar, 1 = Editar
 private int id_edit = 0;//id para ajudar na edição
+Mensagens m = new Mensagens();
     /**
      * Creates new form FrameCadastroCliente
      */
@@ -372,7 +374,7 @@ private int id_edit = 0;//id para ajudar na edição
                 gerarTabela();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão1();
         }
     }//GEN-LAST:event_btDeletarActionPerformed
 

@@ -1,5 +1,6 @@
 package DAO;
 import Conexao.ConexaoSQL;
+import Objetos.Mensagens;
 import Objetos.VendaProduto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 public class VendaProdutoDAO {
     private Connection con = null;
-    private ResultSet rsDados;  
+    Mensagens m = new Mensagens();
     
     
     public void cadastrarVendaProduto(VendaProduto p){
@@ -22,9 +23,9 @@ public class VendaProdutoDAO {
           stm.setInt(4, p.getQuant());
           stm.execute();
           stm.close();
-          System.out.println("CADASTRADO COM SUCESSO");
+          m.mensagemInformacao("CADASTRADO COM SUCESSO");
         } catch (Exception e) {
-            System.out.println("ERRO AO CADASTRAR"+e.getMessage());
+            m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   
     }
     
@@ -39,9 +40,9 @@ public class VendaProdutoDAO {
             stm.setInt(5, p.getId_vendaProduto());
             stm.execute();
             stm.close();
-            System.out.println("EDITADO COM SUCESSO");
+            m.mensagemInformacao("EDITADO COM SUCESSO");
         } catch (Exception e) {
-            System.out.println("ERRO AO EDITAR"+e.getMessage());
+            m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
     }
     
@@ -54,12 +55,12 @@ public class VendaProdutoDAO {
                 stm.setInt(1,id);
                 stm.execute(); 
                 stm.close();
-                System.out.println("DELETADO COM SUCESSO");
+                m.mensagemInformacao("DELETADO COM SUCESSO");
             }catch (Exception e){
                 throw new RuntimeException(e.getMessage());
             }   
         }else{
-            System.out.println("Operação cancelada");
+            m.mensagemWarning("Operação cancelada");
         }
     }
     

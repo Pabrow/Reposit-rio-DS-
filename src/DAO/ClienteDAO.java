@@ -1,6 +1,7 @@
 package DAO;
 import Conexao.ConexaoSQL;
 import Objetos.Cliente;
+import Objetos.Mensagens;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 public class ClienteDAO {
     private Connection con = null;
-    
+    Mensagens m = new Mensagens();
     
     public void cadastrarCliente(Cliente p){
         con = ConexaoSQL.conectar();
@@ -25,9 +26,9 @@ public class ClienteDAO {
           stm.setString(8, p.getDataNasc());
           stm.execute();
           stm.close();
-          System.out.println("CADASTRADO COM SUCESSO");
+          m.mensagemInformacao("CADASTRADO COM SUCESSO");
         } catch (Exception e) {
-            System.out.println("ERRO AO CADASTRAR"+e.getMessage());
+            m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   
     }
     
@@ -46,10 +47,10 @@ public class ClienteDAO {
             stm.setInt(9, p.getId_cliente());
             System.out.println(sql);
             stm.execute();
-            System.out.println("EDITADO COM SUCESSO");
+            m.mensagemInformacao("EDITADO COM SUCESSO");
             stm.close();
         } catch (Exception e) {
-            System.out.println("ERRO AO EDITAR"+e.getMessage());
+            m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
     }
     
@@ -62,12 +63,12 @@ public class ClienteDAO {
                 stm.setInt(1,id);
                 stm.execute(); 
                 stm.close();
-                System.out.println("DELETADO COM SUCESSO");
+                m.mensagemInformacao("DELETADO COM SUCESSO");
             }catch (Exception e){
                 throw new RuntimeException(e.getMessage());
             }   
         }else{
-            System.out.println("Operação cancelada");
+            m.mensagemWarning("Operação cancelada");
         }
     }
     

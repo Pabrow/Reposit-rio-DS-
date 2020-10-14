@@ -10,6 +10,7 @@ import DAO.ServicoDAO;
 import DAO.VendaDAO;
 import DAO.VendaServicoDAO;
 import Objetos.Cliente;
+import Objetos.Mensagens;
 import Objetos.Servico;
 import Objetos.Usuario;
 import Objetos.Venda;
@@ -31,6 +32,7 @@ public class FrameCadastroVendaServico extends javax.swing.JFrame {
 
 private int mode = 0;//0 = Cadastrar, 1 = Editar
 private int id_edit = 0;//id para ajudar na edição
+Mensagens m = new Mensagens();
     /**
      * Creates new form FrameCadastroCliente
      */
@@ -172,19 +174,13 @@ private int id_edit = 0;//id para ajudar na edição
         int[] linhas = tabelaServicosCarrinho.getSelectedRows();
         if(linhas.length==1){
             preco = Float.valueOf(String.valueOf(modelo.getValueAt(linhas[0], 4)));
-            System.out.print(preco);
             qtd = Integer.parseInt(modelo.getValueAt(linhas[0], 5).toString());
-            System.out.print(qtd);
             valor = valor + (preco*qtd);
-            System.out.print(valor);    
         }else{
             for(int i=0;i<linhas.length;i++){
                 preco = Float.valueOf(String.valueOf(modelo.getValueAt(linhas[i], 4)));
-                System.out.print(preco);
                 qtd = Integer.parseInt(modelo.getValueAt(linhas[i], 5).toString());
-                System.out.print(qtd);
                 valor = valor + (preco*qtd);
-                System.out.print(valor);
             }
         
         }
@@ -803,7 +799,7 @@ private int id_edit = 0;//id para ajudar na edição
                 gerarTabelaVendas();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btDeletarActionPerformed
 
@@ -828,10 +824,10 @@ private int id_edit = 0;//id para ajudar na edição
                     }
                 }
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma única linha");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btEditarActionPerformed
 
@@ -883,11 +879,11 @@ private int id_edit = 0;//id para ajudar na edição
                 }
                 limparCampos();
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione um único cliente");
+                JOptionPane.showMessageDialog(null, "Por favor, selecione um único cliente","Importante",1);
             }  
         }
         else{
-           JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione o(s) produto(s) e cliente(s)");     
+           JOptionPane.showMessageDialog(null, "Por favor, selecione o(s) serviço(s) e cliente(s)","Importante",1);     
         }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
@@ -905,13 +901,13 @@ private int id_edit = 0;//id para ajudar na edição
             int[] linhas = tabelaServicos.getSelectedRows();
             if(linhas.length==1){
                 int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
-                int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: "));
+                int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a quantidade"));
                 adicionarItem(id,qtd);
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, SÓ SELECIONE UM");
+                JOptionPane.showMessageDialog(null, "Por favor, só selecione um serviço por vez","Importante",1);
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione um produto para adicionar");
+            JOptionPane.showMessageDialog(null, "Por favor, só selecione um serviço por vez","Importante",1);
         }
     }//GEN-LAST:event_btAdicionarItemActionPerformed
 
@@ -924,13 +920,13 @@ private int id_edit = 0;//id para ajudar na edição
             DefaultTableModel modelo = (DefaultTableModel) tabelaServicosCarrinho.getModel();
             int[] linhas = tabelaServicosCarrinho.getSelectedRows();
             if(linhas.length==1){
-                int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: "));
+                int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a quantidade"));
                 modelo.setValueAt(qtd, linhas[0], 5);
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione um único produto");
+                JOptionPane.showMessageDialog(null, "Por favor, só selecione um serviço por vez","Importante",1);
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione um produto para editar a quantidade");
+            JOptionPane.showMessageDialog(null, "Por favor, só selecione um serviço por vez","Importante",1);
         }
     }//GEN-LAST:event_btAlterarQtdActionPerformed
 
@@ -941,10 +937,10 @@ private int id_edit = 0;//id para ajudar na edição
             if(linhas.length==1){
                 modelo.removeRow(linhas[0]);
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione um único produto");
+                JOptionPane.showMessageDialog(null, "Por favor, Selecione um único serviço","Importante",1);
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione um produto para deletar");
+            JOptionPane.showMessageDialog(null, "Por favor, selecione um produto para deletar","Importante",1);
         }
     }//GEN-LAST:event_btDeletarItemActionPerformed
 

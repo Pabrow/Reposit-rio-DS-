@@ -7,6 +7,7 @@ package Formularios;
 
 import DAO.FornecedorDAO;
 import Objetos.Fornecedor;
+import Objetos.Mensagens;
 import Objetos.Usuario;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -21,6 +22,7 @@ public class FrameCadastroFornecedor extends javax.swing.JFrame {
 
 private int mode = 0;//0 = Cadastrar, 1 = Editar
 private int id_edit = 0;// Id para auxiliar na edição
+Mensagens m = new Mensagens();
     /**
      * Creates new form FrameCadastroCliente
      */
@@ -369,10 +371,10 @@ private int id_edit = 0;// Id para auxiliar na edição
                 pDAO.deletar(id);
                 gerarTabela();
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma única linha");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja deletar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btDeletarActionPerformed
 
@@ -392,16 +394,15 @@ private int id_edit = 0;// Id para auxiliar na edição
                     Fornecedor p = Lista.get(i);
                     if(p.getId_fornecedor()==id){
                         id_edit = id;
-                        System.out.println(id);
                         trocarModo(p);
                     }
                 }
                 paneCadastrar.setSelectedIndex(0);
             }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, Só selecione uma única linha");
+                m.mensagemPadrão1();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
+            m.mensagemPadrão2();
         }
     }//GEN-LAST:event_btEditarActionPerformed
 
