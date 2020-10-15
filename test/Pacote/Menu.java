@@ -38,8 +38,28 @@ public class Menu extends javax.swing.JFrame {
         labelFuncionario2 = new javax.swing.JLabel();
         btCaixa = new javax.swing.JButton();
         edCompra = new javax.swing.JButton();
-        painelMenu = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        pnjTopo = new javax.swing.JPanel();
+        lbMenu = new javax.swing.JLabel();
+        pnjBorderTopo = new javax.swing.JPanel();
+        btFuncionarios1 = new javax.swing.JButton();
+        btFuncionarios = new javax.swing.JButton();
+        btVenda = new javax.swing.JButton();
+        btClientes = new javax.swing.JButton();
+        btFuncionarios2 = new javax.swing.JButton();
+        btFuncionarios3 = new javax.swing.JButton();
+        btFuncionarios4 = new javax.swing.JButton();
+        btFuncionarios5 = new javax.swing.JButton();
+        btFuncionarios6 = new javax.swing.JButton();
+        btFuncionarios7 = new javax.swing.JButton();
+        btFuncionarios8 = new javax.swing.JButton();
+        lbEsquerda = new javax.swing.JPanel();
+        lbBaixo = new javax.swing.JPanel();
+        lbBaixo1 = new javax.swing.JPanel();
+        lbImagemFundo = new javax.swing.JLabel();
 
         jLabel14.setText("Funcionário:");
 
@@ -88,44 +108,202 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 862, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 33, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 153, 153)));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 852, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 540, Short.MAX_VALUE)
+        );
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pacote/Apresentação sem título.png"))); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Menu");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("frame"); // NOI18N
+        getContentPane().setLayout(null);
 
-        jLabel3.setText("jLabel3");
+        pnjTopo.setBackground(new java.awt.Color(20, 95, 133));
+        pnjTopo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        javax.swing.GroupLayout painelMenuLayout = new javax.swing.GroupLayout(painelMenu);
-        painelMenu.setLayout(painelMenuLayout);
-        painelMenuLayout.setHorizontalGroup(
-            painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMenuLayout.createSequentialGroup()
-                .addContainerGap(252, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(142, 142, 142))
-        );
-        painelMenuLayout.setVerticalGroup(
-            painelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelMenuLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel3)
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
+        lbMenu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lbMenu.setForeground(new java.awt.Color(255, 255, 255));
+        lbMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbMenu.setText("Menu");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(painelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout pnjTopoLayout = new javax.swing.GroupLayout(pnjTopo);
+        pnjTopo.setLayout(pnjTopoLayout);
+        pnjTopoLayout.setHorizontalGroup(
+            pnjTopoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnjTopoLayout.createSequentialGroup()
+                .addComponent(lbMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 268, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(painelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        pnjTopoLayout.setVerticalGroup(
+            pnjTopoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnjTopoLayout.createSequentialGroup()
+                .addGap(0, 4, Short.MAX_VALUE)
+                .addComponent(lbMenu))
         );
 
-        pack();
+        getContentPane().add(pnjTopo);
+        pnjTopo.setBounds(0, 0, 970, 30);
+
+        pnjBorderTopo.setBackground(new java.awt.Color(47, 92, 138));
+        pnjBorderTopo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout pnjBorderTopoLayout = new javax.swing.GroupLayout(pnjBorderTopo);
+        pnjBorderTopo.setLayout(pnjBorderTopoLayout);
+        pnjBorderTopoLayout.setHorizontalGroup(
+            pnjBorderTopoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 966, Short.MAX_VALUE)
+        );
+        pnjBorderTopoLayout.setVerticalGroup(
+            pnjBorderTopoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 6, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pnjBorderTopo);
+        pnjBorderTopo.setBounds(0, 30, 970, 10);
+
+        btFuncionarios1.setText("FORNECEDORES");
+        btFuncionarios1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios1);
+        btFuncionarios1.setBounds(360, 160, 170, 70);
+
+        btFuncionarios.setText("fechar");
+        btFuncionarios.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios);
+        btFuncionarios.setBounds(870, 460, 70, 70);
+
+        btVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pacote/btNovaVenda.png"))); // NOI18N
+        btVenda.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btVenda);
+        btVenda.setBounds(360, 70, 170, 70);
+
+        btClientes.setText("Cliente");
+        btClientes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btClientes);
+        btClientes.setBounds(650, 160, 170, 70);
+
+        btFuncionarios2.setText("produtos");
+        btFuncionarios2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios2);
+        btFuncionarios2.setBounds(50, 80, 170, 70);
+
+        btFuncionarios3.setText("Compra");
+        btFuncionarios3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios3);
+        btFuncionarios3.setBounds(360, 260, 170, 70);
+
+        btFuncionarios4.setText("alterar usuario");
+        btFuncionarios4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios4);
+        btFuncionarios4.setBounds(680, 460, 170, 70);
+
+        btFuncionarios5.setText("FUNCIONARIOS");
+        btFuncionarios5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios5);
+        btFuncionarios5.setBounds(650, 250, 170, 70);
+
+        btFuncionarios6.setText("RELATÓRIOS");
+        btFuncionarios6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios6);
+        btFuncionarios6.setBounds(650, 80, 170, 70);
+
+        btFuncionarios7.setText("DESPESAS");
+        btFuncionarios7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btFuncionarios7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFuncionarios7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btFuncionarios7);
+        btFuncionarios7.setBounds(360, 360, 170, 70);
+
+        btFuncionarios8.setText("CAIXA");
+        btFuncionarios8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(btFuncionarios8);
+        btFuncionarios8.setBounds(50, 170, 170, 70);
+
+        lbEsquerda.setBackground(new java.awt.Color(47, 92, 138));
+        lbEsquerda.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout lbEsquerdaLayout = new javax.swing.GroupLayout(lbEsquerda);
+        lbEsquerda.setLayout(lbEsquerdaLayout);
+        lbEsquerdaLayout.setHorizontalGroup(
+            lbEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 6, Short.MAX_VALUE)
+        );
+        lbEsquerdaLayout.setVerticalGroup(
+            lbEsquerdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 516, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(lbEsquerda);
+        lbEsquerda.setBounds(0, 30, 10, 520);
+
+        lbBaixo.setBackground(new java.awt.Color(47, 92, 138));
+        lbBaixo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout lbBaixoLayout = new javax.swing.GroupLayout(lbBaixo);
+        lbBaixo.setLayout(lbBaixoLayout);
+        lbBaixoLayout.setHorizontalGroup(
+            lbBaixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 946, Short.MAX_VALUE)
+        );
+        lbBaixoLayout.setVerticalGroup(
+            lbBaixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 6, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(lbBaixo);
+        lbBaixo.setBounds(0, 540, 950, 10);
+
+        lbBaixo1.setBackground(new java.awt.Color(47, 92, 138));
+        lbBaixo1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout lbBaixo1Layout = new javax.swing.GroupLayout(lbBaixo1);
+        lbBaixo1.setLayout(lbBaixo1Layout);
+        lbBaixo1Layout.setHorizontalGroup(
+            lbBaixo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 6, Short.MAX_VALUE)
+        );
+        lbBaixo1Layout.setVerticalGroup(
+            lbBaixo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 506, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(lbBaixo1);
+        lbBaixo1.setBounds(950, 40, 10, 510);
+
+        lbImagemFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pacote/Apresentação sem título.png"))); // NOI18N
+        getContentPane().add(lbImagemFundo);
+        lbImagemFundo.setBounds(10, 40, 940, 500);
+
+        setBounds(0, 0, 976, 589);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastroActionPerformed
@@ -152,6 +330,10 @@ public class Menu extends javax.swing.JFrame {
         FrameGerenciarCompras fcc = new FrameGerenciarCompras();
         fcc.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_edCompraActionPerformed
+
+    private void btFuncionarios7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFuncionarios7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btFuncionarios7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,14 +374,34 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCadastro;
     private javax.swing.JButton btCaixa;
+    private javax.swing.JButton btClientes;
+    private javax.swing.JButton btFuncionarios;
+    private javax.swing.JButton btFuncionarios1;
+    private javax.swing.JButton btFuncionarios2;
+    private javax.swing.JButton btFuncionarios3;
+    private javax.swing.JButton btFuncionarios4;
+    private javax.swing.JButton btFuncionarios5;
+    private javax.swing.JButton btFuncionarios6;
+    private javax.swing.JButton btFuncionarios7;
+    private javax.swing.JButton btFuncionarios8;
     private javax.swing.JButton btRelatorios;
+    private javax.swing.JButton btVenda;
     private javax.swing.JButton btVendas;
     private javax.swing.JButton edCompra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelFuncionario2;
-    private javax.swing.JPanel painelMenu;
+    private javax.swing.JPanel lbBaixo;
+    private javax.swing.JPanel lbBaixo1;
+    private javax.swing.JPanel lbEsquerda;
+    private javax.swing.JLabel lbImagemFundo;
+    private javax.swing.JLabel lbMenu;
+    private javax.swing.JPanel pnjBorderTopo;
+    private javax.swing.JPanel pnjTopo;
     // End of variables declaration//GEN-END:variables
 }
