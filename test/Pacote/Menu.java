@@ -228,7 +228,6 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(btFuncionarios5);
         btFuncionarios5.setBounds(650, 250, 170, 70);
 
-        btFuncionarios6.setText("RELATÓRIOS");
         btFuncionarios6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(btFuncionarios6);
         btFuncionarios6.setBounds(650, 80, 170, 70);
