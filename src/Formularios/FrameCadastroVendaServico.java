@@ -507,7 +507,7 @@ Mensagens m = new Mensagens();
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(labelId, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(256, 256, 256)
+                        .addGap(232, 232, 232)
                         .addComponent(labelTitulo))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(339, 339, 339)
