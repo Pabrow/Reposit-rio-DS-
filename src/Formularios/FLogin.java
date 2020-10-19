@@ -24,6 +24,7 @@ private int mode = 0;
      */
     public FLogin() {
         initComponents();
+        this.setLocationRelativeTo(null);
         gerarPrimeiroAcesso();
     }
     
@@ -190,19 +191,23 @@ private int mode = 0;
     }//GEN-LAST:event_btEsqSenhaActionPerformed
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-        FuncionarioDAO pDAO = new FuncionarioDAO();
-        Funcionario p = pDAO.entrarFuncionario( edPassSenha.getText(),edCpf.getText());
-        if(p.getId_funcionario() > 0 ){
-            Usuario user = Usuario.getInstancia();
-            user.setCpf(p.getCpf());
-            user.setNome(p.getNome());
-            user.setSenha(p.getSenha());
-            user.setId(p.getId_funcionario());
-            Menu Menu = new Menu();
-            Menu.setVisible(true);
-            this.dispose();
+        if((!edCpf.getText().equals(""))&&(!edPassSenha.getText().equals(""))){
+            FuncionarioDAO pDAO = new FuncionarioDAO();
+            Funcionario p = pDAO.entrarFuncionario( edPassSenha.getText(),edCpf.getText());
+            if(p.getId_funcionario() > 0 ){
+                Usuario user = Usuario.getInstancia();
+                user.setCpf(p.getCpf());
+                user.setNome(p.getNome());
+                user.setSenha(p.getSenha());
+                user.setId(p.getId_funcionario());
+                Menu Menu = new Menu();
+                Menu.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null,"Usuário ou senha incorretos.", "Acessar Login", ERROR_MESSAGE);
+            }
         }else{
-            JOptionPane.showMessageDialog(null,"Usuário ou senha incorretos.", "Acessar Login", ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Digite o Usuário e a Senha.", "Acessar Login", ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btLoginActionPerformed
 

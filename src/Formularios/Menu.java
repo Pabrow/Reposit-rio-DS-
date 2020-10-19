@@ -274,7 +274,8 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(lbImagemFundo);
         lbImagemFundo.setBounds(10, 40, 940, 500);
 
-        setBounds(0, 0, 976, 589);
+        setSize(new java.awt.Dimension(976, 589));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVendasActionPerformed

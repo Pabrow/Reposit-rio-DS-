@@ -119,8 +119,6 @@ public class FuncionarioDAO {
                 p.setEmail(Resultado.getString("email_func"));
                 p.setSalario(Resultado.getDouble("salario_func"));
                 p.setFuncao(Resultado.getString("funcao_func"));
-            }else{
-                m.mensagemWarning("Não foi possível encontrar o usuario.");
             }
             stm.close();
             con.close();
