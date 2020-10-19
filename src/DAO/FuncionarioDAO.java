@@ -143,4 +143,21 @@ public class FuncionarioDAO {
             m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
     }
+    
+    public int primeiroAcesso(){
+        int retorno = 0;
+        con = ConexaoSQL.conectar();
+        String sql = "Select COUNT(id_func) from funcionario";
+        try (PreparedStatement stm =con.prepareStatement(sql)){  
+            ResultSet Resultado  = stm.executeQuery();
+            if(Resultado != null && Resultado.next()){
+                retorno = Resultado.getInt("COUNT(id_func)");
+            }
+            stm.close();
+            con.close();
+        } catch (Exception e) {
+            m.mensagemErro("ERRO"+e.getMessage());
+        }
+        return retorno;
+    }
 }

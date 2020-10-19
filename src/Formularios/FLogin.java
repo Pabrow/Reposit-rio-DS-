@@ -24,6 +24,16 @@ private int mode = 0;
      */
     public FLogin() {
         initComponents();
+        gerarPrimeiroAcesso();
+    }
+    
+    private void gerarPrimeiroAcesso(){
+        FuncionarioDAO f = new FuncionarioDAO();
+        if(f.primeiroAcesso()>0){
+            btPrimeiroAcesso.setVisible(false);
+        }else{
+            btPrimeiroAcesso.setVisible(true);
+        }
     }
 
     /**
@@ -37,6 +47,7 @@ private int mode = 0;
 
         jPanel1 = new javax.swing.JPanel();
         btEsqSenha = new javax.swing.JButton();
+        btPrimeiroAcesso = new javax.swing.JButton();
         btLogin = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         edPassSenha = new javax.swing.JPasswordField();
@@ -71,6 +82,22 @@ private int mode = 0;
         });
         jPanel1.add(btEsqSenha);
         btEsqSenha.setBounds(310, 350, 100, 30);
+
+        btPrimeiroAcesso.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btPrimeiroAcesso.setText("Primeiro Acesso");
+        btPrimeiroAcesso.setBorder(null);
+        btPrimeiroAcesso.setBorderPainted(false);
+        btPrimeiroAcesso.setContentAreaFilled(false);
+        btPrimeiroAcesso.setFocusPainted(false);
+        btPrimeiroAcesso.setFocusable(false);
+        btPrimeiroAcesso.setRequestFocusEnabled(false);
+        btPrimeiroAcesso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPrimeiroAcessoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btPrimeiroAcesso);
+        btPrimeiroAcesso.setBounds(160, 350, 100, 30);
 
         btLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btLogin.setText("Entrar");
@@ -191,6 +218,11 @@ private int mode = 0;
         }
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
+        FrameCadastroFuncionario fcf = new FrameCadastroFuncionario();
+        fcf.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,6 +261,7 @@ private int mode = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEsqSenha;
     private javax.swing.JButton btLogin;
+    private javax.swing.JButton btPrimeiroAcesso;
     private javax.swing.JFormattedTextField edCpf;
     private javax.swing.JPasswordField edPassSenha;
     private javax.swing.JLabel jLabel1;
