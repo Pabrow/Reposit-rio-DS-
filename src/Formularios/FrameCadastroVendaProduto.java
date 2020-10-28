@@ -626,7 +626,7 @@ Mensagens m = new Mensagens();
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btNewProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btAdicionarItem, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(comboBoxFormaPag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -674,7 +674,6 @@ Mensagens m = new Mensagens();
         jTabbedPane1.addTab("Cadastrar", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(51, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 0)));
 
         tabelaVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -686,7 +685,6 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane1.setViewportView(tabelaVendas);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("Pesquisar:");
 
         edPesquisa.setToolTipText("Pesquisa nas datas");
@@ -698,6 +696,7 @@ Mensagens m = new Mensagens();
 
         btPesquisar.setToolTipText("Pesquisa nas datas");
         btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
         btPesquisar.setText("PESQUISAR");
         btPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -742,41 +741,44 @@ Mensagens m = new Mensagens();
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(134, 134, 134)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(btDeletar)
+                        .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btAtualizar)
                         .addGap(18, 18, 18)
-                        .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(254, 254, 254))
+                        .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(282, 282, 282))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addComponent(btPesquisar)
-                        .addGap(167, 167, 167))))
+                        .addGap(166, 166, 166))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btPesquisar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(4, 4, 4))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btEditar)))
+                .addGap(55, 55, 55))
         );
 
         jTabbedPane1.addTab("Visualizar, Editar e Deletar", jPanel3);
@@ -794,53 +796,6 @@ Mensagens m = new Mensagens();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
-        if(tabelaVendas.getRowSelectionAllowed()==true){
-            VendaDAO pDAO = new VendaDAO();
-            DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
-            int[] linhas = tabelaVendas.getSelectedRows();
-            for(int i=0;i<linhas.length;i++){
-                int id = Integer.parseInt(modelo.getValueAt(linhas[i], 0).toString());
-                pDAO.deletar(id);
-                gerarTabelaVendas();
-            }
-        }else{
-            m.mensagemPadrão1();
-        }
-    }//GEN-LAST:event_btDeletarActionPerformed
-
-    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
-        gerarTabelaVendas();
-    }//GEN-LAST:event_btAtualizarActionPerformed
-
-    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-        if(tabelaVendas.getRowSelectionAllowed()==true){
-            DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
-            int[] linhas = tabelaVendas.getSelectedRows();
-            if(linhas.length==1){
-                int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
-                VendaDAO pDAO = new VendaDAO();
-                Venda p = new Venda();
-                List<Venda> Lista = pDAO.listarTodos();
-                for(int i=0;i<Lista.size();i++){     
-                    p = Lista.get(i);
-                    if(p.getId_venda()==id){
-                        id_edit = i;
-                        trocarModo(p);
-                    }
-                }
-            }else{
-               m.mensagemPadrão1();
-            }
-        }else{
-            m.mensagemPadrão2();
-        }
-    }//GEN-LAST:event_btEditarActionPerformed
-
-    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-        gerarTabelaVendas_com_Consulta();
-    }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparCamposActionPerformed
         limparCampos();
@@ -918,10 +873,6 @@ Mensagens m = new Mensagens();
         }
     }//GEN-LAST:event_btAdicionarItemActionPerformed
 
-    private void edPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edPesquisaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edPesquisaActionPerformed
-
     private void btAlterarQtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarQtdActionPerformed
         if(tabelaProdutosCarrinho.getRowSelectionAllowed()==true){
             DefaultTableModel modelo = (DefaultTableModel) tabelaProdutosCarrinho.getModel();
@@ -970,6 +921,57 @@ Mensagens m = new Mensagens();
         FrameCadastroProduto fcc = new FrameCadastroProduto();
         fcc.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btNewProdutoActionPerformed
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        if(tabelaVendas.getRowSelectionAllowed()==true){
+            DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
+            int[] linhas = tabelaVendas.getSelectedRows();
+            if(linhas.length==1){
+                int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
+                VendaDAO pDAO = new VendaDAO();
+                Venda p = new Venda();
+                List<Venda> Lista = pDAO.listarTodos();
+                for(int i=0;i<Lista.size();i++){
+                    p = Lista.get(i);
+                    if(p.getId_venda()==id){
+                        id_edit = i;
+                        trocarModo(p);
+                    }
+                }
+            }else{
+                m.mensagemPadrão1();
+            }
+        }else{
+            m.mensagemPadrão2();
+        }
+    }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+        gerarTabelaVendas();
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
+        if(tabelaVendas.getRowSelectionAllowed()==true){
+            VendaDAO pDAO = new VendaDAO();
+            DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
+            int[] linhas = tabelaVendas.getSelectedRows();
+            for(int i=0;i<linhas.length;i++){
+                int id = Integer.parseInt(modelo.getValueAt(linhas[i], 0).toString());
+                pDAO.deletar(id);
+                gerarTabelaVendas();
+            }
+        }else{
+            m.mensagemPadrão1();
+        }
+    }//GEN-LAST:event_btDeletarActionPerformed
+
+    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        gerarTabelaVendas_com_Consulta();
+    }//GEN-LAST:event_btPesquisarActionPerformed
+
+    private void edPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edPesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edPesquisaActionPerformed
 
     /**
      * @param args the command line arguments
