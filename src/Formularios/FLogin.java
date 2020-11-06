@@ -157,9 +157,9 @@ private int mode = 0;
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
+                .addGap(214, 214, 214)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +179,7 @@ private int mode = 0;
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 550, 450);
 
-        setBounds(0, 0, 549, 452);
+        setBounds(0, 0, 549, 450);
     }// </editor-fold>//GEN-END:initComponents
 
     private void edCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCpfActionPerformed

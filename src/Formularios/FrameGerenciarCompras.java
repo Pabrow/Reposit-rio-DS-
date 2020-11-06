@@ -5,13 +5,17 @@
  */
 package Formularios;
 
+import DAO.ClienteDAO;
 import DAO.CompraDAO;
 import DAO.FornecedorDAO;
 import DAO.ProdutoDAO;
+import DAO.VendaDAO;
+import Objetos.Cliente;
 import Objetos.Compra;
 import Objetos.Fornecedor;
 import Objetos.Produto;
 import Objetos.Usuario;
+import Objetos.Venda;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

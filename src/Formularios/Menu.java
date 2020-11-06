@@ -53,6 +53,7 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("frame"); // NOI18N
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
         pnjTopo.setBackground(new java.awt.Color(20, 95, 133));
@@ -274,7 +275,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(lbImagemFundo);
         lbImagemFundo.setBounds(10, 40, 940, 500);
 
-        setSize(new java.awt.Dimension(976, 589));
+        setSize(new java.awt.Dimension(960, 550));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -293,6 +294,7 @@ public class Menu extends javax.swing.JFrame {
     private void btProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProdutosActionPerformed
         FrameCadastroProduto fcp = new FrameCadastroProduto();
         fcp.setVisible(rootPaneCheckingEnabled);
+        
     }//GEN-LAST:event_btProdutosActionPerformed
 
     private void btClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClientesActionPerformed
@@ -321,7 +323,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btServicosActionPerformed
 
     private void btCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCaixaActionPerformed
-        FrameGerenciarCaixa fgc = new FrameGerenciarCaixa();
+        FrameCadastroCaixa fgc = new FrameCadastroCaixa();
         fgc.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btCaixaActionPerformed
 
