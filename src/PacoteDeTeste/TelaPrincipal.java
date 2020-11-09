@@ -121,6 +121,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel4.setLayout(new java.awt.BorderLayout());
         Painel.add(jPanel4, "pn4");
 
+        jPanel5.setPreferredSize(new java.awt.Dimension(650, 669));
         jPanel5.setLayout(new java.awt.BorderLayout());
         Painel.add(jPanel5, "pn5");
 
@@ -300,7 +301,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn5");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650,669);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
