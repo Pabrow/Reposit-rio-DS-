@@ -11,6 +11,7 @@ import Objetos.Mensagens;
 import Objetos.Usuario;
 import java.awt.Graphics;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -56,19 +57,17 @@ Mensagens m = new Mensagens();
         DespesaDAO pDAO = new DespesaDAO();
         List<Despesa> Lista = pDAO.listarTodos();
         for(Despesa p: Lista){     
-            if(((p.getData().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))||((p.getDesc()().toLowerCase()).contains((edPesquisa.getText()).toLowerCase()))){
-                modelo.addRow(new Object[]{p.getId_produto(),p.getDesc(),p.getMarca(),p.getTamanho(),String.valueOf(p.getQuantidade()),p.getValor(),p.getTipo()});
+           if(((p.getDesc().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))||(((String.valueOf(p.getDesc())).toLowerCase()).contains(edPesquisa.getText().toLowerCase()))){
+                modelo.addRow(new Object[]{p.getId_despesa(),p.getData(),p.getValor(),String.valueOf(p.getFormaPag()),p.getDesc()});
             }
         }
     }
     
     public void limparCampos(){
-        edMarca.setText(null);
+        edData.setText(null);
         edValor.setText(null);
-        edTempo.setText(null);
-        edDesc.setText(null);
-        edTamanho.setText(null);
-        edTipo.setText(null);
+        edFormaPag.setText(null);
+        edDescricao.setText(null);
     }
     
     public String alterarFormato(String data){
@@ -79,19 +78,17 @@ Mensagens m = new Mensagens();
     public void trocarModo(Despesa p){
         if(mode == 0){
             mode = 1;
-            labelTitulo.setText("Editar Produto");
+            labelTitulo.setText("Editar Despesa");
             btCadastrar.setText("Editar");
-            labelId.setText("Id:"+p.getId_produto());
+            labelId.setText("Id:"+p.getId_despesa());
             //Pegando valores dos EDs
-            edMarca.setText(p.getMarca());
+            edData.setText(p.getData());
             edValor.setText(String.valueOf(p.getValor()));
-            edTempo.setText(String.valueOf(p.getQuantidade()));
-            edDesc.setText(p.getDesc());
-            edTipo.setText(p.getTipo());
-            edTamanho.setText(p.getTamanho());
+            edFormaPag.setText(String.valueOf(p.getFormaPag()));
+            edDescricao.setText(p.getDesc());
         }else{
             mode = 0;
-            labelTitulo.setText("Cadastrar Produto");
+            labelTitulo.setText("Cadastrar Despesa");
             btCadastrar.setText("Cadastrar");
             labelId.setText(null);
         }
@@ -245,7 +242,7 @@ Mensagens m = new Mensagens();
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTitulo)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(edData, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(11, 11, 11)
@@ -383,9 +380,10 @@ Mensagens m = new Mensagens();
         Despesa p = new Despesa();
         DespesaDAO pDAO = new DespesaDAO();
         //Pegando valores dos EDs
-        p.setDesc(edDesc.getText());
-        p.setMarca(edMarca.getText());
+        p.setData(edData.getText());
         p.setValor(Double.parseDouble(edValor.getText()));
+        p.setFormaPag(edFormaPag.getText());
+        p.setDesc(edDescricao.getText());
         //Enviar para o DAO
         if(mode == 0){
             pDAO.cadastrarDespesa(p);
@@ -434,12 +432,12 @@ Mensagens m = new Mensagens();
             int[] linhas = tabelaDespesa.getSelectedRows();
             if(linhas.length==1){
                 int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
-                ProdutoDAO pDAO = new ProdutoDAO();
-                Produto p = new Produto();
-                List<Produto> Lista = pDAO.listarTodos();
+                DespesaDAO pDAO = new DespesaDAO();
+                Despesa p = new Despesa();
+                List<Despesa> Lista = pDAO.listarTodos();
                 for(int i=0;i<Lista.size();i++){
                     p = Lista.get(i);
-                    if(p.getId_produto()==id){
+                    if(p.getId_despesa()==id){
                         id_edit = i;
                         trocarModo(p);
                     }
