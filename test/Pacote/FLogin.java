@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Formularios;
+package Pacote;
 
-import Formularios.*;
 import DAO.FuncionarioDAO;
 import Objetos.Funcionario;
 import Objetos.Mensagens;
@@ -201,7 +200,7 @@ private int mode = 0;
                 user.setNome(p.getNome());
                 user.setSenha(p.getSenha());
                 user.setId(p.getId_funcionario());
-                TelaPrincipal Menu = new TelaPrincipal();
+                Menu Menu = new Menu();
                 Menu.setVisible(true);
                 this.dispose();
             }else{
@@ -225,7 +224,7 @@ private int mode = 0;
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
-        funcionarios fcf = new funcionarios();
+        FrameCadastroFuncionario fcf = new FrameCadastroFuncionario();
         fcf.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
 
@@ -240,7 +239,7 @@ private int mode = 0;
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -254,7 +253,6 @@ private int mode = 0;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
