@@ -38,8 +38,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.jPanel5.add(fornecedores);
         servicos servico = new servicos();
         this.jPanel6.add(servico);
-        //despesas despesas = new despesas();
-        //this.jPanel7.add(despesas);
+        despesas despesas = new despesas();
+        this.jPanel7.add(despesas);
         vendaProduto vendaProduto = new vendaProduto();
         this.jPanel8.add(vendaProduto);
         vendaServico vendaServico = new vendaServico();
@@ -270,11 +270,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(650, 669));
@@ -289,7 +289,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "produto");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -302,7 +302,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn5");
-        this.setSize(650,669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -332,7 +332,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn3");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -345,7 +345,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black);
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn4");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -358,7 +358,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black);
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn6");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -371,7 +371,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn7");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
@@ -404,7 +404,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pnonze");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu5.setForeground(Color.blue);
     }//GEN-LAST:event_jMenu5MouseClicked
@@ -417,7 +417,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn10");
-        this.setSize(650, 669);//[897, 599]
+        this.setSize(650, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu4.setForeground(Color.blue);
     }//GEN-LAST:event_jMenu4MouseClicked

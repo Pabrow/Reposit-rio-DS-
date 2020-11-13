@@ -26,6 +26,7 @@ private int mode = 0;
     public FLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         gerarPrimeiroAcesso();
     }
     
@@ -62,7 +63,6 @@ private int mode = 0;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
-        setUndecorated(true);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(244, 244, 244));
@@ -171,7 +171,7 @@ private int mode = 0;
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(3, 3, 544, 0);
+        jPanel3.setBounds(3, 3, 544, 52);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sherek motos3.png"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -180,7 +180,8 @@ private int mode = 0;
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 550, 450);
 
-        setBounds(0, 0, 549, 450);
+        setSize(new java.awt.Dimension(556, 479));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void edCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCpfActionPerformed
