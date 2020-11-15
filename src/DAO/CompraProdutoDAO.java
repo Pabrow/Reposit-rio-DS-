@@ -1,34 +1,34 @@
 package DAO;
 import Conexao.ConexaoSQL;
+import Objetos.Compra;
 import Objetos.Mensagens;
-import Objetos.VendaProduto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-public class VendaProdutoDAO {
+public class CompraProdutoDAO {
     private Connection con = null;
     Mensagens m = new Mensagens();
     
     
-    public void cadastrarVendaProduto(VendaProduto p){
+    public void cadastrarCompraProduto(Compra p){
         con = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Venda_Prod (id_venda_fk, valorUnit_produto, id_produto_fk, quant_vendaprod) values (?, ?, ?, ?);";
+        String sql = "INSERT INTO compra_Prod (id_compra_fk, id_produto_fk, quant_compProd, valorUnit_compProd) values (?, ?, ?, ?);";
         try( PreparedStatement stm =con.prepareStatement(sql)){   
-          stm.setInt(1, p.getId_venda_fk());
-          stm.setDouble(2, p.getValorUnit());
-          stm.setInt(3, p.getId_produto_fk());
-          stm.setInt(4, p.getQuant());
+          stm.setInt(1, p.getId_compra());
+          stm.setInt(2, p.getId_produto_fk());
+          stm.setInt(3, p.getQuantItens());
+          stm.setDouble(4, p.getValorUnit());
           stm.execute();
           stm.close();
         } catch (Exception e) {
-            m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
+            m.mensagemErro("ERRO:"+e.getMessage());
         }   
     }
-    
-    public void editarPorID(VendaProduto p){
+    /*
+    public void editarPorID(Compra p){
         con = ConexaoSQL.conectar();
         String sql = "update Venda_Prod set id_venda_fk =?, valorUnit_produto =?, id_produto_fk =?, quant_vendaprod = ? where id_vendaProd=?;";
          try( PreparedStatement stm =con.prepareStatement(sql)){     
@@ -39,6 +39,7 @@ public class VendaProdutoDAO {
             stm.setInt(5, p.getId_vendaProduto());
             stm.execute();
             stm.close();
+            m.mensagemInformacao("EDITADO COM SUCESSO");
         } catch (Exception e) {
             m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
@@ -53,6 +54,7 @@ public class VendaProdutoDAO {
                 stm.setInt(1,id);
                 stm.execute(); 
                 stm.close();
+                m.mensagemInformacao("DELETADO COM SUCESSO");
             }catch (Exception e){
                 throw new RuntimeException(e.getMessage());
             }   
@@ -83,21 +85,21 @@ public class VendaProdutoDAO {
         }
         return Lista;
     }
-    
+    */
     public int retornarUltimoId() {
         con = ConexaoSQL.conectar();
         int id = 0;
-        String sql = "Select MAX(id_venda) from venda";
+        String sql = "Select MAX(id_compra) from compra";
         try (PreparedStatement stm =con.prepareStatement(sql)){
             ResultSet Resultado  = stm.executeQuery();
             while(Resultado.next()){
-                id = (Resultado.getInt("MAX(id_venda)"));
+                id = (Resultado.getInt("MAX(id_compra)"));
             }
             stm.close();
             con.close();
         } catch (Exception e) {
-            throw new RuntimeException(e);
         }
         return id;
     }
+    
 }

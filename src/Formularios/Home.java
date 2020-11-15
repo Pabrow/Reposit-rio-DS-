@@ -49,7 +49,7 @@ public class Home extends javax.swing.JPanel {
         lbImagemFundo.setForeground(new java.awt.Color(153, 0, 0));
         lbImagemFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Imagem Fundo.png"))); // NOI18N
         add(lbImagemFundo);
-        lbImagemFundo.setBounds(0, 0, 960, 540);
+        lbImagemFundo.setBounds(0, 0, 960, 530);
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -58,7 +58,7 @@ public class FuncionarioDAO {
     
     public void deletar(int id){
         con = ConexaoSQL.conectar();
-        String sql = "delete from funcionario where id_funcionario=?";
+        String sql = "delete from funcionario where id_func=?";
         int opcao = JOptionPane.showConfirmDialog(null, "EXCLUIR O CLIENTE NO ID: "+id, "?", JOptionPane.YES_NO_OPTION);
         if(opcao==0){
             try( PreparedStatement stm =con.prepareStatement(sql)){

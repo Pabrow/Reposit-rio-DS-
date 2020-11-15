@@ -48,7 +48,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.jPanel10.add(compra);
         caixa caixa = new caixa();
         this.jPanel11.add(caixa);
-        this.setSize(721, 540);
+        this.setSize(960, 575);
+        this.setLocationRelativeTo(null);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,19 +77,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jSeparator4 = new javax.swing.JPopupMenu.Separator();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jSeparator5 = new javax.swing.JPopupMenu.Separator();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jSeparator6 = new javax.swing.JPopupMenu.Separator();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -169,7 +164,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem2);
-        jMenu2.add(jSeparator1);
 
         jMenuItem3.setText("Clientes");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +172,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem3);
-        jMenu2.add(jSeparator2);
 
         jMenuItem4.setText("Funcionários");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +180,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
-        jMenu2.add(jSeparator3);
 
         jMenuItem5.setText("Fornecedores");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +188,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem5);
-        jMenu2.add(jSeparator4);
 
         jMenuItem6.setText("Serviços");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +196,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem6);
-        jMenu2.add(jSeparator5);
 
         jMenuItem7.setText("Despesas");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +216,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem8);
-        jMenu3.add(jSeparator6);
 
         jMenuItem9.setText("Serviços");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -315,13 +304,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn8");
-        this.setSize(925, 805);//[897, 599]
+        this.setSize(925, 720);//[897, 599]//LARGURA, ALTURA
         this.setLocationRelativeTo(null);
         jMenu3.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-
+        
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -384,7 +373,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn9");
-        this.setSize(897, 618);//[897, 599]
+        this.setSize(925, 720);//[897, 599]//LARGURA, ALTURA
         this.setLocationRelativeTo(null);
         jMenu3.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
@@ -417,7 +406,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn10");
-        this.setSize(650, 720);//[897, 599]
+        this.setSize(925, 720);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu4.setForeground(Color.blue);
     }//GEN-LAST:event_jMenu4MouseClicked
@@ -430,7 +419,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn1");
-        this.setSize(721, 540);//[897, 599]
+        this.setSize(960, 575);
         this.setLocationRelativeTo(null);
         jMenu1.setForeground(Color.blue);
     }//GEN-LAST:event_jMenu1MouseClicked
@@ -498,11 +487,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JPopupMenu.Separator jSeparator5;
-    private javax.swing.JPopupMenu.Separator jSeparator6;
     // End of variables declaration//GEN-END:variables
 }

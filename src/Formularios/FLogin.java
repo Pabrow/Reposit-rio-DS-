@@ -20,6 +20,7 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
  */
 public class FLogin extends javax.swing.JFrame {
 private int mode = 0;
+private int pAcess = 0;
     /**
      * Creates new form FLogin
      */
@@ -31,11 +32,15 @@ private int mode = 0;
     }
     
     private void gerarPrimeiroAcesso(){
-        FuncionarioDAO f = new FuncionarioDAO();
-        if(f.primeiroAcesso()>0){
-            btPrimeiroAcesso.setVisible(false);
+        if(pAcess==0){
+            FuncionarioDAO f = new FuncionarioDAO();
+            if(f.primeiroAcesso()>0){
+                btPrimeiroAcesso.setVisible(false);
+            }else{
+                btPrimeiroAcesso.setVisible(true);
+            }
         }else{
-            btPrimeiroAcesso.setVisible(true);
+            btPrimeiroAcesso.setVisible(false);
         }
     }
 
@@ -226,8 +231,10 @@ private int mode = 0;
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
-        funcionarios fcf = new funcionarios();
-        fcf.setVisible(rootPaneCheckingEnabled);
+        funcionarioPrimeiroAcesso Menu = new funcionarioPrimeiroAcesso();
+        Menu.setVisible(true);
+        pAcess = 1;
+        gerarPrimeiroAcesso();
     }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
 
     /**

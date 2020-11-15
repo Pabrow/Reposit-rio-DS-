@@ -15,18 +15,15 @@ public class CompraDAO {
     
     public void cadastrarCompra(Compra p){
         con = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Compra (data_compra, valor_compra, quantItens_compra, formaPag_compra, id_fornecedor_fk) values (?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO Compra (data_compra, valor_compra, formaPag_compra, parcelas_compra, id_fornecedor_fk, id_funcionario_fk) values ( ?, ?, ?, ?, ?, ?);";
         try( PreparedStatement stm =con.prepareStatement(sql)){   
           stm.setString(1, p.getData());
           stm.setDouble(2, p.getValor());
-          stm.setInt(3, p.getQuantItens());
-          stm.setString(4, p.getFormaPag());
+          stm.setString(3, p.getFormaPag());
+          stm.setInt(4, p.getParcelas());
           stm.setInt(5, p.getId_fornecedor_fk());
+          stm.setInt(6, p.getId_funcionario_fk());
           stm.execute();
-          ResultSet resultSet = stm.executeQuery("SELECT LAST_INSERT_ID()");
-          if (resultSet.next()) {
-                p.setId_produto_fk(resultSet.getInt("LAST_INSERT_ID()"));
-          }
           stm.close();
           m.mensagemInformacao("CADASTRADO COM SUCESSO");
           cadastrarCompraProduto(p);
@@ -39,15 +36,13 @@ public class CompraDAO {
         con = ConexaoSQL.conectar();
         String sql = "INSERT INTO Compra_prod values(null, ?, ?, ?, ?);";
         try( PreparedStatement stm =con.prepareStatement(sql)){   
-          stm.setInt(1, 4);
+          stm.setInt(1, p.getId_compra());
           stm.setInt(2, p.getId_produto_fk());
-          stm.setInt(3, 1);
-          stm.setFloat(4, 1);
+          stm.setInt(3, p.getQuantItens());
+          stm.setDouble(4, p.getValorUnit());
           stm.execute();
           stm.close();
-          m.mensagemInformacao("CADASTRADO COM SUCESSO");
         } catch (Exception e) {
-            m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   
     }
     
@@ -108,12 +103,11 @@ public class CompraDAO {
             ResultSet Resultado  = stm.executeQuery();
             while(Resultado.next()){
                 Compra p = new Compra();
+                p.setId_compra(Resultado.getInt("compra.id_compra"));
                 p.setData(Resultado.getString("compra.data_compra"));
                 p.setValor(Resultado.getDouble("compra.valor_compra"));
-                p.setQuantItens(Resultado.getInt("compra.quantItens_compra"));
                 p.setFormaPag(Resultado.getString("compra.formaPag_compra"));
                 p.setId_fornecedor_fk(Resultado.getInt("compra.id_fornecedor_fk"));
-                p.setId_produto_fk(Resultado.getInt("compra_prod.id_produto_fk"));
                 Lista.add(p);
             }
             stm.close();

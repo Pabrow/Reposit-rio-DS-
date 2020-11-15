@@ -46,7 +46,7 @@ Mensagens m = new Mensagens();
         ServicoDAO pDAO = new ServicoDAO();
         List<Servico> Lista = pDAO.listarTodos();
         for(Servico p: Lista){     
-            modelo.addRow(new Object[]{p.getId_servico(),p.getDesc(),p.getTempo(),p.getValor(),p.getId_funcionario_fk()});
+            modelo.addRow(new Object[]{p.getId_servico(),p.getValor(),p.getTempo(),p.getDesc(),p.getId_funcionario_fk()});
         }
     }
     
@@ -56,8 +56,8 @@ Mensagens m = new Mensagens();
         ServicoDAO pDAO = new ServicoDAO();
         List<Servico> Lista = pDAO.listarTodos();
         for(Servico p: Lista){     
-            if((p.getDesc().toLowerCase()).contains(edPesquisa.getText().toLowerCase())){
-                modelo.addRow(new Object[]{p.getId_servico(),p.getDesc(),p.getTempo(),p.getValor(),p.getId_funcionario_fk()});
+            if((p.getDesc().toLowerCase()).contains(edPesquisa.getText().toLowerCase())||(String.valueOf(p.getId_servico()).contains(edPesquisa.getText().toLowerCase()))){
+                modelo.addRow(new Object[]{p.getId_servico(),p.getValor(),p.getTempo(),p.getDesc(),p.getId_funcionario_fk()});
             }
         }
     }
@@ -81,7 +81,7 @@ Mensagens m = new Mensagens();
             mode = 1;
             labelTitulo.setText("Editar Servico");
             btCadastrar.setText("Editar");
-            labelId.setText("Id:"+p.getId_servico());
+            labelId.setText("ID:"+p.getId_servico());
             //Pegando valores dos EDs
             edValor.setText(String.valueOf(p.getValor()));
             edTempo.setText(String.valueOf(p.getTempo()));
@@ -116,7 +116,6 @@ Mensagens m = new Mensagens();
         btLimparCampos = new javax.swing.JButton();
         labelId = new javax.swing.JLabel();
         labelFuncionario = new javax.swing.JLabel();
-        labelFuncionario1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -133,24 +132,32 @@ Mensagens m = new Mensagens();
         tabCadastro.setName(""); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         labelTitulo.setText("Cadastrar Servicos");
+        jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 54, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Descrição:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 227, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Tempo:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 118, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Valor:");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 170, -1, -1));
 
         edDesc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(edDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 255, 246, 37));
 
         edTempo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(edTempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 141, 165, -1));
 
         edValor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(edValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 193, 165, -1));
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE CADASTRAR DESPESA.png"))); // NOI18N
@@ -160,6 +167,7 @@ Mensagens m = new Mensagens();
                 btCadastrarActionPerformed(evt);
             }
         });
+        jPanel2.add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 311, -1, -1));
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -169,95 +177,15 @@ Mensagens m = new Mensagens();
                 btLimparCamposActionPerformed(evt);
             }
         });
+        jPanel2.add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, 39));
 
-        labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-
-        labelFuncionario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        labelFuncionario1.setText("[FUNCIONARIO]");
+        labelId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPanel2.add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 87, 43, 13));
+        jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 31, 98, 17));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("Funcionário:");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(labelId, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(edValor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jLabel6))
-                            .addComponent(edTempo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel5))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelTitulo)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelFuncionario1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 411, Short.MAX_VALUE)
-                .addComponent(labelFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(288, 288, 288)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(edDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(256, 256, 256)
-                        .addComponent(btCadastrar))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addComponent(btLimparCampos)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(labelId, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(labelFuncionario1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelTitulo)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(edDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addComponent(btCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(409, Short.MAX_VALUE))
-        );
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 31, -1, -1));
 
         tabCadastro.addTab("Cadastrar", jPanel2);
 
@@ -268,7 +196,7 @@ Mensagens m = new Mensagens();
 
             },
             new String [] {
-                "Id", "Descrição", "Marca", "Tamanho", "Quantidade", "Valor", "Tipo"
+                "Id", "Descrição", "Tempo", "Valor", "Id Funcionario"
             }
         ));
         jScrollPane1.setViewportView(tabelaServicos);
@@ -395,6 +323,7 @@ Mensagens m = new Mensagens();
             pDAO.editarPorID(p);
             trocarModo(p);
         }
+        gerarTabela();
         limparCampos();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
@@ -473,7 +402,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelFuncionario;
-    private javax.swing.JLabel labelFuncionario1;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JTabbedPane tabCadastro;

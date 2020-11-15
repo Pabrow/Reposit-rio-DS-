@@ -15,7 +15,7 @@ public class VendaServicoDAO {
     
     public void cadastrarVendaServico(VendaServico p){
         con = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Venda_Serv (id_venda_fk, id_servico_fk, quant_vendaServ, valorUnit_servico) values (?, ?, ?);";
+        String sql = "INSERT INTO Venda_Serv (id_venda_fk, id_servico_fk, quant_vendaServ, valorUnit_servico) values (?, ?, ?, ?);";
         try( PreparedStatement stm =con.prepareStatement(sql)){   
           stm.setInt(1, p.getId_venda_fk());
           stm.setInt(2, p.getId_servico_fk());
@@ -23,7 +23,6 @@ public class VendaServicoDAO {
           stm.setDouble(4, p.getValorUnit());
           stm.execute();
           stm.close();
-          m.mensagemInformacao("CADASTRADO COM SUCESSO");
         } catch (Exception e) {
             m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   
@@ -40,7 +39,6 @@ public class VendaServicoDAO {
             stm.setInt(5, p.getId_vendaServico());
             stm.execute();
             stm.close();
-            m.mensagemInformacao("EDITADO COM SUCESSO");
         } catch (Exception e) {
             m.mensagemErro("ERRO AO EDITAR"+e.getMessage());
         }
@@ -55,12 +53,10 @@ public class VendaServicoDAO {
                 stm.setInt(1,id);
                 stm.execute(); 
                 stm.close();
-                m.mensagemInformacao("DELETADO COM SUCESSO");
             }catch (Exception e){
                 throw new RuntimeException(e.getMessage());
             }   
         }else{
-            m.mensagemWarning("Operação cancelada");
         }
     }
     
@@ -94,7 +90,7 @@ public class VendaServicoDAO {
         try (PreparedStatement stm =con.prepareStatement(sql)){
             ResultSet Resultado  = stm.executeQuery();
             while(Resultado.next()){
-                id = (Resultado.getInt("id_venda"));
+                id = (Resultado.getInt("MAX(id_venda)"));
             }
             stm.close();
             con.close();

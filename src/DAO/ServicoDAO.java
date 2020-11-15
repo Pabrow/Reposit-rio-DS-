@@ -31,10 +31,10 @@ public class ServicoDAO {
     
     public void editarPorID(Servico p){
         con = ConexaoSQL.conectar();
-        String sql = "update Fornecedor set desc_serv =?, valor_serv =?, tempo_serv =?, id_funcionario_fk =? where id_servico=?;";
+        String sql = "update servico set desc_serv =?, valor_serv =?, tempo_serv =?, id_funcionario_fk =? where id_serv=?;";
          try( PreparedStatement stm =con.prepareStatement(sql)){     
-            stm.setString(2, p.getDesc());
-            stm.setDouble(1, p.getValor());
+            stm.setString(1, p.getDesc());
+            stm.setDouble(2, p.getValor());
             stm.setString(3, p.getTempo());
             stm.setInt(4, p.getId_funcionario_fk());
             stm.setInt(5, p.getId_servico());
@@ -48,7 +48,7 @@ public class ServicoDAO {
     
     public void deletar(int id){
         con = ConexaoSQL.conectar();
-        String sql = "delete from recebimento where id_servico=?";
+        String sql = "delete from servico where id_serv=?";
         int opcao = JOptionPane.showConfirmDialog(null, "EXCLUIR O SERVIÇO NO ID: "+id, "?", JOptionPane.YES_NO_OPTION);
         if(opcao==0){
             try( PreparedStatement stm =con.prepareStatement(sql)){
@@ -72,7 +72,7 @@ public class ServicoDAO {
             ResultSet Resultado  = stm.executeQuery();
             while(Resultado.next()){
                 Servico p = new Servico();
-                p.setId_servico(Resultado.getInt("id_servico"));
+                p.setId_servico(Resultado.getInt("id_serv"));
                 p.setValor(Resultado.getDouble("valor_serv"));
                 p.setDesc(Resultado.getString("desc_serv"));
                 p.setTempo(Resultado.getString("tempo_serv"));

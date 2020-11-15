@@ -33,11 +33,13 @@ Mensagens m = new Mensagens();
         gerarLabel();
         gerarTabela();
     }
+    
     public void gerarData(){
         String data = String.valueOf(getData());
         edData.setText(alterarData2(data));
         
     }
+    
     public Date getData(){
         Date data = new Date(System.currentTimeMillis());  
         return data;
@@ -84,7 +86,7 @@ Mensagens m = new Mensagens();
         DespesaDAO pDAO = new DespesaDAO();
         List<Despesa> Lista = pDAO.listarTodos();
         for(Despesa p: Lista){     
-           if(((p.getDesc().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))||(((String.valueOf(p.getDesc())).toLowerCase()).contains(edPesquisa.getText().toLowerCase()))){
+           if(((p.getDesc().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))||(((String.valueOf(p.getId_despesa()))).toLowerCase()).contains(edPesquisa.getText().toLowerCase())){
                 modelo.addRow(new Object[]{p.getId_despesa(),p.getData(),p.getValor(),String.valueOf(p.getFormaPag()),p.getDesc()});
             }
         }
@@ -394,6 +396,7 @@ Mensagens m = new Mensagens();
             pDAO.editarPorID(p);
             trocarModo(p);
         }
+        gerarTabela();
         limparCampos();
     }//GEN-LAST:event_btCadastrarActionPerformed
 
@@ -436,7 +439,7 @@ Mensagens m = new Mensagens();
                 for(int i=0;i<Lista.size();i++){
                     p = Lista.get(i);
                     if(p.getId_despesa()==id){
-                        id_edit = i;
+                        id_edit = id;
                         trocarModo(p);
                     }
                 }

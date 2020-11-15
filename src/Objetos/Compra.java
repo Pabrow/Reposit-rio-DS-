@@ -3,17 +3,28 @@ public class Compra {
     private int id_compra;
     private int id_fornecedor_fk;
     private int id_produto_fk;
+    private int id_funcionario_fk;
     private String data;
     private double valor;
     private int quantItens;
+    private double valorUnit;
+    private int parcelas;
     private String formaPag;
 
-    public int getId_fornecedor_fk() {
-        return id_fornecedor_fk;
+    public int getId_funcionario_fk() {
+        return id_funcionario_fk;
     }
 
-    public void setId_fornecedor_fk(int id_fornecedor_fk) {
-        this.id_fornecedor_fk = id_fornecedor_fk;
+    public void setId_funcionario_fk(int id_funcionario_fk) {
+        this.id_funcionario_fk = id_funcionario_fk;
+    }
+
+    public int getParcelas() {
+        return parcelas;
+    }
+
+    public void setParcelas(int parcelas) {
+        this.parcelas = parcelas;
     }
 
     public int getId_produto_fk() {
@@ -22,6 +33,22 @@ public class Compra {
 
     public void setId_produto_fk(int id_produto_fk) {
         this.id_produto_fk = id_produto_fk;
+    }
+
+    public double getValorUnit() {
+        return valorUnit;
+    }
+
+    public void setValorUnit(double valorUnit) {
+        this.valorUnit = valorUnit;
+    }
+
+    public int getId_fornecedor_fk() {
+        return id_fornecedor_fk;
+    }
+
+    public void setId_fornecedor_fk(int id_fornecedor_fk) {
+        this.id_fornecedor_fk = id_fornecedor_fk;
     }
 
     public int getId_compra() {
@@ -63,5 +90,6 @@ public class Compra {
     public void setFormaPag(String formaPag) {
         this.formaPag = formaPag;
     }
+
     
 }
