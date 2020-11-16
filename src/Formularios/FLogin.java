@@ -20,7 +20,6 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
  */
 public class FLogin extends javax.swing.JFrame {
 private int mode = 0;
-private int pAcess = 0;
     /**
      * Creates new form FLogin
      */
@@ -32,15 +31,11 @@ private int pAcess = 0;
     }
     
     private void gerarPrimeiroAcesso(){
-        if(pAcess==0){
-            FuncionarioDAO f = new FuncionarioDAO();
-            if(f.primeiroAcesso()>0){
-                btPrimeiroAcesso.setVisible(false);
-            }else{
-                btPrimeiroAcesso.setVisible(true);
-            }
-        }else{
+        FuncionarioDAO f = new FuncionarioDAO();
+        if(f.primeiroAcesso()>0){
             btPrimeiroAcesso.setVisible(false);
+        }else{
+            btPrimeiroAcesso.setVisible(true);
         }
     }
 
@@ -75,6 +70,7 @@ private int pAcess = 0;
         jPanel1.setLayout(null);
 
         btEsqSenha.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btEsqSenha.setForeground(new java.awt.Color(0, 0, 204));
         btEsqSenha.setText("Esqueci a senha");
         btEsqSenha.setBorder(null);
         btEsqSenha.setBorderPainted(false);
@@ -82,6 +78,11 @@ private int pAcess = 0;
         btEsqSenha.setFocusPainted(false);
         btEsqSenha.setFocusable(false);
         btEsqSenha.setRequestFocusEnabled(false);
+        btEsqSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btEsqSenhaMouseClicked(evt);
+            }
+        });
         btEsqSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEsqSenhaActionPerformed(evt);
@@ -91,6 +92,7 @@ private int pAcess = 0;
         btEsqSenha.setBounds(310, 350, 100, 30);
 
         btPrimeiroAcesso.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btPrimeiroAcesso.setForeground(new java.awt.Color(0, 0, 204));
         btPrimeiroAcesso.setText("Primeiro Acesso");
         btPrimeiroAcesso.setBorder(null);
         btPrimeiroAcesso.setBorderPainted(false);
@@ -231,11 +233,16 @@ private int pAcess = 0;
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
-        funcionarioPrimeiroAcesso Menu = new funcionarioPrimeiroAcesso();
-        Menu.setVisible(true);
-        pAcess = 1;
-        gerarPrimeiroAcesso();
+        funcionarios fcf = new funcionarios();
+        fcf.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
+
+    private void btEsqSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEsqSenhaMouseClicked
+        // TODO add your handling code here:
+        RecuperarSenha rec = new RecuperarSenha();
+        rec.setVisible(true);
+        rec.recuperarLogin(edCpf.getText());
+    }//GEN-LAST:event_btEsqSenhaMouseClicked
 
     /**
      * @param args the command line arguments
