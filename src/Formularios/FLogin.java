@@ -233,15 +233,12 @@ private int mode = 0;
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
-        funcionarios fcf = new funcionarios();
+        funcionarioPrimeiroAcesso fcf = new funcionarioPrimeiroAcesso();
         fcf.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
 
     private void btEsqSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEsqSenhaMouseClicked
         // TODO add your handling code here:
-        RecuperarSenha rec = new RecuperarSenha();
-        rec.setVisible(true);
-        rec.recuperarLogin(edCpf.getText());
     }//GEN-LAST:event_btEsqSenhaMouseClicked
 
     /**

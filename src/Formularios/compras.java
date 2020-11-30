@@ -39,6 +39,7 @@ private List<Integer> listaIdsProdutos;
      */
     public compras() {
         initComponents();
+        gerarLabel();
         gerarData();
         gerarTabelaCompras();
         gerarTabelaProdutos();
@@ -51,6 +52,10 @@ private List<Integer> listaIdsProdutos;
         
     }
     
+    public void gerarLabel(){
+        Usuario user = Usuario.getInstancia();
+        labelFuncionario.setText(user.getCpf());
+    }
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
     }
@@ -620,7 +625,6 @@ private List<Integer> listaIdsProdutos;
                         r.setValorUnit(Double.parseDouble(modelo.getValueAt(0, 4).toString()));
                         r.setId_compra(pvDAO.retornarUltimoId());
                         pvDAO.cadastrarCompraProduto(r);
-                        gerarTabelaCompras();
                     }else{
                         for(int i=0;i<linhas;i++){
                             r.setId_produto_fk(Integer.parseInt(modelo.getValueAt(i, 0).toString()));
@@ -628,7 +632,6 @@ private List<Integer> listaIdsProdutos;
                             r.setValorUnit(Double.parseDouble(modelo.getValueAt(i, 4).toString()));
                             r.setId_compra(pvDAO.retornarUltimoId());
                             pvDAO.cadastrarCompraProduto(r);
-                            gerarTabelaCompras();
                         }
                     }
                 }else{
