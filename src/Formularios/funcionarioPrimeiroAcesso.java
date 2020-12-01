@@ -192,6 +192,7 @@ Mensagens m = new Mensagens();
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
             Funcionario p = new Funcionario();
             FuncionarioDAO pDAO = new FuncionarioDAO();
+            FLogin f = new FLogin();
             //Pegando valores dos EDs
             p.setCpf(edCpf.getText());
             p.setEmail(edEmail.getText());
@@ -203,8 +204,11 @@ Mensagens m = new Mensagens();
             p.setSenha(edPassSenha.getText());
             p.setSalario(Double.parseDouble(edSalario.getText()));
             //Enviar para o DAO
-            pDAO.cadastrarFuncionario(p);
-            this.dispose();
+            if((!p.getSenha().equals(""))&&(p.getSenha().length()>2)){
+                pDAO.cadastrarFuncionario(p);
+                f.jaCadastrado();
+                this.dispose();
+            }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     /**
