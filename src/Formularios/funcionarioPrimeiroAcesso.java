@@ -9,6 +9,7 @@ import DAO.FuncionarioDAO;
 import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Usuario;
+import java.awt.event.WindowEvent;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -78,7 +79,15 @@ Mensagens m = new Mensagens();
         labelFuncionario = new javax.swing.JLabel();
         edCpf = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -188,7 +197,7 @@ Mensagens m = new Mensagens();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
             Funcionario p = new Funcionario();
             FuncionarioDAO pDAO = new FuncionarioDAO();
@@ -208,8 +217,19 @@ Mensagens m = new Mensagens();
                 pDAO.cadastrarFuncionario(p);
                 f.jaCadastrado();
                 this.dispose();
+                f.setVisible(rootPaneCheckingEnabled);
             }
     }//GEN-LAST:event_btCadastrarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        FLogin f = new FLogin();
+        //this.dispose();
+        f.setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

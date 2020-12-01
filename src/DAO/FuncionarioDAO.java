@@ -161,18 +161,21 @@ public class FuncionarioDAO {
     
     public int esqueciSenha(String Str, int id){
         if(id!=0){
-            String rg;
+            String rg = null;
             con = ConexaoSQL.conectar();
             String sql = "Select rg_func from funcionario where id_func = ?";
             try (PreparedStatement stm =con.prepareStatement(sql)){  
                 stm.setInt(1, id);
                 stm.execute();  
                 ResultSet Resultado  = stm.executeQuery();
-                rg = Resultado.getString("rg_func");
-                if(rg.equals(Str)){
-                }else{
-                    id = 0;
+                while(Resultado.next()){
+                    if(Resultado!=null){
+                        rg = Resultado.getString("rg_func");
+                    }else{             }
                 }
+                if(!Str.equals(rg)){
+                        id = 0;
+                }else{             }
                 stm.close();
                 con.close();
             } catch (Exception e) {

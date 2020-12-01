@@ -51,8 +51,7 @@ private int mode = 0;
     }
     
     public void jaCadastrado(){
-        btPrimeiroAcesso.setVisible(false);
-        btEsqSenha.setVisible(true);
+        gerarPrimeiroAcesso();
     }
     
     /**
@@ -254,7 +253,7 @@ private int mode = 0;
                     if((!novaSenha.equals(""))&&(novaSenha.length()>2)){
                         fd.editarSenha(d, novaSenha);
                     }else{
-                        m.mensagemErro("Campo vazio!"); 
+                        m.mensagemErro("Senha muito curta!"); 
                     }
                 }else{
                     m.mensagemErro("RG Incorreto"); 
@@ -301,6 +300,7 @@ private int mode = 0;
     private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
         funcionarioPrimeiroAcesso fcf = new funcionarioPrimeiroAcesso();
         fcf.setVisible(rootPaneCheckingEnabled);
+        this.setVisible(false);
     }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
 
     private void btEsqSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEsqSenhaMouseClicked

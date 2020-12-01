@@ -234,7 +234,6 @@ begin
 end;
 $$ delimiter ;
 
-call gerarCaixa('2000-10-10', 1)
 
 /*PROCEDURE PARA A VENDA DE PRODUTOS
 delimiter $$
