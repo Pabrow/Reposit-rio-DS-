@@ -65,7 +65,7 @@ private int mode = 0;
         setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(244, 244, 244));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPanel1.setLayout(null);
 
@@ -108,6 +108,7 @@ private int mode = 0;
         jPanel1.add(btPrimeiroAcesso);
         btPrimeiroAcesso.setBounds(160, 350, 100, 30);
 
+        btLogin.setBackground(new java.awt.Color(0, 102, 102));
         btLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btLogin.setText("Entrar");
         btLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -154,35 +155,34 @@ private int mode = 0;
         jPanel1.add(jLabel3);
         jLabel3.setBounds(230, 240, 119, 22);
 
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Acessar Login");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(214, 214, 214)
-                .addComponent(jLabel1)
-                .addContainerGap(220, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(3, 3, 544, 52);
+        jPanel3.setBounds(3, 3, 544, 50);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sherek motos3.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo shrek motos.png"))); // NOI18N
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(160, 60, 250, 163);
+        jLabel5.setBounds(190, 70, 200, 160);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 550, 450);

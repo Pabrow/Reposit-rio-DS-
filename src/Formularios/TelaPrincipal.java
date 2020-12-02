@@ -61,12 +61,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
+        jButton1 = new javax.swing.JButton();
         Painel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -101,24 +101,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jButton1.setText("jButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Painel.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel1, "pn1");
-
-        jPanel2.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel2, "produto");
-
-        jPanel3.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel3, "pn3");
-
-        jPanel4.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel4, "pn4");
-
         jPanel5.setPreferredSize(new java.awt.Dimension(650, 669));
         jPanel5.setLayout(new java.awt.BorderLayout());
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("jButton3");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 1581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 1009, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(110, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel5.add(jPanel1, java.awt.BorderLayout.CENTER);
+
         Painel.add(jPanel5, "pn5");
 
         jPanel6.setLayout(new java.awt.BorderLayout());
@@ -259,14 +288,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 1601, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, 1130, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(650, 669));
+        setSize(new java.awt.Dimension(1597, 1188));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -424,6 +453,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setForeground(Color.blue);
     }//GEN-LAST:event_jMenu1MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -461,6 +494,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Painel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -479,9 +515,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

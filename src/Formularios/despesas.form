@@ -17,23 +17,23 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="paneCadastrar" min="-2" pref="998" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="paneCadastrar" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="paneCadastrar" min="-2" pref="686" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
-          </Group>
+          <Component id="paneCadastrar" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="paneCadastrar">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="1"/>
+        </Property>
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
 
@@ -60,27 +60,27 @@
             <Component class="javax.swing.JLabel" name="labelTitulo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="24" style="1"/>
+                  <Font name="Tahoma" size="36" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Cadastrar Despesa"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="220" y="80" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="10" y="70" width="1300" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="240" y="140" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="560" y="270" width="60" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -99,7 +99,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="150" y="370" width="-1" height="33"/>
+                  <AbsoluteConstraints x="450" y="610" width="200" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -118,7 +118,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="370" y="370" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="690" y="610" width="180" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -137,26 +137,26 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Valor:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="240" y="170" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="560" y="310" width="70" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Decri&#xe7;&#xe3;o:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="280" y="270" width="80" height="-1"/>
+                  <AbsoluteConstraints x="600" y="470" width="100" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -169,7 +169,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="340" y="170" width="111" height="-1"/>
+                  <AbsoluteConstraints x="620" y="310" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -181,7 +181,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="150" y="290" width="368" height="47"/>
+                  <AbsoluteConstraints x="470" y="500" width="368" height="70"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -194,7 +194,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="498" y="11" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="1210" y="30" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -207,27 +207,27 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="433" y="11" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="1140" y="30" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Forma Pagamento:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="200" y="200" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="500" y="352" width="180" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lbParcelas">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="14" style="0"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Parcelas:"/>
               </Properties>
@@ -236,7 +236,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="230" y="230" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="550" y="410" width="100" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -251,7 +251,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="340" y="230" width="112" height="-1"/>
+                  <AbsoluteConstraints x="650" y="410" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -272,7 +272,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="340" y="200" width="112" height="-1"/>
+                  <AbsoluteConstraints x="680" y="353" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -285,7 +285,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="340" y="140" width="110" height="-1"/>
+                  <AbsoluteConstraints x="620" y="270" width="120" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -308,48 +308,52 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="edPesquisa" min="-2" pref="343" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btPesquisar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="360" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="565" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="edPesquisa" min="-2" pref="343" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btPesquisar" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="765" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="btDeletar" min="-2" pref="125" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="btAtualizar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btEditar" min="-2" pref="113" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="430" max="-2" attributes="0"/>
+                              <Component id="btDeletar" min="-2" pref="139" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="btAtualizar" min="-2" pref="142" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="btEditar" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="395" max="32767" attributes="0"/>
+                      <EmptySpace pref="284" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="edPesquisa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btPesquisar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="494" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="585" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btDeletar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btAtualizar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="btEditar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="btDeletar" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="btAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="85" max="32767" attributes="0"/>
+                      <EmptySpace pref="123" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -377,7 +381,7 @@
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="16" style="0"/>
+                  <Font name="Tahoma" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pesquisar:"/>
               </Properties>

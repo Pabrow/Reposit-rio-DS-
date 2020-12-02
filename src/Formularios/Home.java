@@ -33,8 +33,10 @@ public class Home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        lbImagemFundo = new javax.swing.JLabel();
+
+        jButton1.setText("jButton1");
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(null);
@@ -42,19 +44,15 @@ public class Home extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 58)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto bem vindo shrek motos.png"))); // NOI18N
         jLabel5.setText("Bem vindo!");
         add(jLabel5);
-        jLabel5.setBounds(70, 40, 375, 78);
-
-        lbImagemFundo.setForeground(new java.awt.Color(153, 0, 0));
-        lbImagemFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Imagem Fundo.png"))); // NOI18N
-        add(lbImagemFundo);
-        lbImagemFundo.setBounds(0, 0, 960, 530);
+        jLabel5.setBounds(0, 0, 1160, 700);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel lbImagemFundo;
     // End of variables declaration//GEN-END:variables
 }
