@@ -11,6 +11,7 @@ import Objetos.Mensagens;
 import Objetos.Usuario;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.sql.Date;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.table.DefaultTableModel;
@@ -37,6 +38,13 @@ Mensagens m = new Mensagens();
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
     }
+        
+    
+    
+    public Date getData(){
+        Date data = new Date(System.currentTimeMillis());  
+        return data;
+    }
     
     public void gerarLabel(){
         Usuario user = Usuario.getInstancia();
@@ -55,7 +63,7 @@ Mensagens m = new Mensagens();
         CaixaDAO pDAO = new CaixaDAO();
         List<Caixa> Lista = pDAO.listarTodos();
         for(Caixa p: Lista){     
-            modelo.addRow(new Object[]{p.getId_caixa(),alterarData2(p.getDataIn_caixa()),alterarData2(p.getDataFin_caixa()),p.getSaldoIn_caixa(),p.getTotalFin_caixa(),p.getTotalPag_caixa(),p.getTotalRec_caixa()});
+            modelo.addRow(new Object[]{p.getId_caixa(),alterarData2(p.getDataIn_caixa()),retornoDataFinal(p.getDataFin_caixa()),p.getSaldoIn_caixa(),p.getTotalFin_caixa(),p.getTotalPag_caixa(),p.getTotalRec_caixa()});
         }//        "Id", "Data Inicial", "Data Final", "Saldo Inicial", "Saldo final", "Total pagamento", "Total recebimento"
     }
     
@@ -66,9 +74,17 @@ Mensagens m = new Mensagens();
         List<Caixa> Lista = pDAO.listarTodos();
         for(Caixa p: Lista){ 
             if(((p.getDataIn_caixa().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))||((p.getDataFin_caixa().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))){
-                modelo.addRow(new Object[]{p.getId_caixa(),alterarData2(p.getDataIn_caixa()),alterarData2(p.getDataFin_caixa()),p.getSaldoIn_caixa(),p.getTotalFin_caixa(),p.getTotalPag_caixa(),p.getTotalRec_caixa()});
+                modelo.addRow(new Object[]{p.getId_caixa(),alterarData2(p.getDataIn_caixa()),retornoDataFinal(p.getDataFin_caixa()),p.getSaldoIn_caixa(),p.getTotalFin_caixa(),p.getTotalPag_caixa(),p.getTotalRec_caixa()});
             }
         }
+    }
+    
+    public String retornoDataFinal(String data){
+        String stdata = data;
+        if(data.equals("1111-11-11")){
+            stdata = "Caixa Atual";
+        }
+        return stdata;
     }
     
     public void limparCampos(){
@@ -398,12 +414,7 @@ Mensagens m = new Mensagens();
         CaixaDAO pDAO = new CaixaDAO();
         Usuario user = Usuario.getInstancia();
         //Pegando valores dos EDs
-        p.setDataFin_caixa(alterarData(edDataFin.getText()));
-        p.setDataIn_caixa("1111-11-11");
-        p.setSaldoIn_caixa(Double.parseDouble(edSaldoIn.getText()));
-        p.setTotalFin_caixa(Double.parseDouble(edSaldoFin.getText()));
-        p.setTotalPag_caixa(Double.parseDouble(edTotalPag.getText()));
-        p.setTotalRec_caixa(Double.parseDouble(edTotalRec.getText()));
+        p.setDataIn_caixa(String.valueOf(getData()));
         p.setId_funcionario_fk(user.getId());
         //Enviar para o DAO
         if(mode == 0){

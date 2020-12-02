@@ -158,4 +158,50 @@ public class FuncionarioDAO {
         }
         return retorno;
     }
+    
+    public int esqueciSenha(String Str, int id){
+        if(id!=0){
+            String rg = null;
+            con = ConexaoSQL.conectar();
+            String sql = "Select rg_func from funcionario where id_func = ?";
+            try (PreparedStatement stm =con.prepareStatement(sql)){  
+                stm.setInt(1, id);
+                stm.execute();  
+                ResultSet Resultado  = stm.executeQuery();
+                while(Resultado.next()){
+                    if(Resultado!=null){
+                        rg = Resultado.getString("rg_func");
+                    }else{             }
+                }
+                if(!Str.equals(rg)){
+                        id = 0;
+                }else{             }
+                stm.close();
+                con.close();
+            } catch (Exception e) {
+                m.mensagemErro("ERRO"+e.getMessage());
+            }
+        }else{
+            con = ConexaoSQL.conectar();
+            String sql = "Select id_func from funcionario where cpf_func = ?";
+            try (PreparedStatement stm =con.prepareStatement(sql)){  
+                stm.setString(1, Str);
+                stm.execute();  
+                ResultSet Resultado  = stm.executeQuery();
+                while(Resultado.next()){
+                    if(Resultado!=null){
+                        id = Resultado.getInt("id_func");
+                    }else{             }
+                }
+                if(Resultado==null){
+                        id = 0;
+                }else{             }
+                stm.close();
+                con.close();
+            } catch (Exception e) {
+                m.mensagemErro("ERRO"+e.getMessage());
+            }
+        }
+        return id;
+    }
 }

@@ -641,7 +641,11 @@ Mensagens m = new Mensagens();
                 painel2.add(password);
                 JOptionPane.showMessageDialog(null, painel2, "ALTERAR SENHA", JOptionPane.PLAIN_MESSAGE);
                 String novaSenha = password.getText();
-                pDAO.editarSenha(p, novaSenha);
+                if((!novaSenha.equals(""))&&(novaSenha.length()>2)){
+                    pDAO.editarSenha(p, novaSenha);
+                }else{
+                   m.mensagemErro("Campo vazio!"); 
+                }
             }else{
                 m.mensagemErro("Senha ou CPF incorretos");
             }

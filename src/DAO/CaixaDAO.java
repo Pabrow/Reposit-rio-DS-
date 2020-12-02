@@ -14,18 +14,13 @@ public class CaixaDAO {
     
     public void cadastrarCaixa(Caixa p){
         con = ConexaoSQL.conectar();
-        String sql = "INSERT INTO caixa (dataIn_caixa, saldoIn_caixa, totalRec_caixa, totalPag_caixa, dataFin_caixa, saldoFin_caixa, id_funcionario_fk) values (?, ?, ?, ?, ?, ?, ?);";
-        try( PreparedStatement stm =con.prepareStatement(sql)){   
+        String sql = "call gerarCaixa(?, ?);";
+        try( PreparedStatement stm =con.prepareStatement(sql)){ 
           stm.setString(1, p.getDataIn_caixa());
-          stm.setDouble(2, 0);
-          stm.setDouble(3, 0);
-          stm.setDouble(4, 0);
-          stm.setString(5, p.getDataFin_caixa());
-          stm.setDouble(6, 0);
-          stm.setInt(7, p.getId_funcionario_fk());
+          stm.setInt(2, p.getId_funcionario_fk());
           stm.execute();
           stm.close();
-          m.mensagemInformacao("CADASTRADO COM SUCESSO");
+          m.mensagemInformacao("GERADO COM SUCESSO");
         } catch (Exception e) {
             m.mensagemErro("ERRO AO CADASTRAR"+e.getMessage());
         }   

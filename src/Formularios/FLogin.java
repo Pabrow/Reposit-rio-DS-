@@ -11,8 +11,17 @@ import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Usuario;
 import static java.lang.System.exit;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -34,11 +43,17 @@ private int mode = 0;
         FuncionarioDAO f = new FuncionarioDAO();
         if(f.primeiroAcesso()>0){
             btPrimeiroAcesso.setVisible(false);
+            btEsqSenha.setVisible(true);
         }else{
             btPrimeiroAcesso.setVisible(true);
+            btEsqSenha.setVisible(false);
         }
     }
-
+    
+    public void jaCadastrado(){
+        gerarPrimeiroAcesso();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -192,11 +207,61 @@ private int mode = 0;
     }// </editor-fold>//GEN-END:initComponents
 
     private void edCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCpfActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_edCpfActionPerformed
 
     private void btEsqSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEsqSenhaActionPerformed
-        //TRABALHO DO MATEUS, AQUELE VAGABUNDOOOOOO xd ass. Kleyber, é vdd esse bilhete 
+         FuncionarioDAO fd = new FuncionarioDAO();
+        Funcionario d = new Funcionario();
+        Mensagens m = new Mensagens();
+        if(JOptionPane.showConfirmDialog(null, "Deseja Continuar?", "Esqueceu a Senha", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE) == 0){
+            JFormattedTextField cpf = null;
+            try {
+                cpf = new JFormattedTextField(new MaskFormatter("###.###.###-##"));
+            } catch (ParseException ex) {
+                Logger.getLogger(FLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JLabel rotuloC = new JLabel("Insira o CPF:");
+            JPanel painelC = new JPanel();
+            painelC.add(rotuloC);
+            painelC.add(cpf);
+            JOptionPane.showMessageDialog(null, painelC, "Esqueceu a Senha", JOptionPane.PLAIN_MESSAGE);
+            String Scpf = cpf.getText();
+            int id = fd.esqueciSenha(Scpf, 0);
+            System.out.println(id);
+            if(id!=0){
+                JLabel rotuloR = new JLabel("Insira o RG:");
+                JPanel painelR = new JPanel();
+                JTextField rg = new JTextField(10);
+                painelR.add(rotuloR);
+                painelR.add(rg);
+                JOptionPane.showMessageDialog(null, painelR, "Esqueceu a Senha", JOptionPane.PLAIN_MESSAGE);
+                String Srg = rg.getText();
+                int id2 = fd.esqueciSenha(Srg, id);
+                System.out.println(id2);
+                if(id2!=0){
+                    JPasswordField password = new JPasswordField(10);
+                    password.setEchoChar('*');
+                    password.setText(null);
+                    JLabel rotulo2 = new JLabel("Insira a nova senha:");
+                    JPanel painel2 = new JPanel();
+                    painel2.add(rotulo2);
+                    painel2.add(password);
+                    JOptionPane.showMessageDialog(null, painel2, "ALTERAR SENHA", JOptionPane.PLAIN_MESSAGE);
+                    String novaSenha = password.getText();
+                    d.setId_funcionario(id);
+                    if((!novaSenha.equals(""))&&(novaSenha.length()>2)){
+                        fd.editarSenha(d, novaSenha);
+                    }else{
+                        m.mensagemErro("Senha muito curta!"); 
+                    }
+                }else{
+                    m.mensagemErro("RG Incorreto"); 
+                }
+            }else{
+                m.mensagemErro("CPF Incorreto"); 
+            }
+        }
     }//GEN-LAST:event_btEsqSenhaActionPerformed
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
@@ -233,15 +298,13 @@ private int mode = 0;
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btPrimeiroAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrimeiroAcessoActionPerformed
-        funcionarios fcf = new funcionarios();
+        funcionarioPrimeiroAcesso fcf = new funcionarioPrimeiroAcesso();
         fcf.setVisible(rootPaneCheckingEnabled);
+        this.setVisible(false);
     }//GEN-LAST:event_btPrimeiroAcessoActionPerformed
 
     private void btEsqSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEsqSenhaMouseClicked
         // TODO add your handling code here:
-        RecuperarSenha rec = new RecuperarSenha();
-        rec.setVisible(true);
-        rec.recuperarLogin(edCpf.getText());
     }//GEN-LAST:event_btEsqSenhaMouseClicked
 
     /**
