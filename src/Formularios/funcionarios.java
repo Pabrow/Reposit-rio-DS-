@@ -85,6 +85,7 @@ Mensagens m = new Mensagens();
             edPassSenha.setVisible(false);
             labelTitulo.setText("Editar Funcionario");
             btCadastrar.setText("Editar");
+            btCancelarEdicao.setVisible(true);
             labelId.setText("ID:"+p.getId_funcionario());
             //Pegando valores dos EDs
             edCpf.setText(p.getCpf());
@@ -104,6 +105,7 @@ Mensagens m = new Mensagens();
             mode = 0;
             labelTitulo.setText("Cadastrar Funcionario");
             btCadastrar.setText("Cadastrar");
+            btCancelarEdicao.setVisible(false);
             btAlterSenha.setVisible(false);
             labelId.setText(null);
         }
@@ -146,6 +148,7 @@ Mensagens m = new Mensagens();
         jLabel12 = new javax.swing.JLabel();
         edCpf = new javax.swing.JFormattedTextField();
         btAlterSenha = new javax.swing.JLabel();
+        btCancelarEdicao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaFuncionarios = new javax.swing.JTable();
@@ -259,6 +262,15 @@ Mensagens m = new Mensagens();
             }
         });
 
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -325,13 +337,16 @@ Mensagens m = new Mensagens();
                                     .addGap(77, 77, 77)
                                     .addComponent(btAlterSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGap(63, 63, 63)
-                            .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(btLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addGap(56, 56, 56)
-                            .addComponent(labelTitulo)))
+                            .addComponent(labelTitulo))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGap(63, 63, 63)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btCancelarEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelFuncionario1)
@@ -398,7 +413,9 @@ Mensagens m = new Mensagens();
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(304, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(btCancelarEdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         paneCadastrar.addTab("Cadastrar", jPanel2);
@@ -659,11 +676,17 @@ Mensagens m = new Mensagens();
         // Mostra o rótulo e a caixa de entrada de password para o usuario fornecer a senha:
     }//GEN-LAST:event_btAlterSenhaMouseClicked
 
+    private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
+        Funcionario p = new Funcionario();
+        trocarModo(p);
+    }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btAlterSenha;
     private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelarEdicao;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btLimparCampos;

@@ -108,6 +108,7 @@ Mensagens m = new Mensagens();
             mode = 1;
             labelTitulo.setText("Editar Despesa");
             btCadastrar.setText("Editar");
+            btCancelarEdicao.setVisible(true);
             labelId.setText("ID:"+p.getId_despesa());
             //Pegando valores dos EDs
             edData.setText(alterarData2(p.getData()));
@@ -122,6 +123,7 @@ Mensagens m = new Mensagens();
             mode = 0;
             labelTitulo.setText("Cadastrar Despesa");
             btCadastrar.setText("Cadastrar");
+            btCancelarEdicao.setVisible(false);
             labelId.setText(null);
         }
     }
@@ -153,6 +155,7 @@ Mensagens m = new Mensagens();
         edParcelas = new javax.swing.JTextField();
         comboBoxFormaPag = new javax.swing.JComboBox<>();
         edData = new javax.swing.JTextField();
+        btCancelarEdicao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaDespesa = new javax.swing.JTable();
@@ -265,6 +268,17 @@ Mensagens m = new Mensagens();
         edData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel2.add(edData);
         edData.setBounds(620, 270, 120, 30);
+
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btCancelarEdicao);
+        btCancelarEdicao.setBounds(610, 740, 129, 25);
 
         paneCadastrar.addTab("Cadastrar", jPanel2);
 
@@ -464,10 +478,16 @@ Mensagens m = new Mensagens();
         }
     }//GEN-LAST:event_comboBoxFormaPagActionPerformed
 
+    private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
+        Despesa p = new Despesa();
+        trocarModo(p);
+    }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelarEdicao;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btLimparCampos;

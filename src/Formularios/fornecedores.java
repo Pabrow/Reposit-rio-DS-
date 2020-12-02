@@ -74,6 +74,7 @@ Mensagens m = new Mensagens();
             mode = 1;
             labelTitulo.setText("Editar Fornecedor");
             btCadastrar.setText("Editar");
+            btCancelarEdicao.setVisible(true);
             labelId.setText("Id:"+p.getId_fornecedor());
             //Pegando valores dos EDs
             edCnpj.setText(p.getCnpj());
@@ -85,6 +86,7 @@ Mensagens m = new Mensagens();
             mode = 0;
             labelTitulo.setText("Cadastrar Fornecedor");
             btCadastrar.setText("Cadastrar");
+            btCancelarEdicao.setVisible(false);
             labelId.setText(null);
         }
     }
@@ -114,6 +116,7 @@ Mensagens m = new Mensagens();
         labelFuncionario = new javax.swing.JLabel();
         edTelefone = new javax.swing.JFormattedTextField();
         edCnpj = new javax.swing.JFormattedTextField();
+        btCancelarEdicao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaFornecedores = new javax.swing.JTable();
@@ -205,6 +208,16 @@ Mensagens m = new Mensagens();
             ex.printStackTrace();
         }
         jPanel2.add(edCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 165, -1));
+
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, -1, -1));
 
         paneCadastrar.addTab("Cadastrar", jPanel2);
 
@@ -412,10 +425,16 @@ Mensagens m = new Mensagens();
         }
     }//GEN-LAST:event_btEditarActionPerformed
 
+    private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
+        Fornecedor p = new Fornecedor();
+        trocarModo(p);
+    }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizar;
     private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelarEdicao;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btLimparCampos;

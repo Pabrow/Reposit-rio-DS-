@@ -122,10 +122,18 @@ private List<Integer> listaIdsProdutos;
     public void gerarTabelaCompras(){
         DefaultTableModel modelo = (DefaultTableModel) tabelaCompras.getModel();
         modelo.setNumRows(0);
+        String str = null;
         CompraDAO pDAO = new CompraDAO();
+        FornecedorDAO fDAO = new FornecedorDAO();
         List<Compra> Lista = pDAO.listarTodos();
+        List<Fornecedor> ListaF = fDAO.listarTodos();
         for(Compra p: Lista){     
-            modelo.addRow(new Object[]{p.getId_compra(),p.getData(),p.getFormaPag(),p.getValor(),p.getId_fornecedor_fk()});
+            for(Fornecedor f: ListaF){     
+                if(f.getId_fornecedor()==p.getId_fornecedor_fk()){
+                    str = f.getNome();
+                }
+            }
+            modelo.addRow(new Object[]{p.getId_compra(),p.getData(),p.getFormaPag(),p.getValor(),str});
         }
     }
     
@@ -209,6 +217,7 @@ private List<Integer> listaIdsProdutos;
             mode = 1;
             labelTitulo.setText("Editar Venda");
             btCadastrar.setText("Editar Venda");
+            btCancelarEdicao.setVisible(true);
             edValor.setVisible(true);
             edData.setVisible(true);
             edFuncID.setVisible(true);
@@ -232,6 +241,7 @@ private List<Integer> listaIdsProdutos;
             mode = 0;
             labelTitulo.setText("Realizar Venda");
             btCadastrar.setText("Realizar Venda");
+            btCancelarEdicao.setVisible(false);
             labelId.setText(null);
             edValor.setVisible(false);
             edData.setVisible(false);
@@ -287,6 +297,7 @@ private List<Integer> listaIdsProdutos;
         jLabel5 = new javax.swing.JLabel();
         btDeletarItem = new javax.swing.JButton();
         btAlterarQtd = new javax.swing.JButton();
+        btCancelarEdicao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaCompras = new javax.swing.JTable();
@@ -519,6 +530,16 @@ private List<Integer> listaIdsProdutos;
         });
         jPanel2.add(btAlterarQtd, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, 33));
 
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 610, -1, -1));
+
         jTabbedPane1.addTab("Cadastrar", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -529,7 +550,7 @@ private List<Integer> listaIdsProdutos;
 
             },
             new String [] {
-                "id", "Data", "Forma Pagamento", "Valor", "Id Fornecedor"
+                "id", "Data", "Forma Pagamento", "Valor", "Fornecedor"
             }//p.getId_compra(),p.getData(),p.getFormaPag(),p.getQuantItens(),p.getValor(),p.getId_fornecedor_fk(),p.getId_produto_fk()
         )
     );
@@ -773,6 +794,11 @@ private List<Integer> listaIdsProdutos;
         }
     }//GEN-LAST:event_btAlterarQtdActionPerformed
 
+    private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
+        Compra p = new Compra();
+        trocarModo(p);
+    }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAdicionarItem;
@@ -781,6 +807,7 @@ private List<Integer> listaIdsProdutos;
     private javax.swing.JButton btAtualizar1;
     private javax.swing.JButton btAtualizar2;
     private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelarEdicao;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btDeletarItem;
     private javax.swing.JButton btEditar;

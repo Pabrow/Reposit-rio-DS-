@@ -201,6 +201,7 @@ Mensagens m = new Mensagens();
             mode = 1;
             labelTitulo.setText("Editar Venda");
             btCadastrar.setText("Editar Venda");
+            btCancelarEdicao.setVisible(true);
             labelId.setText("Id:"+p.getId_venda());
             //Pegando valores dos EDs
             edValor.setText(String.valueOf(p.getValor()));
@@ -229,6 +230,7 @@ Mensagens m = new Mensagens();
             edData.setEditable(false);
             labelTitulo.setText("Realizar Venda");
             btCadastrar.setText("Realizar Venda");
+            btCancelarEdicao.setVisible(false);
             labelId.setText(null);
         }
     }
@@ -280,6 +282,7 @@ Mensagens m = new Mensagens();
         edFuncID = new javax.swing.JLabel();
         btAtualizar1 = new javax.swing.JButton();
         btAtualizar2 = new javax.swing.JButton();
+        btCancelarEdicao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaVendas = new javax.swing.JTable();
@@ -524,6 +527,16 @@ Mensagens m = new Mensagens();
             }
         });
         jPanel2.add(btAtualizar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, -1, 28));
+
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, -1, -1));
 
         jTabbedPane1.addTab("Cadastrar", jPanel2);
 
@@ -802,6 +815,11 @@ Mensagens m = new Mensagens();
         gerarTabelaServicos();
     }//GEN-LAST:event_btAtualizar2ActionPerformed
 
+    private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
+        Venda p = new Venda();
+        trocarModo(p);
+    }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAdicionarItem;
@@ -810,6 +828,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JButton btAtualizar1;
     private javax.swing.JButton btAtualizar2;
     private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelarEdicao;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btDeletarItem;
     private javax.swing.JButton btEditar;

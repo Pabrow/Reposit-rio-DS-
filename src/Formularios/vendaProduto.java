@@ -219,6 +219,7 @@ Mensagens m = new Mensagens();
             mode = 1;
             labelTitulo.setText("Editar Venda");
             btCadastrar.setText("Editar Venda");
+            btCancelarEdicao.setVisible(true);
             labelId.setText("ID:"+p.getId_venda());
             //Pegando valores dos EDs
             edValor.setText(String.valueOf(p.getValor()));
@@ -253,6 +254,7 @@ Mensagens m = new Mensagens();
             edData.setVisible(false);
             labelTitulo.setText("Realizar Venda");
             btCadastrar.setText("Realizar Venda");
+            btCancelarEdicao.setVisible(false);
             labelId.setText(null);
         }
     }
@@ -304,6 +306,7 @@ Mensagens m = new Mensagens();
         edFuncID = new javax.swing.JLabel();
         btAtualizar2 = new javax.swing.JButton();
         btAtualizar1 = new javax.swing.JButton();
+        btCancelarEdicao = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaVendas = new javax.swing.JTable();
@@ -546,6 +549,16 @@ Mensagens m = new Mensagens();
         });
         jPanel2.add(btAtualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, 50, 28));
 
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 600, -1, -1));
+
         paneCadastrar.addTab("Cadastrar", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -639,10 +652,11 @@ Mensagens m = new Mensagens();
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(edPesquisa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -844,6 +858,11 @@ Mensagens m = new Mensagens();
         gerarTabelaClientes();
     }//GEN-LAST:event_btAtualizar1ActionPerformed
 
+    private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
+        Venda p = new Venda();
+        trocarModo(p);
+    }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAdicionarItem;
@@ -852,6 +871,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JButton btAtualizar1;
     private javax.swing.JButton btAtualizar2;
     private javax.swing.JButton btCadastrar;
+    private javax.swing.JButton btCancelarEdicao;
     private javax.swing.JButton btDeletar;
     private javax.swing.JButton btDeletarItem;
     private javax.swing.JButton btEditar;

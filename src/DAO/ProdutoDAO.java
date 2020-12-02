@@ -71,7 +71,7 @@ public class ProdutoDAO {
     public List<Produto> listarTodos() {
         con = ConexaoSQL.conectar();
         List<Produto> Lista = new ArrayList<>();
-        String sql = "Select * from Produto";
+        String sql = "Select * from Produto;";
         try (PreparedStatement stm =con.prepareStatement(sql)){
             ResultSet Resultado  = stm.executeQuery();
             while(Resultado.next()){

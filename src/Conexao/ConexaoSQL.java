@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 
 public class ConexaoSQL {
     private static Connection con;
-    private static final String url="-?useTimezone=true&serverTimezone=UTC";//3306 é desnecessário se for localhost
+    //jdbc:mysql://localhost:3306/BDvacinacao2
+    private static final String url="jdbc:mysql://localhost:3306/BD_mecanica2?useTimezone=true&serverTimezone=UTC";
+    //private static final String url="-?useTimezone=true&serverTimezone=UTC";//3306 é desnecessário se for localhost
     private static final String usuario="root";
     private static final String senha="root";
  
