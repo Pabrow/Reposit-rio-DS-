@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-
+package Objetos;
 import java.awt.Graphics;
 
 /**
@@ -39,15 +39,14 @@ public class Home extends javax.swing.JPanel {
         jButton1.setText("jButton1");
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 58)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto bem vindo shrek motos.png"))); // NOI18N
         jLabel5.setText("Bem vindo!");
-        add(jLabel5);
-        jLabel5.setBounds(0, 0, 1160, 700);
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 700));
     }// </editor-fold>//GEN-END:initComponents
 
 
