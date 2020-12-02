@@ -29,11 +29,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Home home = new Home();
         this.jPanel1.add(home);
         produtos cadastroProdutos = new produtos();
-        this.jPanel2.add(cadastroProdutos);
+        /*.jPanel2.add(cadastroProdutos);
         clientes clientes = new clientes();
         this.jPanel3.add(clientes);
         funcionarios funcionarios = new funcionarios();
-        this.jPanel4.add(funcionarios);
+        this.jPanel4.add(funcionarios);*/
         fornecedores fornecedores = new fornecedores();
         this.jPanel5.add(fornecedores);
         servicos servico = new servicos();

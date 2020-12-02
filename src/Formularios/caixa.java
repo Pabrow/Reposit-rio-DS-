@@ -169,15 +169,6 @@ Mensagens m = new Mensagens();
 
         jTextField1 = new javax.swing.JTextField();
         paneCadastrar = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        edPesquisa = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaCaixas = new javax.swing.JTable();
-        btDeletar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
-        btEditar = new javax.swing.JButton();
-        btPesquisar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btCadastrar = new javax.swing.JButton();
         btLimparCampos = new javax.swing.JButton();
@@ -200,84 +191,20 @@ Mensagens m = new Mensagens();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        edPesquisa = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaCaixas = new javax.swing.JTable();
+        btDeletar = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
+        btEditar = new javax.swing.JButton();
+        btPesquisar = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
         paneCadastrar.setBackground(new java.awt.Color(0, 102, 102));
         paneCadastrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Pesquisar:");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 100, -1));
-
-        edPesquisa.setToolTipText("Procure pela data Inicial ou data Final");
-        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jPanel3.add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 334, 30));
-
-        tabelaCaixas.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        tabelaCaixas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Id", "Data Inicial", "Data Final", "Saldo Inicial", "Saldo final", "Total pagamento", "Total recebimento"
-            }
-        ));
-        tabelaCaixas.setSelectionBackground(new java.awt.Color(128, 128, 128));
-        jScrollPane1.setViewportView(tabelaCaixas);
-
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 980, 660));
-
-        btDeletar.setToolTipText("Deleta o caixa selecionado.");
-        btDeletar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
-        btDeletar.setText("Deletar");
-        btDeletar.setToolTipText("Deleta o caixa selecionado");
-        btDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 780, 140, 60));
-
-        btAtualizar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setToolTipText("Atualiza a tabela");
-        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 780, 150, 60));
-
-        btEditar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
-        btEditar.setText("Editar");
-        btEditar.setToolTipText("Edita o caixa selecionado");
-        btEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEditarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 780, 130, 60));
-
-        btPesquisar.setToolTipText("Procure pela data Inicial ou data Final");
-        btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
-        btPesquisar.setText("PESQUISAR");
-        btPesquisar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btPesquisarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, -1, 30));
-
-        paneCadastrar.addTab("Visualizar, Editar e Deletar", jPanel3);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -391,6 +318,79 @@ Mensagens m = new Mensagens();
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 590, 190, 20));
 
         paneCadastrar.addTab("Gerar", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("Pesquisar:");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 100, -1));
+
+        edPesquisa.setToolTipText("Procure pela data Inicial ou data Final");
+        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jPanel3.add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 334, 30));
+
+        tabelaCaixas.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        tabelaCaixas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Data Inicial", "Data Final", "Saldo Inicial", "Saldo final", "Total pagamento", "Total recebimento"
+            }
+        ));
+        tabelaCaixas.setSelectionBackground(new java.awt.Color(128, 128, 128));
+        jScrollPane1.setViewportView(tabelaCaixas);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 980, 660));
+
+        btDeletar.setToolTipText("Deleta o caixa selecionado.");
+        btDeletar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
+        btDeletar.setText("Deletar");
+        btDeletar.setToolTipText("Deleta o caixa selecionado");
+        btDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 780, 140, 60));
+
+        btAtualizar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
+        btAtualizar.setText("Atualizar");
+        btAtualizar.setToolTipText("Atualiza a tabela");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 780, 150, 60));
+
+        btEditar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
+        btEditar.setText("Editar");
+        btEditar.setToolTipText("Edita o caixa selecionado");
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 780, 130, 60));
+
+        btPesquisar.setToolTipText("Procure pela data Inicial ou data Final");
+        btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
+        btPesquisar.setText("PESQUISAR");
+        btPesquisar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, -1, 30));
+
+        paneCadastrar.addTab("Visualizar, Editar e Deletar", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
