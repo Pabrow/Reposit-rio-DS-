@@ -29,11 +29,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Home home = new Home();
         this.jPanel1.add(home);
         produtos cadastroProdutos = new produtos();
-        /*.jPanel2.add(cadastroProdutos);
+        this.jPanel2.add(cadastroProdutos);
         clientes clientes = new clientes();
         this.jPanel3.add(clientes);
         funcionarios funcionarios = new funcionarios();
-        this.jPanel4.add(funcionarios);*/
+        this.jPanel4.add(funcionarios);
         fornecedores fornecedores = new fornecedores();
         this.jPanel5.add(fornecedores);
         servicos servico = new servicos();
@@ -369,7 +369,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu5.setForeground(Color.black); 
         CardLayout cl = (CardLayout) Painel.getLayout();
         cl.show(Painel, "pn3");
-        this.setSize(650, 720);//[897, 599]
+        this.setSize(1393, 930);//[897, 599]
         this.setLocationRelativeTo(null);
         jMenu2.setForeground(Color.blue);
     }//GEN-LAST:event_jMenuItem3ActionPerformed

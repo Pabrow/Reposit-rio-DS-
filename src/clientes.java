@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Formularios;
+
 
 import DAO.ClienteDAO;
 import Objetos.Cliente;
@@ -124,6 +124,8 @@ Mensagens m = new Mensagens();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        paneCadastrar = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -147,67 +149,73 @@ Mensagens m = new Mensagens();
         labelTitulo = new javax.swing.JLabel();
         labelId = new javax.swing.JLabel();
         btCancelarEdicao = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaClientes = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         edPesquisa = new javax.swing.JTextField();
         btPesquisar = new javax.swing.JButton();
         btDeletar = new javax.swing.JButton();
         btAtualizar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaClientes = new javax.swing.JTable();
-        jLabel11 = new javax.swing.JLabel();
 
-        setLayout(null);
+        paneCadastrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        paneCadastrar.setMaximumSize(new java.awt.Dimension(650, 650));
+        paneCadastrar.setMinimumSize(new java.awt.Dimension(650, 650));
+        paneCadastrar.setPreferredSize(new java.awt.Dimension(650, 650));
+
+        jPanel2.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Nome:");
-        add(jLabel2);
-        jLabel2.setBounds(200, 190, 60, 20);
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(307, 199, 60, 22);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("CPF:");
-        add(jLabel3);
-        jLabel3.setBounds(210, 260, 41, 22);
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(324, 263, 41, 22);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("RG:");
-        add(jLabel4);
-        jLabel4.setBounds(210, 310, 33, 22);
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(334, 319, 33, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Endereço:");
-        add(jLabel5);
-        jLabel5.setBounds(180, 350, 92, 22);
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(275, 385, 92, 22);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Email:");
-        add(jLabel6);
-        jLabel6.setBounds(500, 250, 56, 22);
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(707, 263, 56, 22);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Data de Nascimento:");
-        add(jLabel7);
-        jLabel7.setBounds(450, 300, 200, 22);
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(674, 319, 189, 22);
 
         try {
             edDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        add(edDataNasc);
-        edDataNasc.setBounds(490, 330, 90, 22);
+        jPanel2.add(edDataNasc);
+        edDataNasc.setBounds(867, 322, 138, 22);
 
         edEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(edEmail);
-        edEmail.setBounds(440, 280, 200, 23);
+        jPanel2.add(edEmail);
+        edEmail.setBounds(767, 264, 238, 23);
 
         edEndereco.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(edEndereco);
-        edEndereco.setBounds(120, 380, 222, 23);
+        jPanel2.add(edEndereco);
+        edEndereco.setBounds(367, 386, 222, 23);
 
         edRg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(edRg);
-        edRg.setBounds(120, 330, 231, 23);
+        jPanel2.add(edRg);
+        edRg.setBounds(367, 320, 231, 23);
 
         try {
             edCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -219,35 +227,35 @@ Mensagens m = new Mensagens();
                 edCpfActionPerformed(evt);
             }
         });
-        add(edCpf);
-        edCpf.setBounds(120, 280, 231, 23);
+        jPanel2.add(edCpf);
+        edCpf.setBounds(367, 266, 231, 23);
 
         edNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(edNome);
-        edNome.setBounds(120, 210, 231, 23);
+        jPanel2.add(edNome);
+        edNome.setBounds(367, 200, 231, 23);
 
         try {
             edTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        add(edTelefone);
-        edTelefone.setBounds(440, 220, 200, 24);
+        jPanel2.add(edTelefone);
+        edTelefone.setBounds(805, 201, 200, 24);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Telefone:");
-        add(jLabel8);
-        jLabel8.setBounds(490, 190, 86, 22);
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(715, 199, 86, 22);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Sexo:");
-        add(jLabel9);
-        jLabel9.setBounds(500, 360, 51, 30);
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(748, 385, 51, 22);
 
         comBoxSexo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         comBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino"}));
-        add(comBoxSexo);
-        comBoxSexo.setBounds(470, 390, 128, 23);
+        jPanel2.add(comBoxSexo);
+        comBoxSexo.setBounds(803, 386, 128, 23);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -257,8 +265,8 @@ Mensagens m = new Mensagens();
                 btLimparCamposActionPerformed(evt);
             }
         });
-        add(btLimparCampos);
-        btLimparCampos.setBounds(440, 520, 197, 63);
+        jPanel2.add(btLimparCampos);
+        btLimparCampos.setBounds(689, 536, 197, 63);
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ADICIONAR PESSOA.png"))); // NOI18N
@@ -268,26 +276,26 @@ Mensagens m = new Mensagens();
                 btCadastrarActionPerformed(evt);
             }
         });
-        add(btCadastrar);
-        btCadastrar.setBounds(150, 520, 202, 63);
+        jPanel2.add(btCadastrar);
+        btCadastrar.setBounds(402, 536, 202, 63);
 
         labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
-        add(labelFuncionario);
-        labelFuncionario.setBounds(1170, 20, 98, 17);
+        jPanel2.add(labelFuncionario);
+        labelFuncionario.setBounds(1135, 11, 98, 17);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Funcionário:");
-        add(jLabel1);
-        jLabel1.setBounds(1190, 0, 75, 17);
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(1054, 11, 75, 17);
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Cadastrar Cliente");
-        add(labelTitulo);
-        labelTitulo.setBounds(90, 110, 1242, 44);
-        add(labelId);
-        labelId.setBounds(700, 550, 21, 21);
+        jPanel2.add(labelTitulo);
+        labelTitulo.setBounds(0, 42, 1242, 44);
+        jPanel2.add(labelId);
+        labelId.setBounds(946, 563, 21, 21);
 
         btCancelarEdicao.setVisible(false);
         btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -297,68 +305,16 @@ Mensagens m = new Mensagens();
                 btCancelarEdicaoActionPerformed(evt);
             }
         });
-        add(btCancelarEdicao);
-        btCancelarEdicao.setBounds(280, 620, 202, 63);
+        jPanel2.add(btCancelarEdicao);
+        btCancelarEdicao.setBounds(525, 632, 202, 63);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Pesquisar:");
-        add(jLabel10);
-        jLabel10.setBounds(770, 180, 95, 22);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projeto menu.png"))); // NOI18N
+        jPanel2.add(jLabel11);
+        jLabel11.setBounds(0, 0, 1430, 980);
 
-        edPesquisa.setToolTipText("Pesquisa nos nomes e nos cpf's");
-        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(edPesquisa);
-        edPesquisa.setBounds(880, 180, 320, 30);
+        paneCadastrar.addTab("Cadastrar", jPanel2);
 
-        btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
-        btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
-        btPesquisar.setText("PESQUISAR");
-        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btPesquisarActionPerformed(evt);
-            }
-        });
-        add(btPesquisar);
-        btPesquisar.setBounds(1210, 180, 145, 30);
-
-        btDeletar.setToolTipText("Deleta o cliente selecionado");
-        btDeletar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
-        btDeletar.setText("Deletar");
-        btDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarActionPerformed(evt);
-            }
-        });
-        add(btDeletar);
-        btDeletar.setBounds(1170, 630, 109, 40);
-
-        btAtualizar.setToolTipText("Atualiza a tabela.");
-        btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setToolTipText("Atualiza a tabela");
-        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarActionPerformed(evt);
-            }
-        });
-        add(btAtualizar);
-        btAtualizar.setBounds(1000, 630, 150, 39);
-
-        btAtualizar.setToolTipText("Editar o cliente selecionado.");
-        btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
-        btEditar.setText("Editar");
-        btEditar.setToolTipText("Edita o cliente selecionado");
-        btEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEditarActionPerformed(evt);
-            }
-        });
-        add(btEditar);
-        btEditar.setBounds(870, 630, 109, 40);
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -370,12 +326,112 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane1.setViewportView(tabelaClientes);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(760, 220, 600, 402);
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("Pesquisar:");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
-        add(jLabel11);
-        jLabel11.setBounds(0, -90, 1390, 1000);
+        edPesquisa.setToolTipText("Pesquisa nos nomes e nos cpf's");
+        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
+        btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
+        btPesquisar.setText("PESQUISAR");
+        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisarActionPerformed(evt);
+            }
+        });
+
+        btDeletar.setToolTipText("Deleta o cliente selecionado");
+        btDeletar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
+        btDeletar.setText("Deletar");
+        btDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarActionPerformed(evt);
+            }
+        });
+
+        btAtualizar.setToolTipText("Atualiza a tabela.");
+        btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
+        btAtualizar.setText("Atualizar");
+        btAtualizar.setToolTipText("Atualiza a tabela");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+
+        btAtualizar.setToolTipText("Editar o cliente selecionado.");
+        btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
+        btEditar.setText("Editar");
+        btEditar.setToolTipText("Edita o cliente selecionado");
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btPesquisar)
+                .addGap(321, 321, 321))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 915, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(388, 388, 388)
+                        .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(176, 176, 176))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(btAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+
+        paneCadastrar.addTab("Visualizar, Editar e Deletar", jPanel3);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(paneCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 1398, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(paneCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 1013, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void edCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCpfActionPerformed
@@ -465,6 +521,7 @@ Mensagens m = new Mensagens();
                         trocarModo(p);
                     }
                 }
+                paneCadastrar.setSelectedIndex(0);
             }else{
                 m.mensagemPadrão1();
             }
@@ -507,10 +564,13 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
+    private javax.swing.JTabbedPane paneCadastrar;
     private javax.swing.JTable tabelaClientes;
     // End of variables declaration//GEN-END:variables
 }

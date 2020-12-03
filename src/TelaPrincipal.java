@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Objetos;
+
 
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -50,8 +50,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.jPanel11.add(caixa);
         this.setSize(960, 575);
         this.setLocationRelativeTo(null);*/
-        Home home = new Home();
-        this.jPanel1.add(home);
+        clientes_com_cor_diferente c = new clientes_com_cor_diferente();
+        
+        this.jPanel1.add(c);
         
     }
     /**
