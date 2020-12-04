@@ -170,7 +170,6 @@ Mensagens m = new Mensagens();
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        paneCadastrar = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         btCadastrar = new javax.swing.JButton();
         btLimparCampos = new javax.swing.JButton();
@@ -194,20 +193,17 @@ Mensagens m = new Mensagens();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         btCancelarEdicao = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        edPesquisa = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         tabelaCaixas = new javax.swing.JTable();
-        btDeletar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
-        btEditar = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        edPesquisa = new javax.swing.JTextField();
         btPesquisar = new javax.swing.JButton();
+        btEditar = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
+        btDeletar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
-
-        paneCadastrar.setBackground(new java.awt.Color(0, 102, 102));
-        paneCadastrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,7 +218,7 @@ Mensagens m = new Mensagens();
                 btCadastrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 240, 80));
+        jPanel2.add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 240, 80));
 
         btLimparCampos.setVisible(false);
         btLimparCampos.setBackground(new java.awt.Color(153, 204, 255));
@@ -238,12 +234,12 @@ Mensagens m = new Mensagens();
                 btLimparCamposActionPerformed(evt);
             }
         });
-        jPanel2.add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 670, 210, 50));
+        jPanel2.add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, 210, 50));
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Gerar Caixa");
-        jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 1400, 90));
+        jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 80, 1400, 90));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Funcionário:");
@@ -258,67 +254,67 @@ Mensagens m = new Mensagens();
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Importante:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 130, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 130, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Ao clicar no botão Gerar Caixa, o caixa");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 370, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 370, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setText(" Anterior é fechado e um novo Caixa é gerado.");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 420, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 420, -1));
 
         edDataIn.setVisible(false);
         edDataIn.setEditable(false);
         edDataIn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edDataIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 130, -1));
+        jPanel2.add(edDataIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 130, -1));
 
         edDataFin.setVisible(false);
         edDataFin.setEditable(false);
         edDataFin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edDataFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, 130, -1));
+        jPanel2.add(edDataFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 130, -1));
 
         edSaldoIn.setVisible(false);
         edSaldoIn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edSaldoIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 130, 30));
+        jPanel2.add(edSaldoIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 130, 30));
 
         edSaldoFin.setVisible(false);
         edSaldoFin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edSaldoFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 620, 140, 30));
+        jPanel2.add(edSaldoFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 640, 140, 30));
 
         edTotalPag.setVisible(false);
         edTotalPag.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edTotalPag, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 540, 140, 30));
+        jPanel2.add(edTotalPag, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 560, 140, 30));
 
         edTotalRec.setVisible(false);
         edTotalRec.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edTotalRec, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 620, 130, 30));
+        jPanel2.add(edTotalRec, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 640, 130, 30));
 
         jLabel2.setVisible(false);
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Data Final:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 100, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 100, -1));
 
         jLabel3.setVisible(false);
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Data Inicial:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 120, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 120, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Saldo Inicial:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 120, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 120, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Total Pagamento:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 590, 170, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 610, 170, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Saldo Final:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 510, 120, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 120, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Total Recebimento:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 590, 190, 20));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 190, 20));
 
         btCancelarEdicao.setVisible(false);
         btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -328,20 +324,7 @@ Mensagens m = new Mensagens();
                 btCancelarEdicaoActionPerformed(evt);
             }
         });
-        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 760, -1, -1));
-
-        paneCadastrar.addTab("Gerar", jPanel2);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Pesquisar:");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 100, -1));
-
-        edPesquisa.setToolTipText("Procure pela data Inicial ou data Final");
-        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jPanel3.add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 334, 30));
+        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 780, -1, -1));
 
         tabelaCaixas.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         tabelaCaixas.setModel(new javax.swing.table.DefaultTableModel(
@@ -353,43 +336,17 @@ Mensagens m = new Mensagens();
             }
         ));
         tabelaCaixas.setSelectionBackground(new java.awt.Color(128, 128, 128));
-        jScrollPane1.setViewportView(tabelaCaixas);
+        jScrollPane2.setViewportView(tabelaCaixas);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 980, 660));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 590, 390));
 
-        btDeletar.setToolTipText("Deleta o caixa selecionado.");
-        btDeletar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
-        btDeletar.setText("Deletar");
-        btDeletar.setToolTipText("Deleta o caixa selecionado");
-        btDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 780, 140, 60));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel13.setText("Pesquisar:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 250, 100, -1));
 
-        btAtualizar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
-        btAtualizar.setText("Atualizar");
-        btAtualizar.setToolTipText("Atualiza a tabela");
-        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 780, 150, 60));
-
-        btEditar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
-        btEditar.setText("Editar");
-        btEditar.setToolTipText("Edita o caixa selecionado");
-        btEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEditarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 780, 130, 60));
+        edPesquisa.setToolTipText("Procure pela data Inicial ou data Final");
+        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jPanel2.add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 250, 334, 30));
 
         btPesquisar.setToolTipText("Procure pela data Inicial ou data Final");
         btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -401,24 +358,60 @@ Mensagens m = new Mensagens();
                 btPesquisarActionPerformed(evt);
             }
         });
-        jPanel3.add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, -1, 30));
+        jPanel2.add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 250, -1, 30));
 
-        paneCadastrar.addTab("Visualizar, Editar e Deletar", jPanel3);
+        btEditar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
+        btEditar.setText("Editar");
+        btEditar.setToolTipText("Edita o caixa selecionado");
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 710, 130, 60));
+
+        btAtualizar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
+        btAtualizar.setText("Atualizar");
+        btAtualizar.setToolTipText("Atualiza a tabela");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 710, 150, 60));
+
+        btDeletar.setToolTipText("Deleta o caixa selecionado.");
+        btDeletar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
+        btDeletar.setText("Deletar");
+        btDeletar.setToolTipText("Deleta o caixa selecionado");
+        btDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 710, 140, 60));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 970));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(paneCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 1425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(paneCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 1002, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -446,61 +439,26 @@ Mensagens m = new Mensagens();
         limparCampos();
     }//GEN-LAST:event_btLimparCamposActionPerformed
 
-    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
-        if(tabelaCaixas.getRowSelectionAllowed()==true){
-            CaixaDAO pDAO = new CaixaDAO();
-            DefaultTableModel modelo = (DefaultTableModel) tabelaCaixas.getModel();
-            int[] linhas = tabelaCaixas.getSelectedRows();
-            if(linhas.length==1){
-                int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
-                pDAO.deletar(id);
-                gerarTabela();
-            }else{
-                m.mensagemPadrão1();
-            }
-        }else{
-            m.mensagemPadrão2();
-        }
-    }//GEN-LAST:event_btDeletarActionPerformed
-
-    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
-        gerarTabela();
-    }//GEN-LAST:event_btAtualizarActionPerformed
-
-    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-        if(tabelaCaixas.getRowSelectionAllowed()==true){
-            DefaultTableModel modelo = (DefaultTableModel) tabelaCaixas.getModel();
-            int[] linhas = tabelaCaixas.getSelectedRows();
-            if(linhas.length==1){
-                btLimparCampos.setVisible(true);
-                int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
-                CaixaDAO pDAO = new CaixaDAO();
-                Caixa p = new Caixa();
-                List<Caixa> Lista = pDAO.listarTodos();
-                for(int i=0;i<Lista.size();i++){
-                    p = Lista.get(i);
-                    if(p.getId_caixa()==id){
-                        id_edit = id;
-                        trocarModo(p);
-                    }
-                }
-                paneCadastrar.setSelectedIndex(0);
-            }else{
-                m.mensagemPadrão1();
-            }
-        }else{
-            m.mensagemPadrão2();
-        }
-    }//GEN-LAST:event_btEditarActionPerformed
-
-    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-        gerarTabela_com_Consulta();
-    }//GEN-LAST:event_btPesquisarActionPerformed
-
     private void btCancelarEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarEdicaoActionPerformed
         Caixa p = new Caixa();
         trocarModo(p);
     }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
+    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btPesquisarActionPerformed
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btDeletarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -519,8 +477,9 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edTotalPag;
     private javax.swing.JTextField edTotalRec;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -530,13 +489,11 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
-    private javax.swing.JTabbedPane paneCadastrar;
     private javax.swing.JTable tabelaCaixas;
     // End of variables declaration//GEN-END:variables
 }

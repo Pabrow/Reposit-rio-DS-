@@ -309,8 +309,6 @@ private List<Integer> listaIdsProdutos;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lb1 = new javax.swing.JLabel();
@@ -340,55 +338,55 @@ private List<Integer> listaIdsProdutos;
         edFuncID = new javax.swing.JLabel();
         btAtualizar1 = new javax.swing.JButton();
         btAtualizar2 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tabelaProdutosCarrinho = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         btDeletarItem = new javax.swing.JButton();
         btAlterarQtd = new javax.swing.JButton();
         btCancelarEdicao = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tabelaProdutosCarrinho = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         lbvalor = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaCompras = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         edPesquisa = new javax.swing.JTextField();
         btPesquisar = new javax.swing.JButton();
-        btDeletar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
+        btDeletar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabelaCompras = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(650, 650));
         setLayout(null);
 
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(650, 650));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         labelTitulo.setText("Realizar Compra");
-        jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 230, -1));
+        add(labelTitulo);
+        labelTitulo.setBounds(330, 30, 230, 29);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Forma Pagamento:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, 20));
+        add(jLabel4);
+        jLabel4.setBounds(100, 310, 103, 20);
 
         lb1.setVisible(false);
         lb1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lb1.setText("Valor da Compra:");
-        jPanel2.add(lb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, 20));
+        add(lb1);
+        lb1.setBounds(100, 370, 93, 20);
 
         lb2.setVisible(false);
         lb2.setBackground(new java.awt.Color(255, 255, 255));
         lb2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lb2.setText("Data da Compra:");
         lb2.setOpaque(true);
-        jPanel2.add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, 20));
+        add(lb2);
+        lb2.setBounds(100, 400, 91, 20);
 
         edValor.setVisible(false);
         edValor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 170, 20));
+        add(edValor);
+        edValor.setBounds(210, 370, 170, 20);
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE REALIZAR VENDA.png"))); // NOI18N
@@ -398,7 +396,8 @@ private List<Integer> listaIdsProdutos;
                 btCadastrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, -1, 33));
+        add(btCadastrar);
+        btCadastrar.setBounds(300, 540, 167, 33);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -408,15 +407,19 @@ private List<Integer> listaIdsProdutos;
                 btLimparCamposActionPerformed(evt);
             }
         });
-        jPanel2.add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 167, -1));
+        add(btLimparCampos);
+        btLimparCampos.setBounds(500, 540, 167, 33);
 
         labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jPanel2.add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 46, 43, 13));
-        jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 90, 28));
+        add(labelId);
+        labelId.setBounds(95, 46, 43, 13);
+        add(labelFuncionario);
+        labelFuncionario.setBounds(700, 0, 90, 28);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Produto:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 80, -1));
+        add(jLabel8);
+        jLabel8.setBounds(30, 70, 80, 15);
 
         tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -428,7 +431,8 @@ private List<Integer> listaIdsProdutos;
         ));
         jScrollPane2.setViewportView(tabelaProdutos);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 390, 133));
+        add(jScrollPane2);
+        jScrollPane2.setBounds(30, 100, 390, 133);
 
         tabelaFornecedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -440,17 +444,21 @@ private List<Integer> listaIdsProdutos;
         ));
         jScrollPane4.setViewportView(tabelaFornecedor);
 
-        jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 390, 133));
+        add(jScrollPane4);
+        jScrollPane4.setBounds(460, 100, 390, 133);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Fornecedor:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 90, 40));
+        add(jLabel9);
+        jLabel9.setBounds(460, 60, 90, 40);
 
         edPesquisaProduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edPesquisaProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 210, -1));
+        add(edPesquisaProduto);
+        edPesquisaProduto.setBounds(80, 70, 210, 21);
 
         edPesquisaCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jPanel2.add(edPesquisaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 210, 23));
+        add(edPesquisaCliente);
+        edPesquisaCliente.setBounds(530, 70, 210, 23);
 
         btPesquisarFornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btPesquisarFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
@@ -461,7 +469,8 @@ private List<Integer> listaIdsProdutos;
                 btPesquisarFornecedorActionPerformed(evt);
             }
         });
-        jPanel2.add(btPesquisarFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 70, 110, 23));
+        add(btPesquisarFornecedor);
+        btPesquisarFornecedor.setBounds(740, 70, 110, 23);
 
         btPesquisarProduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btPesquisarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
@@ -471,7 +480,8 @@ private List<Integer> listaIdsProdutos;
                 btPesquisarProdutoActionPerformed(evt);
             }
         });
-        jPanel2.add(btPesquisarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 130, 22));
+        add(btPesquisarProduto);
+        btPesquisarProduto.setBounds(290, 70, 130, 22);
 
         edData.setVisible(false);
         edData.setFont(new java.awt.Font("Tahoma", 0, 14));
@@ -480,18 +490,21 @@ private List<Integer> listaIdsProdutos;
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jPanel2.add(edData, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, 90, 20));
+        add(edData);
+        edData.setBounds(240, 400, 90, 20);
 
         lb3.setVisible(false);
         lb3.setBackground(new java.awt.Color(255, 255, 255));
         lb3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lb3.setText("Id do Funcionário:");
         lb3.setOpaque(true);
-        jPanel2.add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, 20));
+        add(lb3);
+        lb3.setBounds(100, 430, 98, 20);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Funcionário:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, -1, -1));
+        add(jLabel13);
+        jLabel13.setBounds(630, 0, 65, 15);
 
         btAdicionarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btAdicionarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ADICIONAR ITEM.png"))); // NOI18N
@@ -501,16 +514,19 @@ private List<Integer> listaIdsProdutos;
                 btAdicionarItemActionPerformed(evt);
             }
         });
-        jPanel2.add(btAdicionarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, 28));
+        add(btAdicionarItem);
+        btAdicionarItem.setBounds(150, 240, 163, 28);
 
         lbParcelas.setVisible(false);
         lbParcelas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lbParcelas.setText("Parcelas:");
-        jPanel2.add(lbParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 100, 20));
+        add(lbParcelas);
+        lbParcelas.setBounds(100, 340, 100, 20);
 
         edParcelas.setVisible(false);
         edParcelas.setText("1");
-        jPanel2.add(edParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 90, 20));
+        add(edParcelas);
+        edParcelas.setBounds(270, 340, 90, 20);
 
         comboBoxFormaPag.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         comboBoxFormaPag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista", "A Prazo" }));
@@ -519,10 +535,12 @@ private List<Integer> listaIdsProdutos;
                 comboBoxFormaPagActionPerformed(evt);
             }
         });
-        jPanel2.add(comboBoxFormaPag, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 170, 20));
+        add(comboBoxFormaPag);
+        comboBoxFormaPag.setBounds(210, 310, 170, 20);
 
         edFuncID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edFuncID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 50, 20));
+        add(edFuncID);
+        edFuncID.setBounds(210, 430, 50, 20);
 
         btAtualizar.setToolTipText("Atualiza a tabela.");
         btAtualizar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -532,7 +550,8 @@ private List<Integer> listaIdsProdutos;
                 btAtualizar1ActionPerformed(evt);
             }
         });
-        jPanel2.add(btAtualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 50, 28));
+        add(btAtualizar1);
+        btAtualizar1.setBounds(800, 240, 50, 28);
 
         btAtualizar.setToolTipText("Atualiza a tabela.");
         btAtualizar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -542,7 +561,46 @@ private List<Integer> listaIdsProdutos;
                 btAtualizar2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btAtualizar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, -1, 28));
+        add(btAtualizar2);
+        btAtualizar2.setBounds(350, 240, 63, 28);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Carrinho:");
+        add(jLabel5);
+        jLabel5.setBounds(630, 280, 57, 17);
+
+        btDeletarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btDeletarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
+        btDeletarItem.setText("Deletar Item");
+        btDeletarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarItemActionPerformed(evt);
+            }
+        });
+        add(btDeletarItem);
+        btDeletarItem.setBounds(530, 460, 129, 33);
+
+        btAlterarQtd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btAlterarQtd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ALTERAR QUANTIDADE.png"))); // NOI18N
+        btAlterarQtd.setText("Alterar Quantidade");
+        btAlterarQtd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAlterarQtdActionPerformed(evt);
+            }
+        });
+        add(btAlterarQtd);
+        btAlterarQtd.setBounds(670, 460, 171, 33);
+
+        btCancelarEdicao.setVisible(false);
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setText("Cancelar Edição");
+        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarEdicaoActionPerformed(evt);
+            }
+        });
+        add(btCancelarEdicao);
+        btCancelarEdicao.setBounds(390, 610, 129, 25);
 
         tabelaProdutosCarrinho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -554,52 +612,73 @@ private List<Integer> listaIdsProdutos;
         ));
         jScrollPane5.setViewportView(tabelaProdutosCarrinho);
 
-        jPanel2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 390, 143));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Carrinho:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, -1, -1));
-
-        btDeletarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btDeletarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
-        btDeletarItem.setText("Deletar Item");
-        btDeletarItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarItemActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btDeletarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, -1, -1));
-
-        btAlterarQtd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btAlterarQtd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ALTERAR QUANTIDADE.png"))); // NOI18N
-        btAlterarQtd.setText("Alterar Quantidade");
-        btAlterarQtd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAlterarQtdActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btAlterarQtd, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, -1, 33));
-
-        btCancelarEdicao.setVisible(false);
-        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btCancelarEdicao.setText("Cancelar Edição");
-        btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarEdicaoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 610, -1, -1));
+        add(jScrollPane5);
+        jScrollPane5.setBounds(470, 310, 390, 143);
 
         jLabel1.setText("Valor Atual da Venda: ");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, -1, -1));
+        add(jLabel1);
+        jLabel1.setBounds(200, 560, 107, 14);
 
         lbvalor.setText("R$ 0,00");
-        jPanel2.add(lbvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 50, 20));
+        add(lbvalor);
+        lbvalor.setBounds(210, 580, 50, 20);
 
-        jTabbedPane1.addTab("Cadastrar", jPanel2);
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel11.setText("Pesquisar:");
+        add(jLabel11);
+        jLabel11.setBounds(930, 130, 54, 15);
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add(edPesquisa);
+        edPesquisa.setBounds(990, 130, 240, 23);
+
+        btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
+        btPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
+        btPesquisar.setText("PESQUISAR");
+        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisarActionPerformed(evt);
+            }
+        });
+        add(btPesquisar);
+        btPesquisar.setBounds(1240, 120, 133, 33);
+
+        btAtualizar.setToolTipText("Editar o cliente selecionado.");
+        btEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
+        btEditar.setText("Editar");
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+        add(btEditar);
+        btEditar.setBounds(1000, 590, 103, 41);
+
+        btAtualizar.setToolTipText("Atualiza a tabela.");
+        btAtualizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
+        btAtualizar.setText("Atualizar");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+        add(btAtualizar);
+        btAtualizar.setBounds(1130, 590, 117, 39);
+
+        btDeletar.setToolTipText("Deleta o cliente selecionado.");
+        btDeletar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
+        btDeletar.setText("Deletar");
+        btDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarActionPerformed(evt);
+            }
+        });
+        add(btDeletar);
+        btDeletar.setBounds(1270, 590, 103, 33);
 
         tabelaCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -610,69 +689,18 @@ private List<Integer> listaIdsProdutos;
             }//p.getId_compra(),p.getData(),p.getFormaPag(),p.getQuantItens(),p.getValor(),p.getId_fornecedor_fk(),p.getId_produto_fk()
         )
     );
-    jScrollPane1.setViewportView(tabelaCompras);
+    jScrollPane3.setViewportView(tabelaCompras);
 
-    jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 55, 565, 493));
+    add(jScrollPane3);
+    jScrollPane3.setBounds(902, 160, 470, 402);
 
-    jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-    jLabel10.setText("Pesquisar:");
-    jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 21, -1, -1));
-
-    edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    jPanel3.add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 16, 344, -1));
-
-    btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
-    btPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
-    btPesquisar.setText("PESQUISAR");
-    btPesquisar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btPesquisarActionPerformed(evt);
-        }
-    });
-    jPanel3.add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 11, -1, -1));
-
-    btDeletar.setToolTipText("Deleta o cliente selecionado.");
-    btDeletar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
-    btDeletar.setText("Deletar");
-    btDeletar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btDeletarActionPerformed(evt);
-        }
-    });
-    jPanel3.add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 554, -1, 41));
-
-    btAtualizar.setToolTipText("Atualiza a tabela.");
-    btAtualizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
-    btAtualizar.setText("Atualizar");
-    btAtualizar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btAtualizarActionPerformed(evt);
-        }
-    });
-    jPanel3.add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 554, -1, -1));
-
-    btAtualizar.setToolTipText("Editar o cliente selecionado.");
-    btEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
-    btEditar.setText("Editar");
-    btEditar.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            btEditarActionPerformed(evt);
-        }
-    });
-    jPanel3.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 554, -1, -1));
-
-    jTabbedPane1.addTab("Visualizar, Editar e Deletar", jPanel3);
-
-    add(jTabbedPane1);
-    jTabbedPane1.setBounds(0, 0, 1230, 770);
+    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+    add(jLabel2);
+    jLabel2.setBounds(0, 0, 1410, 960);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-        //int quantTotal = 0;
+        if(camposPreenchidos()==true){
         if((tabelaFornecedor.getRowCount()>0)&&(tabelaProdutos.getRowCount()>0)){
             int[] linhasClientes = tabelaFornecedor.getSelectedRows();
             if(linhasClientes.length==1){
@@ -727,6 +755,7 @@ private List<Integer> listaIdsProdutos;
         else{
             JOptionPane.showMessageDialog(null, "Por favor, selecione o(s) produto(s) e cliente(s)", "Importante", 1);
         }
+        }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparCamposActionPerformed
@@ -740,53 +769,6 @@ private List<Integer> listaIdsProdutos;
     private void btPesquisarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarProdutoActionPerformed
         gerarTabelaProdutos_com_Consulta();
     }//GEN-LAST:event_btPesquisarProdutoActionPerformed
-
-    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
-        gerarTabelaCompras_com_Consulta();
-    }//GEN-LAST:event_btPesquisarActionPerformed
-
-    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
-        if(tabelaCompras.getRowCount()==1){
-            CompraDAO pDAO = new CompraDAO();
-            DefaultTableModel modelo = (DefaultTableModel) tabelaCompras.getModel();
-            int[] linhas = tabelaCompras.getSelectedRows();
-            for(int i=0;i<linhas.length;i++){
-                int id = Integer.parseInt(modelo.getValueAt(linhas[i], 0).toString());
-                pDAO.deletar(id);
-                gerarTabelaCompras();
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma única linha se deseja editar");
-        }
-    }//GEN-LAST:event_btDeletarActionPerformed
-
-    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
-        gerarTabelaCompras();
-    }//GEN-LAST:event_btAtualizarActionPerformed
-
-    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-        if(tabelaCompras.getRowSelectionAllowed()==true){
-            DefaultTableModel modelo = (DefaultTableModel) tabelaCompras.getModel();
-            int[] linhas = tabelaCompras.getSelectedRows();
-            if(linhas.length==1){
-                int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
-                CompraDAO pDAO = new CompraDAO();
-                Compra p = new Compra();
-                List<Compra> Lista = pDAO.listarTodos();
-                for(int i=0;i<Lista.size();i++){
-                    p = Lista.get(i);
-                    if(p.getId_compra()==id){
-                        id_edit = i;
-                        trocarModo(p);
-                    }
-                }
-            }else{
-                JOptionPane.showMessageDialog(null, "POR FAVOR, SÓ SELECIONE UM");
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "POR FAVOR, Selecione uma linha se deseja editar");
-        }
-    }//GEN-LAST:event_btEditarActionPerformed
 
     private void btAdicionarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarItemActionPerformed
         if(tabelaProdutos.getRowSelectionAllowed()==true){
@@ -859,6 +841,22 @@ private List<Integer> listaIdsProdutos;
         trocarModo(p);
     }//GEN-LAST:event_btCancelarEdicaoActionPerformed
 
+    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btPesquisarActionPerformed
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btAtualizarActionPerformed
+
+    private void btDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeletarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btDeletarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAdicionarItem;
@@ -884,19 +882,17 @@ private List<Integer> listaIdsProdutos;
     private javax.swing.JTextField edPesquisaProduto;
     private javax.swing.JTextField edValor;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;

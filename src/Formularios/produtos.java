@@ -383,6 +383,7 @@ Mensagens m = new Mensagens();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        if(camposPreenchidos()==true){
         Produto p = new Produto();
         ProdutoDAO pDAO = new ProdutoDAO();
         //Pegando valores dos EDs
@@ -403,6 +404,7 @@ Mensagens m = new Mensagens();
             trocarModo(p);
         }
         limparCampos();
+        }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparCamposActionPerformed

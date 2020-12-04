@@ -346,6 +346,7 @@ Mensagens m = new Mensagens();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        if(camposPreenchidos()==true){
         Servico p = new Servico();
         ServicoDAO pDAO = new ServicoDAO();
         Usuario user = Usuario.getInstancia();
@@ -364,6 +365,7 @@ Mensagens m = new Mensagens();
         }
         gerarTabela();
         limparCampos();
+        }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparCamposActionPerformed

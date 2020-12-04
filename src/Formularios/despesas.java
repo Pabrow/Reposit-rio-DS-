@@ -162,8 +162,6 @@ Mensagens m = new Mensagens();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        paneCadastrar = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btCadastrar = new javax.swing.JButton();
@@ -181,32 +179,28 @@ Mensagens m = new Mensagens();
         comboBoxFormaPag = new javax.swing.JComboBox<>();
         edData = new javax.swing.JTextField();
         btCancelarEdicao = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaDespesa = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         edPesquisa = new javax.swing.JTextField();
         btPesquisar = new javax.swing.JButton();
         btDeletar = new javax.swing.JButton();
         btAtualizar = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaDespesa = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
 
-        paneCadastrar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        paneCadastrar.setName(""); // NOI18N
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(null);
+        setLayout(null);
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Cadastrar Despesa");
-        jPanel2.add(labelTitulo);
-        labelTitulo.setBounds(10, 70, 1300, 44);
+        add(labelTitulo);
+        labelTitulo.setBounds(-10, 130, 1300, 44);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Data:");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(560, 270, 60, 30);
+        add(jLabel2);
+        jLabel2.setBounds(220, 240, 60, 30);
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE CADASTRAR DESPESA.png"))); // NOI18N
@@ -216,8 +210,8 @@ Mensagens m = new Mensagens();
                 btCadastrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btCadastrar);
-        btCadastrar.setBounds(450, 610, 200, 50);
+        add(btCadastrar);
+        btCadastrar.setBounds(110, 580, 200, 50);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -227,57 +221,57 @@ Mensagens m = new Mensagens();
                 btLimparCamposActionPerformed(evt);
             }
         });
-        jPanel2.add(btLimparCampos);
-        btLimparCampos.setBounds(690, 610, 180, 50);
+        add(btLimparCampos);
+        btLimparCampos.setBounds(350, 580, 180, 50);
 
         labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jPanel2.add(labelId);
+        add(labelId);
         labelId.setBounds(290, 120, 43, 12);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Valor:");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(560, 310, 70, 30);
+        add(jLabel3);
+        jLabel3.setBounds(220, 280, 70, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Decrição:");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(600, 470, 100, 22);
+        add(jLabel4);
+        jLabel4.setBounds(260, 440, 100, 22);
 
         edValor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         edValor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel2.add(edValor);
-        edValor.setBounds(620, 310, 120, 30);
+        add(edValor);
+        edValor.setBounds(280, 280, 120, 30);
 
         edDescricao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edDescricao);
-        edDescricao.setBounds(470, 500, 368, 70);
+        add(edDescricao);
+        edDescricao.setBounds(130, 470, 368, 70);
 
         labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
-        jPanel2.add(labelFuncionario);
+        add(labelFuncionario);
         labelFuncionario.setBounds(1210, 30, 88, 15);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Funcionário:");
-        jPanel2.add(jLabel1);
+        add(jLabel1);
         jLabel1.setBounds(1140, 30, 65, 15);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Forma Pagamento:");
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(500, 352, 180, 30);
+        add(jLabel6);
+        jLabel6.setBounds(160, 330, 180, 30);
 
         lbParcelas.setVisible(false);
         lbParcelas.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbParcelas.setText("Parcelas:");
-        jPanel2.add(lbParcelas);
-        lbParcelas.setBounds(550, 410, 100, 30);
+        add(lbParcelas);
+        lbParcelas.setBounds(210, 380, 100, 30);
 
         edParcelas.setVisible(false);
         edParcelas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edParcelas);
-        edParcelas.setBounds(650, 410, 120, 30);
+        add(edParcelas);
+        edParcelas.setBounds(310, 380, 120, 30);
 
         comboBoxFormaPag.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         comboBoxFormaPag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista", "A Prazo" }));
@@ -286,13 +280,13 @@ Mensagens m = new Mensagens();
                 comboBoxFormaPagActionPerformed(evt);
             }
         });
-        jPanel2.add(comboBoxFormaPag);
-        comboBoxFormaPag.setBounds(680, 353, 120, 30);
+        add(comboBoxFormaPag);
+        comboBoxFormaPag.setBounds(340, 330, 120, 30);
 
         edData.setEditable(false);
         edData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edData);
-        edData.setBounds(620, 270, 120, 30);
+        add(edData);
+        edData.setBounds(280, 240, 120, 30);
 
         btCancelarEdicao.setVisible(false);
         btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -302,24 +296,15 @@ Mensagens m = new Mensagens();
                 btCancelarEdicaoActionPerformed(evt);
             }
         });
-        jPanel2.add(btCancelarEdicao);
-        btCancelarEdicao.setBounds(610, 740, 129, 25);
-
-        paneCadastrar.addTab("Cadastrar", jPanel2);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        tabelaDespesa.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Id", "Data", "Descrição", "Forma de Pagamento", "Valor"}
-        ));
-        jScrollPane1.setViewportView(tabelaDespesa);
+        add(btCancelarEdicao);
+        btCancelarEdicao.setBounds(270, 710, 129, 25);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("Pesquisar:");
+        add(jLabel10);
+        jLabel10.setBounds(730, 260, 95, 22);
+        add(edPesquisa);
+        edPesquisa.setBounds(840, 260, 180, 20);
 
         btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
         btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -330,6 +315,8 @@ Mensagens m = new Mensagens();
                 btPesquisarActionPerformed(evt);
             }
         });
+        add(btPesquisar);
+        btPesquisar.setBounds(1040, 250, 139, 33);
 
         btDeletar.setToolTipText("Deleta a despesa selecionada");
         btDeletar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -340,6 +327,8 @@ Mensagens m = new Mensagens();
                 btDeletarActionPerformed(evt);
             }
         });
+        add(btDeletar);
+        btDeletar.setBounds(1040, 730, 109, 33);
 
         btAtualizar.setToolTipText("Atualiza a tabela");
         btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -350,6 +339,8 @@ Mensagens m = new Mensagens();
                 btAtualizarActionPerformed(evt);
             }
         });
+        add(btAtualizar);
+        btAtualizar.setBounds(900, 740, 127, 39);
 
         btAtualizar.setToolTipText("Edita a despesa selecionada");
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -360,68 +351,28 @@ Mensagens m = new Mensagens();
                 btEditarActionPerformed(evt);
             }
         });
+        add(btEditar);
+        btEditar.setBounds(750, 750, 109, 41);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btPesquisar)
-                .addGap(360, 360, 360))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 765, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(430, 430, 430)
-                        .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(btAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(284, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btAtualizar)
-                    .addComponent(btEditar))
-                .addContainerGap(123, Short.MAX_VALUE))
-        );
+        tabelaDespesa.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        paneCadastrar.addTab("Visualizar, Editar e Deletar", jPanel3);
+            },
+            new String [] {
+                "Id", "Data", "Descrição", "Forma de Pagamento", "Valor"}
+        ));
+        jScrollPane1.setViewportView(tabelaDespesa);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(paneCadastrar))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(paneCadastrar)
-        );
+        add(jScrollPane1);
+        jScrollPane1.setBounds(730, 300, 452, 402);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        add(jLabel5);
+        jLabel5.setBounds(0, 0, 1400, 970);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        if(camposPreenchidos()==true){
         Despesa p = new Despesa();
         DespesaDAO pDAO = new DespesaDAO();
         //Pegando valores dos EDs
@@ -439,6 +390,7 @@ Mensagens m = new Mensagens();
         }
         gerarTabela();
         limparCampos();
+        }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparCamposActionPerformed
@@ -484,7 +436,6 @@ Mensagens m = new Mensagens();
                         trocarModo(p);
                     }
                 }
-                paneCadastrar.setSelectedIndex(0);
             }else{
                 JOptionPane.showMessageDialog(null, "POR FAVOR, SÓ SELECIONE UM");
             }
@@ -528,15 +479,13 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel lbParcelas;
-    private javax.swing.JTabbedPane paneCadastrar;
     private javax.swing.JTable tabelaDespesa;
     // End of variables declaration//GEN-END:variables
 }
