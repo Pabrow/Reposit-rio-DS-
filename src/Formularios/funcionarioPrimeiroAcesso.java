@@ -34,6 +34,42 @@ Mensagens m = new Mensagens();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        if(((edCpf.getText().trim().replaceAll(" ","").equals("..-")))&&((edTelefone.getText().trim().replaceAll(" ","").length()!=14))){
+            qtd=qtd+1;
+        }
+        if(edEmail.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edSalario.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edPassSenha.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edRg.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edNome.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if((edTelefone.getText().trim().replaceAll(" ","").equals("()-"))&&((edTelefone.getText().trim().replaceAll(" ","").length()!=14))){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
+    }
     
     public void limparCampos(){
         edCpf.setText(null);
@@ -218,6 +254,8 @@ Mensagens m = new Mensagens();
                 f.jaCadastrado();
                 this.dispose();
                 f.setVisible(rootPaneCheckingEnabled);
+            }else{
+                JOptionPane.showMessageDialog(null, "A senha deve possuir 3 ou mais caracteres e não deve ser nula", "Importante", 1);
             }
     }//GEN-LAST:event_btCadastrarActionPerformed
 

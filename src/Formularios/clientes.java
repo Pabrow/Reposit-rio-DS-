@@ -11,6 +11,7 @@ import Objetos.Mensagens;
 import Objetos.Usuario;
 import java.awt.Graphics;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,6 +32,45 @@ Mensagens m = new Mensagens();
     }
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
+    }
+    
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        System.out.println(edDataNasc.getText().trim().replaceAll(" ","").length());
+        System.out.println(edCpf.getText().trim().replaceAll(" ","").length());
+        if(((edCpf.getText().trim().replaceAll(" ","").equals("..-")))&&((edCpf.getText().trim().replaceAll(" ","").length()!=14))){
+            qtd=qtd+1;
+        }
+        if(((edDataNasc.getText().trim().replaceAll(" ","").equals("//")))&&((edDataNasc.getText().trim().replaceAll(" ","").length()!=10))){
+            qtd=qtd+1;
+        }
+        if(edEmail.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edEndereco.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edRg.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edNome.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if((edTelefone.getText().trim().replaceAll(" ","").equals("()-"))&&((edTelefone.getText().trim().replaceAll(" ","").length()!=14))){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
     }
     
     public void gerarLabel(){
@@ -231,6 +271,7 @@ Mensagens m = new Mensagens();
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        edTelefone.setText("");
         add(edTelefone);
         edTelefone.setBounds(440, 220, 200, 24);
 
@@ -387,6 +428,7 @@ Mensagens m = new Mensagens();
     }//GEN-LAST:event_btLimparCamposActionPerformed
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        if(camposPreenchidos()==true){
         if(mode == 0){
             Cliente p = new Cliente();
             ClienteDAO pDAO = new ClienteDAO();
@@ -421,7 +463,7 @@ Mensagens m = new Mensagens();
             gerarTabela();
             limparCampos();
             trocarModo(p);
-        }
+        }}
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed

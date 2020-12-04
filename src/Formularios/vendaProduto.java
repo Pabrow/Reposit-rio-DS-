@@ -6,10 +6,13 @@
 package Formularios;
 
 import DAO.ClienteDAO;
+import DAO.FuncionarioDAO;
 import DAO.ProdutoDAO;
 import DAO.VendaDAO;
 import DAO.VendaProdutoDAO;
 import Objetos.Cliente;
+import Objetos.Fornecedor;
+import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Produto;
 import Objetos.Usuario;
@@ -52,10 +55,61 @@ Mensagens m = new Mensagens();
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
     }
-    
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        if(((edData.getText().trim().replaceAll(" ","").equals("//")))&&((edData.getText().trim().replaceAll(" ","").length()!=10))){
+            qtd=qtd+1;
+        }
+        if(edParcelas.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edValor.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
+    }
     public void gerarLabelFuncionario(){
         Usuario user = Usuario.getInstancia();
         labelFuncionario.setText(user.getCpf());
+    }
+    public void setValor(){
+        double valor = calcularValor();
+        if(valor>0){
+            lbvalor.setText("R$ "+String.valueOf(valor));
+        }else{
+            lbvalor.setText("R$ 0,00");
+        }
+    }
+    
+    public void zerarValor(){
+        lbvalor.setText("R$ 0,00");
+    }
+    
+    public boolean validadorQtd(int id, int qtd){
+        boolean validade = false;
+        ProdutoDAO pDAO = new ProdutoDAO();
+        List<Produto> Lista = pDAO.listarTodos();
+        for(Produto p: Lista){     
+            if(id == p.getId_produto()){
+                if(p.getQuantidade()<qtd){
+                    validade = false;
+                }else{
+                    validade = true;
+                }
+            }
+        }
+        return validade;
     }
     
     public void adicionarItem(int id, int qtd){
@@ -64,7 +118,12 @@ Mensagens m = new Mensagens();
         List<Produto> Lista = pDAO.listarTodos();
         for(Produto p: Lista){     
             if(id == p.getId_produto()){
-                modelo.addRow(new Object[]{p.getId_produto(),p.getDesc(),p.getMarca(),p.getTipo(),p.getValor(),qtd});
+                if(validadorQtd(id,qtd)==false){
+                    JOptionPane.showMessageDialog(null, "Valor excede a quantidade no estoque!", "Importante", 1);
+                }else{
+                    modelo.addRow(new Object[]{p.getId_produto(),p.getDesc(),p.getMarca(),p.getTipo(),p.getValor(),qtd});
+                    setValor();
+                }
             }
         }
     }
@@ -73,9 +132,17 @@ Mensagens m = new Mensagens();
         DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
         modelo.setNumRows(0);
         VendaDAO pDAO = new VendaDAO();
+        FuncionarioDAO fDAO = new FuncionarioDAO();
+        List<Funcionario> ListaF = fDAO.listarTodos();
         List<Venda> Lista = pDAO.listarTodos();
-        for(Venda p: Lista){     
-            modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),alterarData2(p.getData()),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),p.getId_funcionario_fk()});
+        String str = null;
+        for(Venda p: Lista){      
+            for(Funcionario f: ListaF){     
+                if(f.getId_funcionario()==p.getId_funcionario_fk()){
+                    str = f.getNome();
+                }
+            }
+            modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),alterarData2(p.getData()),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),str});
         }
     }
     
@@ -103,10 +170,18 @@ Mensagens m = new Mensagens();
         DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
         modelo.setNumRows(0);
         VendaDAO pDAO = new VendaDAO();
+        FuncionarioDAO fDAO = new FuncionarioDAO();
+        List<Funcionario> ListaF = fDAO.listarTodos();
         List<Venda> Lista = pDAO.listarTodos();
-        for(Venda p: Lista){     
+        String str = null;
+        for(Venda p: Lista){       
+            for(Funcionario f: ListaF){     
+                if(f.getId_funcionario()==p.getId_funcionario_fk()){
+                    str = f.getNome();
+                }
+            }
             if(((p.getData().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))){
-                modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),alterarData2(p.getData()),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),p.getId_funcionario_fk()});
+                modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),alterarData2(p.getData()),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),str});
             }//        "Id", "Valor", "Data", "Hora", "Forma Pagamento", "Cliente", "Funcionário", "Produto", "Quantidade"
         }
     }
@@ -307,6 +382,8 @@ Mensagens m = new Mensagens();
         btAtualizar2 = new javax.swing.JButton();
         btAtualizar1 = new javax.swing.JButton();
         btCancelarEdicao = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lbvalor = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaVendas = new javax.swing.JTable();
@@ -559,6 +636,12 @@ Mensagens m = new Mensagens();
         });
         jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 600, -1, -1));
 
+        jLabel1.setText("Valor Atual da Venda: ");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, -1, -1));
+
+        lbvalor.setText("R$ 0,00");
+        jPanel2.add(lbvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 50, 20));
+
         paneCadastrar.addTab("Cadastrar", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -720,6 +803,7 @@ Mensagens m = new Mensagens();
                     rDAO.editarPorID(r);
                     gerarTabelaVendas();
                     trocarModo(r);
+                    zerarValor();
                 }
                 limparCampos();
             }else{
@@ -774,8 +858,14 @@ Mensagens m = new Mensagens();
             DefaultTableModel modelo = (DefaultTableModel) tabelaProdutosCarrinho.getModel();
             int[] linhas = tabelaProdutosCarrinho.getSelectedRows();
             if(linhas.length==1){
+                int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
                 int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a Quantidade"));
-                modelo.setValueAt(qtd, linhas[0], 5);
+                if(validadorQtd(id,qtd)==true){
+                    modelo.setValueAt(qtd, linhas[0], 5);
+                    setValor();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Valor excede a quantidade no estoque!", "Importante", 1);
+                }
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, selecione um único produto");
             }
@@ -790,6 +880,7 @@ Mensagens m = new Mensagens();
             int[] linhas = tabelaProdutosCarrinho.getSelectedRows();
             if(linhas.length==1){
                 modelo.removeRow(linhas[0]);
+                setValor();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, selecione um único produto");
             }
@@ -888,6 +979,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edPesquisaCliente;
     private javax.swing.JTextField edPesquisaProduto;
     private javax.swing.JTextField edValor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel4;
@@ -908,6 +1000,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel lb3;
     private javax.swing.JLabel lb4;
     private javax.swing.JLabel lbParcelas;
+    private javax.swing.JLabel lbvalor;
     private javax.swing.JTabbedPane paneCadastrar;
     private javax.swing.JTable tabelaClientes;
     private javax.swing.JTable tabelaProdutos;

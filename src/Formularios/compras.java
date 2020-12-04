@@ -9,11 +9,13 @@ import DAO.ClienteDAO;
 import DAO.CompraDAO;
 import DAO.CompraProdutoDAO;
 import DAO.FornecedorDAO;
+import DAO.FuncionarioDAO;
 import DAO.ProdutoDAO;
 import DAO.VendaDAO;
 import Objetos.Cliente;
 import Objetos.Compra;
 import Objetos.Fornecedor;
+import Objetos.Funcionario;
 import Objetos.Produto;
 import Objetos.Usuario;
 import Objetos.Venda;
@@ -52,6 +54,31 @@ private List<Integer> listaIdsProdutos;
         
     }
     
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        if(((edData.getText().trim().replaceAll(" ","").equals("//")))&&((edData.getText().trim().replaceAll(" ","").length()!=10))){
+            qtd=qtd+1;
+        }
+        if(edValor.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edParcelas.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
+    }
+    
     public void gerarLabel(){
         Usuario user = Usuario.getInstancia();
         labelFuncionario.setText(user.getCpf());
@@ -69,6 +96,19 @@ private List<Integer> listaIdsProdutos;
                 modelo.addRow(new Object[]{p.getId_produto(),p.getDesc(),p.getMarca(),p.getTipo(),p.getValor(),qtd});
             }
         }
+    }
+    
+    public void setValor(){
+        double valor = calcularValor();
+        if(valor>0){
+            lbvalor.setText("R$ "+String.valueOf(valor));
+        }else{
+            lbvalor.setText("R$ 0,00");
+        }
+    }
+    
+    public void zerarValor(){
+        lbvalor.setText("R$ 0,00");
     }
     
     public float calcularValor(){
@@ -161,10 +201,18 @@ private List<Integer> listaIdsProdutos;
         DefaultTableModel modelo = (DefaultTableModel) tabelaCompras.getModel();
         modelo.setNumRows(0);
         VendaDAO pDAO = new VendaDAO();
+        FuncionarioDAO fDAO = new FuncionarioDAO();
         List<Venda> Lista = pDAO.listarTodos();
+        List<Funcionario> ListaF = fDAO.listarTodos();
+        String str = null;
         for(Venda p: Lista){     
             if(((p.getData().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))){
-                modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),p.getData(),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),p.getId_funcionario_fk()});
+                for(Funcionario f: ListaF){     
+                if(p.getId_funcionario_fk()==f.getId_funcionario()){
+                     str = f.getNome();
+                }
+                }
+                modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),p.getData(),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),str});
             }//        "Id", "Valor", "Data", "Hora", "Forma Pagamento", "Cliente", "Funcionário", "Produto", "Quantidade"
         }
     }
@@ -298,6 +346,8 @@ private List<Integer> listaIdsProdutos;
         btDeletarItem = new javax.swing.JButton();
         btAlterarQtd = new javax.swing.JButton();
         btCancelarEdicao = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lbvalor = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaCompras = new javax.swing.JTable();
@@ -540,6 +590,12 @@ private List<Integer> listaIdsProdutos;
         });
         jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 610, -1, -1));
 
+        jLabel1.setText("Valor Atual da Venda: ");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, -1, -1));
+
+        lbvalor.setText("R$ 0,00");
+        jPanel2.add(lbvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 50, 20));
+
         jTabbedPane1.addTab("Cadastrar", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -660,6 +716,7 @@ private List<Integer> listaIdsProdutos;
                     rDAO.editarPorID(r);
                     gerarTabelaCompras();
                     trocarModo(r);
+                    zerarValor();
                 }
                 gerarTabelaCompras();
                 limparCampos();
@@ -739,6 +796,7 @@ private List<Integer> listaIdsProdutos;
                 int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
                 int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a Quantidade"));
                 adicionarItem(id,qtd);
+                setValor();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, selecione um único produto");
             }
@@ -771,6 +829,7 @@ private List<Integer> listaIdsProdutos;
             int[] linhas = tabelaProdutosCarrinho.getSelectedRows();
             if(linhas.length==1){
                 modelo.removeRow(linhas[0]);
+                setValor();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, selecione um único produto");
             }
@@ -786,6 +845,7 @@ private List<Integer> listaIdsProdutos;
             if(linhas.length==1){
                 int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a Quantidade"));
                 modelo.setValueAt(qtd, linhas[0], 5);
+                setValor();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, selecione um único produto");
             }
@@ -823,6 +883,7 @@ private List<Integer> listaIdsProdutos;
     private javax.swing.JTextField edPesquisaCliente;
     private javax.swing.JTextField edPesquisaProduto;
     private javax.swing.JTextField edValor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel4;
@@ -843,6 +904,7 @@ private List<Integer> listaIdsProdutos;
     private javax.swing.JLabel lb2;
     private javax.swing.JLabel lb3;
     private javax.swing.JLabel lbParcelas;
+    private javax.swing.JLabel lbvalor;
     private javax.swing.JTable tabelaCompras;
     private javax.swing.JTable tabelaFornecedor;
     private javax.swing.JTable tabelaProdutos;

@@ -34,6 +34,31 @@ Mensagens m = new Mensagens();
         gerarTabela();
     }
     
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        if(edValor.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edParcelas.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edDescricao.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
+    }
+    
     public void gerarData(){
         String data = String.valueOf(getData());
         edData.setText(alterarData2(data));

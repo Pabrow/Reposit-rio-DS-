@@ -38,7 +38,42 @@ Mensagens m = new Mensagens();
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
     }
-    
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        if(((edCpf.getText().trim().replaceAll(" ","").equals("..-")))&&((edTelefone.getText().trim().replaceAll(" ","").length()!=14))){
+            qtd=qtd+1;
+        }
+        if(edEmail.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edSalario.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edPassSenha.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edRg.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edNome.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if((edTelefone.getText().trim().replaceAll(" ","").equals("()-"))&&((edTelefone.getText().trim().replaceAll(" ","").length()!=14))){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
+    }
     public void gerarLabel(){
         Usuario user = Usuario.getInstancia();
         labelFuncionario.setText(user.getCpf());
@@ -551,9 +586,13 @@ Mensagens m = new Mensagens();
             p.setSenha(edPassSenha.getText());
             p.setSalario(Double.parseDouble(edSalario.getText()));
             //Enviar para o DAO
-            pDAO.cadastrarFuncionario(p);
-            gerarTabela();
-            limparCampos();
+            if((!p.getSenha().equals(""))&&(p.getSenha().length()>2)){
+                pDAO.cadastrarFuncionario(p);
+                gerarTabela();
+                limparCampos();
+            }else{
+                JOptionPane.showMessageDialog(null, "A senha deve possuir 3 ou mais caracteres e não deve ser nula", "Importante", 1);
+            }
         }else{
             Funcionario p = new Funcionario();
             FuncionarioDAO pDAO = new FuncionarioDAO();
@@ -569,10 +608,14 @@ Mensagens m = new Mensagens();
             p.setSalario(Double.parseDouble(edSalario.getText()));
             p.setFuncao(edFuncao.getText());
             //Enviar para o DAO
-            pDAO.editarPorID(p);
-            gerarTabela();
-            limparCampos();
-            trocarModo(p);
+            if((!p.getSenha().equals(""))&&(p.getSenha().length()>2)){
+                pDAO.editarPorID(p);
+                gerarTabela();
+                limparCampos();
+                trocarModo(p);
+            }else{
+                JOptionPane.showMessageDialog(null, "A senha deve possuir 3 ou mais caracteres e não deve ser nula", "Importante", 1);
+            }
         }
     }//GEN-LAST:event_btCadastrarActionPerformed
 

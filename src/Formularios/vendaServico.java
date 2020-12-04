@@ -6,10 +6,12 @@
 package Formularios;
 
 import DAO.ClienteDAO;
+import DAO.FuncionarioDAO;
 import DAO.ServicoDAO;
 import DAO.VendaDAO;
 import DAO.VendaServicoDAO;
 import Objetos.Cliente;
+import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Servico;
 import Objetos.Usuario;
@@ -47,7 +49,30 @@ Mensagens m = new Mensagens();
         edData.setText(alterarData2(data));
         
     }
-    
+    public boolean camposPreenchidos(){
+        boolean preenchidos = false;
+        int qtd = 0;
+        if(((edData.getText().trim().replaceAll(" ","").equals("//")))&&((edData.getText().trim().replaceAll(" ","").length()!=10))){
+            qtd=qtd+1;
+        }
+        if(edParcelas.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(edValor.getText().trim().replaceAll(" ","").equals("")){
+            qtd=qtd+1;
+        }
+        if(qtd!=0){
+            preenchidos = false;
+            if(qtd==1){
+                JOptionPane.showMessageDialog(null, qtd+" campo ficou vazio!", "Importante", 1);
+            }else{
+                JOptionPane.showMessageDialog(null, qtd+" campos ficaram vazios!", "Importante", 1);
+            }
+        }else{
+            preenchidos = true;
+        }
+        return preenchidos;
+    }
     public String alterarData(String data){
         String dia = data.substring(0, 2);
         String mes = data.substring(3, 5);
@@ -74,6 +99,19 @@ Mensagens m = new Mensagens();
         labelFuncionario.setText(user.getCpf());
     }
     
+    public void setValor(){
+        double valor = calcularValor();
+        if(valor>0){
+            lbvalor.setText("R$ "+String.valueOf(valor));
+        }else{
+            lbvalor.setText("R$ 0,00");
+        }
+    }
+    
+    public void zerarValor(){
+        lbvalor.setText("R$ 0,00");
+    }
+    
     public void adicionarItem(int id, int qtd){
         DefaultTableModel modelo = (DefaultTableModel) tabelaServicosCarrinho.getModel();
         ServicoDAO pDAO = new ServicoDAO();
@@ -82,6 +120,7 @@ Mensagens m = new Mensagens();
         for(Servico p: Lista){     
             if(id == p.getId_servico()){
                 modelo.addRow(new Object[]{p.getId_servico(),p.getDesc(),p.getTempo(),p.getValor(), qtd});
+                setValor();
             }
         }
     }
@@ -90,9 +129,17 @@ Mensagens m = new Mensagens();
         DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
         modelo.setNumRows(0);
         VendaDAO pDAO = new VendaDAO();
+        FuncionarioDAO fDAO = new FuncionarioDAO();
+        List<Funcionario> ListaF = fDAO.listarTodos();
         List<Venda> Lista = pDAO.listarTodos();
-        for(Venda p: Lista){     
-            modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),p.getData(),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),p.getId_funcionario_fk()});
+        String str = null;
+        for(Venda p: Lista){            
+            for(Funcionario f: ListaF){     
+                if(f.getId_funcionario()==p.getId_funcionario_fk()){
+                    str = f.getNome();
+                }
+            }
+            modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),p.getData(),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),str});
         }
     }
     
@@ -120,10 +167,18 @@ Mensagens m = new Mensagens();
         DefaultTableModel modelo = (DefaultTableModel) tabelaVendas.getModel();
         modelo.setNumRows(0);
         VendaDAO pDAO = new VendaDAO();
+        FuncionarioDAO fDAO = new FuncionarioDAO();
+        List<Funcionario> ListaF = fDAO.listarTodos();
         List<Venda> Lista = pDAO.listarTodos();
-        for(Venda p: Lista){     
+        String str = null;
+        for(Venda p: Lista){              
+            for(Funcionario f: ListaF){     
+                if(f.getId_funcionario()==p.getId_funcionario_fk()){
+                    str = f.getNome();
+                }
+            }
             if(((p.getData().toLowerCase()).contains(edPesquisa.getText().toLowerCase()))){
-                modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),p.getData(),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),p.getId_funcionario_fk()});
+                modelo.addRow(new Object[]{p.getId_venda(),p.getValor(),p.getData(),p.getHora(),p.getFormaPag(),p.getId_cliente_fk(),str});
             }//        "Id", "Valor", "Data", "Hora", "Forma Pagamento", "Cliente", "Funcionário", "Produto", "Quantidade"
         }
     }
@@ -283,6 +338,8 @@ Mensagens m = new Mensagens();
         btAtualizar1 = new javax.swing.JButton();
         btAtualizar2 = new javax.swing.JButton();
         btCancelarEdicao = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lbvalor = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaVendas = new javax.swing.JTable();
@@ -538,6 +595,12 @@ Mensagens m = new Mensagens();
         });
         jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, -1, -1));
 
+        jLabel1.setText("Valor Atual da Venda: ");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, -1, -1));
+
+        lbvalor.setText("R$ 0,00");
+        jPanel2.add(lbvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 100, 20));
+
         jTabbedPane1.addTab("Cadastrar", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -676,6 +739,7 @@ Mensagens m = new Mensagens();
                     rDAO.editarPorID(r);
                     gerarTabelaVendas();
                     trocarModo(r);
+                    zerarValor();
                 }
                 limparCampos();
             }else{
@@ -706,7 +770,6 @@ Mensagens m = new Mensagens();
             if(linhas.length==1){
                 int id = Integer.parseInt(modelo.getValueAt(linhas[0], 0).toString());
                 int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a quantidade"));
-                System.out.println(qtd);
                 adicionarItem(id,qtd);
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, só selecione um serviço por vez","Importante",1);
@@ -732,8 +795,8 @@ Mensagens m = new Mensagens();
             int[] linhas = tabelaServicosCarrinho.getSelectedRows();
             if(linhas.length==1){
                 int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade do produto adicionado: ","Digite a quantidade"));
-                
                 modelo.setValueAt(qtd, linhas[0], 5);
+                setValor();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, só selecione um serviço por vez","Importante",1);
             }
@@ -748,6 +811,7 @@ Mensagens m = new Mensagens();
             int[] linhas = tabelaServicosCarrinho.getSelectedRows();
             if(linhas.length==1){
                 modelo.removeRow(linhas[0]);
+                setValor();
             }else{
                 JOptionPane.showMessageDialog(null, "Por favor, Selecione um único serviço","Importante",1);
             }
@@ -845,6 +909,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edPesquisaCliente;
     private javax.swing.JTextField edPesquisaProduto;
     private javax.swing.JTextField edValor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel4;
@@ -866,6 +931,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel lbId;
     private javax.swing.JLabel lbParcelas;
     private javax.swing.JLabel lbValor;
+    private javax.swing.JLabel lbvalor;
     private javax.swing.JTable tabelaClientes;
     private javax.swing.JTable tabelaServicos;
     private javax.swing.JTable tabelaServicosCarrinho;
