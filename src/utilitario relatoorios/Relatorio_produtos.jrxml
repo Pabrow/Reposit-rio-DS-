@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_produtos" language="groovy" pageWidth="635" pageHeight="842" columnWidth="595" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf8b6a1d-7776-474e-8f15-20b661080aa4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from Produto]]>
+	</queryString>
+	<field name="id_prod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="desc_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marca_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tamanho_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qtd_prod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_prod" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="desc_prod">
+		<groupExpression><![CDATA[$F{desc_prod}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="158" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="0" width="156" height="156" uuid="170affce-77ef-44fb-a6ca-084f54de4ff3"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="439" y="2" width="156" height="156" uuid="ff69b089-0b5c-44df-9302-6f6b589d8aaf"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="166" y="55" width="273" height="40" uuid="5b221afb-016d-4b05-85cb-181ba4373794"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELÁTORIO DE PRODUTOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="495" y="0" width="98" height="20" uuid="cbdffc8c-a11c-4771-8f17-fca009e7afb4"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="0" width="84" height="20" uuid="16eef050-dad4-4d5a-a5e4-06d0e6b3d295"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANTIDADE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="0" width="100" height="20" uuid="906c66d3-41c3-40b8-b7c1-4a35b91fc998"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="247" y="0" width="84" height="20" uuid="59fa3828-dc0b-4eef-8095-c6cd403f3d43"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAMANHO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="0" width="100" height="20" uuid="466b25e2-e843-4bd0-bbcc-f3564dd25813"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="0" width="45" height="20" uuid="800af116-329c-4530-bfdd-b9d05bae71e1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="0" width="80" height="20" uuid="65f89381-116b-4453-ba05-d5efe23833e2"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="45" height="20" uuid="7ab5dd79-1274-410d-88b8-d51f15fd2dd6"/>
+				<textFieldExpression><![CDATA[$F{id_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="0" width="100" height="20" uuid="7b2e18b1-3189-420a-8487-2222f624cdc7"/>
+				<textFieldExpression><![CDATA[$F{desc_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="147" y="0" width="100" height="20" uuid="2977f637-cff0-4bd2-b1ed-c59d8e776320"/>
+				<textFieldExpression><![CDATA[$F{marca_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="84" height="20" uuid="230990e8-5b7f-4c5d-94e2-f8061723f0b3"/>
+				<textFieldExpression><![CDATA[$F{qtd_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="0" width="90" height="20" uuid="7168d0cb-dbe8-46b2-9118-ee8713d27b7e"/>
+				<textFieldExpression><![CDATA[$F{tamanho_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="0" width="80" height="20" uuid="541fa27b-a2a0-4c44-ab29-d7ca4b508fac"/>
+				<textFieldExpression><![CDATA[$F{valor_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="495" y="0" width="98" height="20" uuid="cb856f2a-3b13-4f1f-b43e-09508d3a5d40"/>
+				<textFieldExpression><![CDATA[$F{tipo_prod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="591" height="30" uuid="b9aed4ac-e911-4129-a898-e2a612ffd996"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHREK MOTOS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
