@@ -84,6 +84,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -242,10 +243,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel2.setBounds(0, 60, 170, 820);
 
         jPanel1.setLayout(new java.awt.CardLayout());
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(176, 64, 1170, 810);
 
-        setSize(new java.awt.Dimension(1363, 909));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        jLabel17.setText("jLabel17");
+        jPanel1.add(jLabel17, "card2");
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(176, 64, 1400, 1010);
+
+        setSize(new java.awt.Dimension(1592, 1110));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -294,6 +300,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
