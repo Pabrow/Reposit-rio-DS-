@@ -28,7 +28,6 @@ Mensagens m = new Mensagens();
      */
     public servicos() {
         initComponents();
-        gerarLabel();
         gerarTabela();
     }
     
@@ -59,11 +58,6 @@ Mensagens m = new Mensagens();
             preenchidos = true;
         }
         return preenchidos;
-    }
-    
-    public void gerarLabel(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
     }
     
     public void gerarTabela(){
@@ -131,8 +125,6 @@ Mensagens m = new Mensagens();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tabCadastro = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -143,57 +135,49 @@ Mensagens m = new Mensagens();
         btCadastrar = new javax.swing.JButton();
         btLimparCampos = new javax.swing.JButton();
         labelId = new javax.swing.JLabel();
-        labelFuncionario = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         btCancelarEdicao = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaServicos = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         edPesquisa = new javax.swing.JTextField();
         btPesquisar = new javax.swing.JButton();
-        btDeletar = new javax.swing.JButton();
-        btAtualizar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaServicos = new javax.swing.JTable();
         btEditar = new javax.swing.JButton();
+        btAtualizar = new javax.swing.JButton();
+        btDeletar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
 
-        tabCadastro.setMaximumSize(new java.awt.Dimension(650, 650));
-        tabCadastro.setMinimumSize(new java.awt.Dimension(650, 650));
-        tabCadastro.setName(""); // NOI18N
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Cadastrar Servicos");
-        jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1030, -1));
+        add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 1030, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Descrição:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 240, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 380, 240, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Tempo:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 170, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 170, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Valor:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 160, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 160, -1));
 
         edDesc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(406, 360, 290, 70));
+        add(edDesc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 290, 70));
 
         edTempo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edTempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 165, 30));
+        add(edTempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 165, 30));
 
         edValor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 165, 30));
+        add(edValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 165, 30));
 
-        btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE CADASTRAR DESPESA.png"))); // NOI18N
         btCadastrar.setText("Cadastrar");
         btCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -201,9 +185,9 @@ Mensagens m = new Mensagens();
                 btCadastrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 480, -1, -1));
+        add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, -1, -1));
 
-        btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btLimparCampos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
         btLimparCampos.setText("Limpar Campos");
         btLimparCampos.addActionListener(new java.awt.event.ActionListener() {
@@ -211,18 +195,13 @@ Mensagens m = new Mensagens();
                 btLimparCamposActionPerformed(evt);
             }
         });
-        jPanel2.add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, -1, 39));
+        add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, -1, 39));
 
         labelId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel2.add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 87, 43, 13));
-        jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 98, 17));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel12.setText("Funcionário:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, -1, -1));
+        add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 43, 13));
 
         btCancelarEdicao.setVisible(false);
-        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btCancelarEdicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
         btCancelarEdicao.setText("Cancelar Edição");
         btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
@@ -230,14 +209,25 @@ Mensagens m = new Mensagens();
                 btCancelarEdicaoActionPerformed(evt);
             }
         });
-        jPanel2.add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 550, 170, 40));
+        add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 600, 170, 40));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-370, -200, 1400, 1010));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Pesquisar:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, -1, -1));
 
-        tabCadastro.addTab("Cadastrar", jPanel2);
+        edPesquisa.setToolTipText("Pesquisa nos campos de descrição");
+        add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 220, 30));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        btPesquisar.setToolTipText("Pesquisa nos campos de descrição");
+        btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
+        btPesquisar.setText("PESQUISAR");
+        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisarActionPerformed(evt);
+            }
+        });
+        add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 220, -1, -1));
 
         tabelaServicos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -249,40 +239,7 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane1.setViewportView(tabelaServicos);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Pesquisar:");
-
-        edPesquisa.setToolTipText("Pesquisa nos campos de descrição");
-
-        btPesquisar.setToolTipText("Pesquisa nos campos de descrição");
-        btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
-        btPesquisar.setText("PESQUISAR");
-        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btPesquisarActionPerformed(evt);
-            }
-        });
-
-        btDeletar.setToolTipText("Deleta o serviço selecionado.");
-        btDeletar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
-        btDeletar.setText("Deletar");
-        btDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDeletarActionPerformed(evt);
-            }
-        });
-
-        btAtualizar.setToolTipText("Atualiza a tabela.");
-        btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
-        btAtualizar.setText("Atualizar");
-        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtualizarActionPerformed(evt);
-            }
-        });
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, -1, -1));
 
         btAtualizar.setToolTipText("Editar o serviço selecionado.");
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -293,63 +250,32 @@ Mensagens m = new Mensagens();
                 btEditarActionPerformed(evt);
             }
         });
+        add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 680, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(edPesquisa)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(btDeletar)
-                        .addGap(28, 28, 28)
-                        .addComponent(btAtualizar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btEditar)))
-                .addContainerGap(427, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(edPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btDeletar)
-                    .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(196, 196, 196))
-        );
+        btAtualizar.setToolTipText("Atualiza a tabela.");
+        btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
+        btAtualizar.setText("Atualizar");
+        btAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAtualizarActionPerformed(evt);
+            }
+        });
+        add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 680, -1, -1));
 
-        tabCadastro.addTab("Visualizar, Editar e Deletar", jPanel3);
+        btDeletar.setToolTipText("Deleta o serviço selecionado.");
+        btDeletar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
+        btDeletar.setText("Deletar");
+        btDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeletarActionPerformed(evt);
+            }
+        });
+        add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 680, -1, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 1032, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(tabCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1400, 1010));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
@@ -420,7 +346,6 @@ Mensagens m = new Mensagens();
                         trocarModo(p);
                     }
                 }
-                tabCadastro.setSelectedIndex(0);
             }else{
                 m.mensagemPadrão1();
             }
@@ -449,17 +374,12 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edValor;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
-    private javax.swing.JTabbedPane tabCadastro;
     private javax.swing.JTable tabelaServicos;
     // End of variables declaration//GEN-END:variables
 }

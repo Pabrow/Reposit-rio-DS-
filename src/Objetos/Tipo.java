@@ -9,17 +9,17 @@ package Objetos;
  *
  * @author mateu
  */
-public class Marca {
+public class Tipo {
 
-    private int id_marca;
+    private int id_tipo;
     private String nome;
 
-    public int getId_marca() {
-        return id_marca;
+    public int getId_tipo() {
+        return id_tipo;
     }
 
-    public void setId_marca(int id_marca) {
-        this.id_marca = id_marca;
+    public void setId_tipo(int id_tipo) {
+        this.id_tipo = id_tipo;
     }
 
     public String getNome() {

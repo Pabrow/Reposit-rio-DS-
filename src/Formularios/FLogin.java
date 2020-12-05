@@ -277,7 +277,7 @@ private int mode = 0;
                 user.setNome(p.getNome());
                 user.setSenha(p.getSenha());
                 user.setId(p.getId_funcionario());
-                TelaPrincipal Menu = new TelaPrincipal();
+                TelaPrincipalAntiga Menu = new TelaPrincipalAntiga();
                 Menu.setVisible(true);
                 this.dispose();
             }else{

@@ -5,7 +5,9 @@
  */
 package Formularios;
 
+import DAO.FuncaoDAO;
 import DAO.FuncionarioDAO;
+import Objetos.Funcao;
 import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Usuario;
@@ -15,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -31,13 +34,23 @@ Mensagens m = new Mensagens();
      */
     public funcionarios() {
         initComponents();
-        gerarLabel();
         gerarTabela();
+        gerarComboBox();
     }
     
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
     }
+        
+    public void gerarComboBox(){
+        comboBox.removeAllItems();
+        FuncaoDAO td = new FuncaoDAO();
+        List<Funcao> Lista = td.listarTodos();
+        for(Funcao p: Lista){     
+            comboBox.addItem(p.getNome());
+        }
+    }
+    
     public boolean camposPreenchidos(){
         boolean preenchidos = false;
         int qtd = 0;
@@ -74,10 +87,6 @@ Mensagens m = new Mensagens();
         }
         return preenchidos;
     }
-    public void gerarLabel(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
-    }
     
     public void gerarTabela(){
         DefaultTableModel modelo = (DefaultTableModel) tabelaFuncionarios.getModel();
@@ -103,7 +112,6 @@ Mensagens m = new Mensagens();
     
     public void limparCampos(){
         edCpf.setText(null);
-        edFuncao.setText(null);
         edPassSenha.setText(null);
         edEmail.setText(null);
         edSalario.setText(null);
@@ -124,7 +132,12 @@ Mensagens m = new Mensagens();
             labelId.setText("ID:"+p.getId_funcionario());
             //Pegando valores dos EDs
             edCpf.setText(p.getCpf());
-            edFuncao.setText(p.getFuncao());
+            int qtd = comboBox.getItemCount();
+            for(int i=1;i<=qtd;i++){
+                if(p.getFuncao().equals(comboBox.getItemAt(i))){
+                    comboBox.setSelectedIndex(i);
+                }
+            }
             edEmail.setText(p.getEmail());
             edSalario.setText(String.valueOf(p.getSalario()));
             edNome.setText(p.getNome());
@@ -175,7 +188,6 @@ Mensagens m = new Mensagens();
         edTelefone = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
         edPassSenha = new javax.swing.JPasswordField();
-        edFuncao = new javax.swing.JTextField();
         labelFuncionario = new javax.swing.JLabel();
         labelFuncionario1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -190,6 +202,8 @@ Mensagens m = new Mensagens();
         btEditar = new javax.swing.JButton();
         btAtualizar = new javax.swing.JButton();
         btDeletar = new javax.swing.JButton();
+        comboBox = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -302,15 +316,6 @@ Mensagens m = new Mensagens();
         edPassSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edPassSenha);
         edPassSenha.setBounds(470, 470, 200, 30);
-
-        edFuncao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        edFuncao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edFuncaoActionPerformed(evt);
-            }
-        });
-        add(edFuncao);
-        edFuncao.setBounds(220, 540, 200, 30);
         add(labelFuncionario);
         labelFuncionario.setBounds(1062, 103, 47, 23);
 
@@ -430,6 +435,18 @@ Mensagens m = new Mensagens();
         add(btDeletar);
         btDeletar.setBounds(770, 730, 120, 50);
 
+        comboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        add(comboBox);
+        comboBox.setBounds(220, 540, 160, 30);
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(390, 540, 30, 30);
+
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
         jLabel11.setText("jLabel11");
         add(jLabel11);
@@ -448,7 +465,7 @@ Mensagens m = new Mensagens();
             p.setRg(edRg.getText());
             p.setSexo(String.valueOf(comBoxSexo.getSelectedItem()));
             p.setTelefone(edTelefone.getText());
-            p.setFuncao(edFuncao.getText());
+            p.setFuncao(String.valueOf(comboBox.getSelectedItem()));
             p.setSenha(edPassSenha.getText());
             p.setSalario(Double.parseDouble(edSalario.getText()));
             //Enviar para o DAO
@@ -472,7 +489,7 @@ Mensagens m = new Mensagens();
             p.setTelefone(edTelefone.getText());
             p.setSenha(edPassSenha.getText());
             p.setSalario(Double.parseDouble(edSalario.getText()));
-            p.setFuncao(edFuncao.getText());
+            p.setFuncao(String.valueOf(comboBox.getSelectedItem()));
             //Enviar para o DAO
             if((!p.getSenha().equals(""))&&(p.getSenha().length()>2)){
                 pDAO.editarPorID(p);
@@ -489,10 +506,6 @@ Mensagens m = new Mensagens();
     private void btLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparCamposActionPerformed
         limparCampos();
     }//GEN-LAST:event_btLimparCamposActionPerformed
-
-    private void edFuncaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edFuncaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edFuncaoActionPerformed
 
     private void edCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edCpfActionPerformed
         // TODO add your handling code here:
@@ -590,6 +603,24 @@ Mensagens m = new Mensagens();
         trocarModo(p);
     }//GEN-LAST:event_btCancelarEdicaoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja acicionar uma nova função?", "ADICIONAR FUNÇÃO", JOptionPane.YES_NO_OPTION);
+        if(opcao==0){
+            JTextField textfield = new JTextField(50);
+            JLabel rotulo = new JLabel("Insira a nova função:");
+            JPanel painel = new JPanel();
+            painel.add(rotulo);
+            painel.add(textfield);
+            JOptionPane.showMessageDialog(null, painel, "ADICIONAR FUNÇÃO", JOptionPane.PLAIN_MESSAGE);
+            String novoMarca = textfield.getText();
+            Funcao t = new Funcao();
+            t.setNome(novoMarca);
+            FuncaoDAO td = new FuncaoDAO();
+            td.cadastrarFuncao(t);
+            gerarComboBox();
+        } 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btAlterSenha;
@@ -601,15 +632,16 @@ Mensagens m = new Mensagens();
     private javax.swing.JButton btLimparCampos;
     private javax.swing.JButton btPesquisar;
     private javax.swing.JComboBox<String> comBoxSexo;
+    private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JFormattedTextField edCpf;
     private javax.swing.JTextField edEmail;
-    private javax.swing.JTextField edFuncao;
     private javax.swing.JTextField edNome;
     private javax.swing.JPasswordField edPassSenha;
     private javax.swing.JTextField edPesquisa;
     private javax.swing.JTextField edRg;
     private javax.swing.JTextField edSalario;
     private javax.swing.JFormattedTextField edTelefone;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

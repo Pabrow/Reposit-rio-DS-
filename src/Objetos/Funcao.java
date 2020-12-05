@@ -30,9 +30,4 @@ public class Funcao {
         this.nome = nome;
     }
 
-    @Override
-    public String toString() {
-        return getNome(); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

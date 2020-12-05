@@ -28,7 +28,6 @@ Mensagens m = new Mensagens();
      */
     public fornecedores() {
         initComponents();
-        gerarLabel();
         gerarTabela();
     }
     
@@ -64,10 +63,6 @@ Mensagens m = new Mensagens();
             preenchidos = true;
         }
         return preenchidos;
-    }
-    public void gerarLabel(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
     }
     
     public void gerarTabela(){
@@ -140,8 +135,6 @@ Mensagens m = new Mensagens();
         btCadastrar = new javax.swing.JButton();
         btLimparCampos = new javax.swing.JButton();
         labelId = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        labelFuncionario = new javax.swing.JLabel();
         edTelefone = new javax.swing.JFormattedTextField();
         edCnpj = new javax.swing.JFormattedTextField();
         btCancelarEdicao = new javax.swing.JButton();
@@ -216,16 +209,6 @@ Mensagens m = new Mensagens();
         labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(labelId);
         labelId.setBounds(410, 160, 43, 30);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel1.setText("Funcionário:");
-        add(jLabel1);
-        jLabel1.setBounds(1140, 20, 100, 20);
-
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelFuncionario.setText("[FUNCIONARIO]");
-        add(labelFuncionario);
-        labelFuncionario.setBounds(1240, 20, 132, 20);
 
         try {
             edTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
@@ -443,7 +426,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edNome;
     private javax.swing.JTextField edPesquisa;
     private javax.swing.JFormattedTextField edTelefone;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -451,7 +433,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JTable tabelaFornecedores;

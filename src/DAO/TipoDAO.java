@@ -8,6 +8,7 @@ package DAO;
 import Conexao.ConexaoSQL;
 import Objetos.Marca;
 import Objetos.Mensagens;
+import Objetos.Tipo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,14 +20,14 @@ import javax.swing.JOptionPane;
  *
  * @author mateu
  */
-public class MarcaDAO {
+public class TipoDAO {
 
     private Connection con = null;
     Mensagens m = new Mensagens();
 
-    public void cadastrarMarca(Marca p) {
+    public void cadastrarTipo(Tipo p) {
         con = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Marca (nome_marca) values (?);";
+        String sql = "INSERT INTO Tipo (nome_tipo) values (?);";
         try (PreparedStatement stm = con.prepareStatement(sql)) {
             stm.setString(1, p.getNome());
             stm.execute();
@@ -37,9 +38,9 @@ public class MarcaDAO {
         }
     }
 
-    public void editarPorID(Marca p) {
+    public void editarPorID(Tipo p) {
         con = ConexaoSQL.conectar();
-        String sql = "update marca set nome_marca =? where id_marca=?;";
+        String sql = "update marca set nome_tipo =? where id_tipo=?;";
         try (PreparedStatement stm = con.prepareStatement(sql)) {
             stm.setString(1, p.getNome());
             stm.execute();
@@ -52,8 +53,8 @@ public class MarcaDAO {
 
     public void deletar(int id) {
         con = ConexaoSQL.conectar();
-        String sql = "delete from marca where id_marca=?";
-        int opcao = JOptionPane.showConfirmDialog(null, "EXCLUIR MARCA NO ID: " + id, "?", JOptionPane.YES_NO_OPTION);
+        String sql = "delete from tipo where id_tipo=?";
+        int opcao = JOptionPane.showConfirmDialog(null, "EXCLUIR tipo NO ID: " + id, "?", JOptionPane.YES_NO_OPTION);
         if (opcao == 0) {
             try (PreparedStatement stm = con.prepareStatement(sql)) {
                 stm.setInt(1, id);
@@ -68,16 +69,16 @@ public class MarcaDAO {
         }
     }
 
-    public List<Marca> listarTodos() {
+    public List<Tipo> listarTodos() {
         con = ConexaoSQL.conectar();
-        List<Marca> Lista = new ArrayList<>();
-        String sql = "Select * from Marca";
+        List<Tipo> Lista = new ArrayList<>();
+        String sql = "Select * from Tipo";
         try (PreparedStatement stm = con.prepareStatement(sql)) {
             ResultSet Resultado = stm.executeQuery();
             while (Resultado.next()) {
-                Marca p = new Marca();
-                p.setId_marca(Resultado.getInt("id_marca"));
-                p.setNome(Resultado.getString("nome_marca"));
+                Tipo p = new Tipo();
+                p.setId_tipo(Resultado.getInt("id_tipo"));
+                p.setNome(Resultado.getString("nome_tipo"));
                 Lista.add(p);
             }
             stm.close();

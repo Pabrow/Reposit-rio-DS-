@@ -43,7 +43,6 @@ Mensagens m = new Mensagens();
         gerarTabelaVendas();
         gerarTabelaProdutos();
         gerarTabelaClientes();
-        gerarLabelFuncionario();
     }
     
     public void gerarData(){
@@ -78,10 +77,6 @@ Mensagens m = new Mensagens();
             preenchidos = true;
         }
         return preenchidos;
-    }
-    public void gerarLabelFuncionario(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
     }
     public void setValor(){
         double valor = calcularValor();
@@ -500,7 +495,6 @@ Mensagens m = new Mensagens();
         lb3.setBackground(new java.awt.Color(255, 255, 255));
         lb3.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb3.setText("Hora da Venda:");
-        lb3.setOpaque(true);
         add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 650, 130, -1));
 
         edData.setVisible(false);
@@ -520,7 +514,6 @@ Mensagens m = new Mensagens();
         lb4.setBackground(new java.awt.Color(255, 255, 255));
         lb4.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb4.setText("Id do Funcionário:");
-        lb4.setOpaque(true);
         add(lb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 690, 160, -1));
 
         edHora.setVisible(false);
@@ -550,7 +543,6 @@ Mensagens m = new Mensagens();
         lb2.setBackground(new java.awt.Color(255, 255, 255));
         lb2.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb2.setText("Data da Venda:");
-        lb2.setOpaque(true);
         add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 610, 130, -1));
 
         tabelaProdutosCarrinho.setModel(new javax.swing.table.DefaultTableModel(

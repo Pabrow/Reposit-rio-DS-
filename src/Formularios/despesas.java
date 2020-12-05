@@ -30,7 +30,6 @@ Mensagens m = new Mensagens();
     public despesas(){
         initComponents();
         gerarData();
-        gerarLabel();
         gerarTabela();
     }
     
@@ -90,10 +89,6 @@ Mensagens m = new Mensagens();
         super.paintComponent(g);
     }
     
-    public void gerarLabel(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
-    }
     
     public void gerarTabela(){
         DefaultTableModel modelo = (DefaultTableModel) tabelaDespesa.getModel();
@@ -171,8 +166,6 @@ Mensagens m = new Mensagens();
         jLabel4 = new javax.swing.JLabel();
         edValor = new javax.swing.JTextField();
         edDescricao = new javax.swing.JTextField();
-        labelFuncionario = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lbParcelas = new javax.swing.JLabel();
         edParcelas = new javax.swing.JTextField();
@@ -246,16 +239,6 @@ Mensagens m = new Mensagens();
         edDescricao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edDescricao);
         edDescricao.setBounds(130, 470, 368, 70);
-
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelFuncionario.setText("[FUNCIONARIO]");
-        add(labelFuncionario);
-        labelFuncionario.setBounds(1250, 30, 140, 15);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel1.setText("Funcionário:");
-        add(jLabel1);
-        jLabel1.setBounds(1140, 30, 100, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Forma Pagamento:");
@@ -475,7 +458,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edParcelas;
     private javax.swing.JTextField edPesquisa;
     private javax.swing.JTextField edValor;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -483,7 +465,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel lbParcelas;

@@ -1,9 +1,10 @@
+package Formularios;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Formularios;
 
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -27,34 +28,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     private void gerarPanels(){
         Home home = new Home();
-        this.jPanel1.add(home);
+        this.jPanel4.add(home);
         produtos cadastroProdutos = new produtos();
-        this.jPanel2.add(cadastroProdutos);
+        this.jPanel5.add(cadastroProdutos);
         clientes clientes = new clientes();
-        this.jPanel3.add(clientes);
+        this.jPanel6.add(clientes);
         funcionarios funcionarios = new funcionarios();
-        this.jPanel4.add(funcionarios);
+        this.jPanel7.add(funcionarios);
         fornecedores fornecedores = new fornecedores();
-        this.jPanel5.add(fornecedores);
+        this.jPanel8.add(fornecedores);
         servicos servico = new servicos();
-        this.jPanel6.add(servico);
+        this.jPanel9.add(servico);
         despesas despesas = new despesas();
-        this.jPanel7.add(despesas);
+        this.jPanel10.add(despesas);
         vendaProduto vendaProduto = new vendaProduto();
-        this.jPanel8.add(vendaProduto);
+        this.jPanel11.add(vendaProduto);
         vendaServico vendaServico = new vendaServico();
-        this.jPanel9.add(vendaServico);
+        this.jPanel12.add(vendaServico);
         compras compra = new compras();
-        this.jPanel10.add(compra);
+        this.jPanel13.add(compra);
         caixa caixa = new caixa();
-        this.jPanel11.add(caixa);
-        this.setSize(960, 575);
+        this.jPanel14.add(caixa);
+        //relaorios caixa = new caixa();
+        //this.jPanel15.add(caixa);
         this.setLocationRelativeTo(null);
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn1");
-        this.setSize(960, 575);
-        this.setLocationRelativeTo(null);
-        jMenu1.setForeground(Color.blue);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,8 +63,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         Painel = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -75,28 +91,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
 
         jInternalFrame1.setVisible(true);
 
@@ -111,370 +109,339 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jButton1.setText("jButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        Painel.setLayout(new java.awt.CardLayout());
+        jPanel3.setBackground(new java.awt.Color(22, 39, 54));
 
-        jPanel5.setPreferredSize(new java.awt.Dimension(650, 669));
-        jPanel5.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel5, "pn5");
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("LOGO SHREK MOTOS");
 
-        jPanel6.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel6, "pn6");
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("CPF DO FUNC");
 
-        jPanel7.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel7, "pn7");
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Conectado como:");
 
-        jPanel8.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel8, "pn8");
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("NOME DO FUNC");
 
-        jPanel9.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel9, "pn9");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(297, 297, 297)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 956, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(128, 128, 128))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
-        jPanel10.setPreferredSize(new java.awt.Dimension(650, 650));
-        jPanel10.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel10, "pn10");
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(0, 0, 1580, 70);
 
-        jPanel11.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel11, "pnonze");
+        jPanel2.setBackground(new java.awt.Color(22, 39, 54));
+        jPanel2.setForeground(new java.awt.Color(22, 39, 54));
+        jPanel2.setToolTipText("");
+        jPanel2.setLayout(null);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("BOTÃO DE TROCAR DE USUARIO");
+        jPanel2.add(jLabel12);
+        jLabel12.setBounds(10, 930, 329, 25);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("HOME");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1);
+        jButton1.setBounds(20, 20, 140, 50);
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("VENDA");
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setFocusPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton2);
+        jButton2.setBounds(20, 160, 140, 50);
 
-        jButton3.setText("jButton3");
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("CAIXA");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setFocusPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton3);
+        jButton3.setBounds(20, 120, 140, 50);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(764, 764, 764)
-                .addComponent(jButton3)
-                .addGap(754, 754, 754))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 1581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addGap(554, 554, 554))
-        );
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("RELATÓRIOS");
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.setFocusPainted(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4);
+        jButton4.setBounds(20, 590, 140, 50);
 
-        Painel.add(jPanel1, "pn1");
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("COMPRA");
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.setFocusPainted(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton5);
+        jButton5.setBounds(20, 210, 140, 50);
 
-        jPanel2.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel2, "pn2");
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("DESPESAS");
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setFocusPainted(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton6);
+        jButton6.setBounds(20, 270, 140, 50);
 
-        jPanel3.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel3, "pn3");
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("CLIENTES");
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
+        jButton7.setFocusPainted(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton7);
+        jButton7.setBounds(20, 330, 140, 50);
+
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("FUNCIONÁRIOS");
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+        jButton8.setFocusPainted(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton8);
+        jButton8.setBounds(20, 390, 140, 50);
+
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("FORNECEDORES");
+        jButton9.setBorderPainted(false);
+        jButton9.setContentAreaFilled(false);
+        jButton9.setFocusPainted(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton9);
+        jButton9.setBounds(20, 440, 140, 50);
+
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("PRODUTOS");
+        jButton10.setBorderPainted(false);
+        jButton10.setContentAreaFilled(false);
+        jButton10.setFocusPainted(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton10);
+        jButton10.setBounds(20, 490, 140, 50);
+
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("ESTOQUE");
+        jButton11.setBorderPainted(false);
+        jButton11.setContentAreaFilled(false);
+        jButton11.setFocusPainted(false);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton11);
+        jButton11.setBounds(20, 540, 140, 50);
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 60, 180, 1010);
+
+        Painel.setLayout(new java.awt.CardLayout());
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
+        Painel.add(jLabel17, "card2");
 
         jPanel4.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel4, "pn4");
+        Painel.add(jPanel4, "card3");
+
+        jPanel5.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel5, "card6");
+
+        jPanel6.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel6, "card7");
+
+        jPanel7.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel7, "card8");
+
+        jPanel8.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel8, "card9");
+
+        jPanel9.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel9, "card10");
+
+        jPanel10.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel10, "card11");
+
+        jPanel11.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel11, "card12");
 
         jPanel12.setLayout(new java.awt.BorderLayout());
         Painel.add(jPanel12, "card13");
 
         jPanel13.setLayout(new java.awt.BorderLayout());
-        Painel.add(jPanel13, "card14");
+        Painel.add(jPanel13, "card5");
 
-        jMenuBar1.setBorder(null);
+        jPanel14.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel14, "card4");
 
-        jMenu1.setText("Home");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu1);
+        jPanel15.setLayout(new java.awt.BorderLayout());
+        Painel.add(jPanel15, "card14");
 
-        jMenu2.setText("Cadastros");
+        getContentPane().add(Painel);
+        Painel.setBounds(176, 64, 1400, 1010);
 
-        jMenuItem2.setText("Produtos");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
-
-        jMenuItem3.setText("Clientes");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
-        jMenuItem4.setText("Funcionários");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("Fornecedores");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Serviços");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem6);
-
-        jMenuItem7.setText("Despesas");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem7);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Venda");
-
-        jMenuItem8.setText("Produtos");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem8);
-
-        jMenuItem9.setText("Serviços");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem9);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Compra");
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
-            }
-        });
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Caixa");
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5MouseClicked(evt);
-            }
-        });
-        jMenu5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu5ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu5);
-
-        setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        setSize(new java.awt.Dimension(1597, 1188));
+        setSize(new java.awt.Dimension(1592, 1110));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn2");
-        this.setSize(650, 720);//[897, 599]
+        cl.show(Painel, "card3");
         this.setLocationRelativeTo(null);
-        jMenu2.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn5");
-        this.setSize(650, 720);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu2.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn8");
-        this.setSize(925, 720);//[897, 599]//LARGURA, ALTURA
-        this.setLocationRelativeTo(null);
-        jMenu3.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
-
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        
-    }//GEN-LAST:event_jMenu1ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn3");
-        this.setSize(1393, 930);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu2.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black);
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn4");
-        this.setSize(650, 720);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu2.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black);
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn6");
-        this.setSize(650, 720);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu2.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn7");
-        this.setSize(650, 720);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu2.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
-
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn9");
-        this.setSize(925, 720);//[897, 599]//LARGURA, ALTURA
-        this.setLocationRelativeTo(null);
-        jMenu3.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
-    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-    
-    }//GEN-LAST:event_jMenu4ActionPerformed
-
-    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
-    }//GEN-LAST:event_jMenu5ActionPerformed
-
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pnonze");
-        this.setSize(650, 720);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu5.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenu5MouseClicked
-
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn10");
-        this.setSize(925, 720);//[897, 599]
-        this.setLocationRelativeTo(null);
-        jMenu4.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenu4MouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        jMenu1.setForeground(Color.black);
-        jMenu2.setForeground(Color.black);
-        jMenu3.setForeground(Color.black);
-        jMenu4.setForeground(Color.black);
-        jMenu5.setForeground(Color.black); 
-        CardLayout cl = (CardLayout) Painel.getLayout();
-        cl.show(Painel, "pn1");
-        this.setSize(960, 575);
-        this.setLocationRelativeTo(null);
-        jMenu1.setForeground(Color.blue);
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card3");
+        this.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card4");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card3");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card5");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card11");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card3");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card8");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card9");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card12");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        CardLayout cl = (CardLayout) Painel.getLayout();
+        cl.show(Painel, "card3");
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -502,13 +469,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -521,28 +481,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Painel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

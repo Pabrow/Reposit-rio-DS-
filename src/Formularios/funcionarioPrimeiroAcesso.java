@@ -5,7 +5,9 @@
  */
 package Formularios;
 
+import DAO.FuncaoDAO;
 import DAO.FuncionarioDAO;
+import Objetos.Funcao;
 import Objetos.Funcionario;
 import Objetos.Mensagens;
 import Objetos.Usuario;
@@ -15,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -34,6 +37,16 @@ Mensagens m = new Mensagens();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
+    
+    public void gerarComboBox(){
+        comboBox.removeAllItems();
+        FuncaoDAO td = new FuncaoDAO();
+        List<Funcao> Lista = td.listarTodos();
+        for(Funcao p: Lista){     
+            comboBox.addItem(p.getNome());
+        }
+    }
+    
     public boolean camposPreenchidos(){
         boolean preenchidos = false;
         int qtd = 0;
@@ -73,7 +86,6 @@ Mensagens m = new Mensagens();
     
     public void limparCampos(){
         edCpf.setText(null);
-        edFuncao.setText(null);
         edPassSenha.setText(null);
         edEmail.setText(null);
         edSalario.setText(null);
@@ -111,9 +123,10 @@ Mensagens m = new Mensagens();
         edTelefone = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
         edPassSenha = new javax.swing.JPasswordField();
-        edFuncao = new javax.swing.JTextField();
         labelFuncionario = new javax.swing.JLabel();
         edCpf = new javax.swing.JFormattedTextField();
+        comboBox = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -219,9 +232,6 @@ Mensagens m = new Mensagens();
 
         edPassSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel2.add(edPassSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 520, 250, 30));
-
-        edFuncao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(edFuncao, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 250, 30));
         jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 47, 47, 23));
 
         try {
@@ -231,8 +241,18 @@ Mensagens m = new Mensagens();
         }
         jPanel2.add(edCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 250, 30));
 
+        comboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(comboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 210, 30));
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 590, -1, 30));
+
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1400, 990));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 990));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,7 +262,9 @@ Mensagens m = new Mensagens();
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -260,7 +282,7 @@ Mensagens m = new Mensagens();
             p.setRg(edRg.getText());
             p.setSexo(String.valueOf(comBoxSexo.getSelectedItem()));
             p.setTelefone(edTelefone.getText());
-            p.setFuncao(edFuncao.getText());
+            p.setFuncao(String.valueOf(comboBox.getSelectedIndex()));
             p.setSenha(edPassSenha.getText());
             p.setSalario(Double.parseDouble(edSalario.getText()));
             //Enviar para o DAO
@@ -284,6 +306,24 @@ Mensagens m = new Mensagens();
         //this.dispose();
         f.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja acicionar uma nova função?", "ADICIONAR FUNÇÃO", JOptionPane.YES_NO_OPTION);
+        if(opcao==0){
+            JTextField textfield = new JTextField(50);
+            JLabel rotulo = new JLabel("Insira a nova função:");
+            JPanel painel = new JPanel();
+            painel.add(rotulo);
+            painel.add(textfield);
+            JOptionPane.showMessageDialog(null, painel, "ADICIONAR FUNÇÃO", JOptionPane.PLAIN_MESSAGE);
+            String novoMarca = textfield.getText();
+            Funcao t = new Funcao();
+            t.setNome(novoMarca);
+            FuncaoDAO td = new FuncaoDAO();
+            td.cadastrarFuncao(t);
+            gerarComboBox();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,14 +364,15 @@ Mensagens m = new Mensagens();
     private javax.swing.JButton btCadastrar;
     private javax.swing.JButton btLimparCampos;
     private javax.swing.JComboBox<String> comBoxSexo;
+    private javax.swing.JComboBox<String> comboBox;
     private javax.swing.JFormattedTextField edCpf;
     private javax.swing.JTextField edEmail;
-    private javax.swing.JTextField edFuncao;
     private javax.swing.JTextField edNome;
     private javax.swing.JPasswordField edPassSenha;
     private javax.swing.JTextField edRg;
     private javax.swing.JTextField edSalario;
     private javax.swing.JFormattedTextField edTelefone;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

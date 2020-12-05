@@ -5,8 +5,15 @@
  */
 package DAO;
 
+import Conexao.ConexaoSQL;
+import Objetos.Funcao;
 import Objetos.Mensagens;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,9 +24,9 @@ public class FuncaoDAO {
     private Connection con = null;
     Mensagens m = new Mensagens();
     
-    public void cadastrarMarca(marca p){
+    public void cadastrarFuncao(Funcao p){
         con = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Funcao (nome_Funcao) values (?);";
+        String sql = "INSERT INTO Funcao (nome_funcao) values (?);";
         try( PreparedStatement stm =con.prepareStatement(sql)){   
           stm.setString(1, p.getNome());
           stm.execute();
@@ -30,7 +37,7 @@ public class FuncaoDAO {
         }   
     }
     
-    public void editarPorID(Marca p){
+    public void editarPorID(Funcao p){
         con = ConexaoSQL.conectar();
         String sql = "update Funcao set nome_Funcao =? where id_Funcao=?;";
          try( PreparedStatement stm =con.prepareStatement(sql)){   
@@ -68,8 +75,8 @@ public class FuncaoDAO {
             ResultSet Resultado  = stm.executeQuery();
             while(Resultado.next()){
                 Funcao p = new Funcao();
-                p.setId_Funcao(Resultado.getInt("id_Funcao"));
-                p.setNome(Resultado.getString("nome_Funcao"));
+                p.setId_funcao(Resultado.getInt("id_funcao"));
+                p.setNome(Resultado.getString("nome_funcao"));
                 Lista.add(p);
             }
             stm.close();

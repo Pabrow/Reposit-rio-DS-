@@ -126,7 +126,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(297, 297, 297)
                 .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 796, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 956, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addComponent(jLabel14)
@@ -145,11 +145,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(0, 0, 1420, 60);
+        jPanel3.setBounds(0, 0, 1580, 70);
 
         jPanel2.setBackground(new java.awt.Color(22, 39, 54));
         jPanel2.setForeground(new java.awt.Color(22, 39, 54));
@@ -240,7 +240,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel12.setBounds(0, 746, 329, 25);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 60, 170, 820);
+        jPanel2.setBounds(0, 60, 180, 1010);
 
         jPanel1.setLayout(new java.awt.CardLayout());
 

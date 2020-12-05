@@ -47,8 +47,6 @@ Mensagens m = new Mensagens();
     }
     
     public void gerarLabel(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
         jLabel2.setVisible(false);
         jLabel3.setVisible(false);
         jLabel4.setVisible(false);
@@ -174,8 +172,6 @@ Mensagens m = new Mensagens();
         btCadastrar = new javax.swing.JButton();
         btLimparCampos = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        labelFuncionario = new javax.swing.JLabel();
         labelId = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -240,14 +236,6 @@ Mensagens m = new Mensagens();
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Gerar Caixa");
         jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 80, 1400, 90));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel1.setText("Funcionário:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, 100, -1));
-
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        labelFuncionario.setText("[FUNCIONARIO]");
-        jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 10, 140, -1));
 
         labelId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel2.add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 30, 20));
@@ -476,7 +464,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JTextField edSaldoIn;
     private javax.swing.JTextField edTotalPag;
     private javax.swing.JTextField edTotalRec;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -491,7 +478,6 @@ Mensagens m = new Mensagens();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JTable tabelaCaixas;

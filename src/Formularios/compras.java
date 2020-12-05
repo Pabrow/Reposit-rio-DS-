@@ -41,7 +41,6 @@ private List<Integer> listaIdsProdutos;
      */
     public compras() {
         initComponents();
-        gerarLabel();
         gerarData();
         gerarTabelaCompras();
         gerarTabelaProdutos();
@@ -79,10 +78,6 @@ private List<Integer> listaIdsProdutos;
         return preenchidos;
     }
     
-    public void gerarLabel(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
-    }
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
     }
@@ -154,10 +149,6 @@ private List<Integer> listaIdsProdutos;
         return dataTOP;
     }
     
-    public void gerarLabelFuncionario(){
-        Usuario user = Usuario.getInstancia();
-        labelFuncionario.setText(user.getCpf());
-    }
     
     public void gerarTabelaCompras(){
         DefaultTableModel modelo = (DefaultTableModel) tabelaCompras.getModel();
@@ -270,8 +261,8 @@ private List<Integer> listaIdsProdutos;
             edData.setVisible(true);
             edFuncID.setVisible(true);
             lb1.setVisible(true);
-            lb2.setVisible(true);
-            lb3.setVisible(true);
+            //lb2.setVisible(true);
+            //lb3.setVisible(true);
             labelId.setText("Id:"+p.getId_compra());
             //Pegando valores dos EDs
             edValor.setText(String.valueOf(p.getValor()));
@@ -295,8 +286,8 @@ private List<Integer> listaIdsProdutos;
             edData.setVisible(false);
             edFuncID.setVisible(false);
             lb1.setVisible(false);
-            lb2.setVisible(false);
-            lb3.setVisible(false);
+            //lb2.setVisible(false);
+            //lb3.setVisible(false);
         }
     }
     
@@ -309,13 +300,12 @@ private List<Integer> listaIdsProdutos;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lb1 = new javax.swing.JLabel();
-        lb2 = new javax.swing.JLabel();
         edValor = new javax.swing.JTextField();
         btCadastrar = new javax.swing.JButton();
-        labelFuncionario = new javax.swing.JLabel();
         btLimparCampos = new javax.swing.JButton();
         labelId = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -329,8 +319,6 @@ private List<Integer> listaIdsProdutos;
         btPesquisarFornecedor = new javax.swing.JButton();
         btPesquisarProduto = new javax.swing.JButton();
         edData = new javax.swing.JFormattedTextField();
-        lb3 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         btAdicionarItem = new javax.swing.JButton();
         lbParcelas = new javax.swing.JLabel();
         edParcelas = new javax.swing.JTextField();
@@ -354,15 +342,19 @@ private List<Integer> listaIdsProdutos;
         btDeletar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabelaCompras = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+
+        jButton1.setText("jButton1");
 
         setPreferredSize(new java.awt.Dimension(650, 650));
         setLayout(null);
 
-        labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         labelTitulo.setText("Realizar Compra");
         add(labelTitulo);
-        labelTitulo.setBounds(330, 30, 230, 29);
+        labelTitulo.setBounds(600, 110, 360, 44);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Forma Pagamento:");
@@ -374,14 +366,6 @@ private List<Integer> listaIdsProdutos;
         lb1.setText("Valor da Compra:");
         add(lb1);
         lb1.setBounds(120, 490, 93, 20);
-
-        lb2.setVisible(false);
-        lb2.setBackground(new java.awt.Color(255, 255, 255));
-        lb2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lb2.setText("Data da Compra:");
-        lb2.setOpaque(true);
-        add(lb2);
-        lb2.setBounds(120, 520, 91, 20);
 
         edValor.setVisible(false);
         edValor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -398,8 +382,6 @@ private List<Integer> listaIdsProdutos;
         });
         add(btCadastrar);
         btCadastrar.setBounds(320, 660, 167, 33);
-        add(labelFuncionario);
-        labelFuncionario.setBounds(1300, 10, 90, 28);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -492,19 +474,6 @@ private List<Integer> listaIdsProdutos;
         }
         add(edData);
         edData.setBounds(260, 520, 90, 20);
-
-        lb3.setVisible(false);
-        lb3.setBackground(new java.awt.Color(255, 255, 255));
-        lb3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lb3.setText("Id do Funcionário:");
-        lb3.setOpaque(true);
-        add(lb3);
-        lb3.setBounds(120, 550, 98, 20);
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setText("Funcionário:");
-        add(jLabel13);
-        jLabel13.setBounds(1195, 10, 100, 17);
 
         btAdicionarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btAdicionarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ADICIONAR ITEM.png"))); // NOI18N
@@ -627,11 +596,11 @@ private List<Integer> listaIdsProdutos;
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("Pesquisar:");
         add(jLabel11);
-        jLabel11.setBounds(930, 130, 54, 15);
+        jLabel11.setBounds(920, 190, 54, 15);
 
         edPesquisa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edPesquisa);
-        edPesquisa.setBounds(990, 130, 240, 23);
+        edPesquisa.setBounds(980, 190, 240, 23);
 
         btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
         btPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -643,7 +612,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btPesquisar);
-        btPesquisar.setBounds(1240, 120, 133, 33);
+        btPesquisar.setBounds(1230, 180, 133, 33);
 
         btAtualizar.setToolTipText("Editar o cliente selecionado.");
         btEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -655,7 +624,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btEditar);
-        btEditar.setBounds(1000, 590, 103, 41);
+        btEditar.setBounds(920, 650, 103, 41);
 
         btAtualizar.setToolTipText("Atualiza a tabela.");
         btAtualizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -667,7 +636,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btAtualizar);
-        btAtualizar.setBounds(1130, 590, 117, 39);
+        btAtualizar.setBounds(1060, 650, 117, 39);
 
         btDeletar.setToolTipText("Deleta o cliente selecionado.");
         btDeletar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -679,7 +648,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btDeletar);
-        btDeletar.setBounds(1270, 590, 103, 33);
+        btDeletar.setBounds(1220, 650, 103, 33);
 
         tabelaCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -693,7 +662,15 @@ private List<Integer> listaIdsProdutos;
     jScrollPane3.setViewportView(tabelaCompras);
 
     add(jScrollPane3);
-    jScrollPane3.setBounds(902, 160, 470, 402);
+    jScrollPane3.setBounds(890, 220, 470, 402);
+
+    jLabel3.setText("Data da Compra:");
+    add(jLabel3);
+    jLabel3.setBounds(120, 520, 90, 20);
+
+    jLabel6.setText("ID do Funcionario");
+    add(jLabel6);
+    jLabel6.setBounds(120, 550, 110, 14);
 
     jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
     add(jLabel2);
@@ -882,24 +859,23 @@ private List<Integer> listaIdsProdutos;
     private javax.swing.JTextField edPesquisaCliente;
     private javax.swing.JTextField edPesquisaProduto;
     private javax.swing.JTextField edValor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JLabel labelFuncionario;
     private javax.swing.JLabel labelId;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel lb1;
-    private javax.swing.JLabel lb2;
-    private javax.swing.JLabel lb3;
     private javax.swing.JLabel lbParcelas;
     private javax.swing.JLabel lbvalor;
     private javax.swing.JTable tabelaCompras;
