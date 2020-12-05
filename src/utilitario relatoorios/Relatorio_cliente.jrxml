@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_cliente" language="groovy" pageWidth="830" pageHeight="779" columnWidth="790" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a11f5e1-2ca5-4576-bdbe-56f27a4004d1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * From Cliente]]>
+	</queryString>
+	<field name="id_cli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tel_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="end_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataNasc_cli" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nome_cli">
+		<groupExpression><![CDATA[$F{nome_cli}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="156" splitType="Stretch">
+			<image>
+				<reportElement x="634" y="2" width="156" height="154" uuid="d6b577a8-b226-4442-b8a7-bb6ccdada53b"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="2" width="166" height="154" uuid="a5c693bc-ff43-4865-91b4-1de80c3b4b1d"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="166" y="55" width="468" height="40" uuid="40bed7e4-8527-4bca-a681-5aa93cf08b42"/>
+				<textElement textAlignment="Center">
+					<font size="23" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELÁTORIO DE CLIENTES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="330" y="0" width="84" height="20" uuid="cf61c134-9690-476a-be43-c89c705d70c4"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="0" width="84" height="20" uuid="202e58e0-710b-4fe2-a040-6e61a3fe3dd1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEXO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="100" height="20" uuid="6f1414a2-f724-4908-b62a-05e07b344d9e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="45" height="20" uuid="a4970434-22cb-414e-ae2c-fc5c20bb1bd6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="80" height="20" uuid="4db6155e-befa-4f45-8433-b0a2aa0b059a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="494" y="0" width="98" height="20" uuid="a69cd7e3-636d-4d48-9c98-81ff0239ff90"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="0" width="100" height="20" uuid="988a4f95-9b02-4d35-9cd2-ce765d914b30"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="592" y="0" width="98" height="20" uuid="137d2772-35f5-49dd-8133-93433093b54d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENDEREÇO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="690" y="0" width="98" height="20" uuid="8981af16-2c51-407f-a8f9-145fd1f54fa6"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA DE NASC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="45" height="20" uuid="9928615a-12f4-4441-b91f-4c0958091dbb"/>
+				<textFieldExpression><![CDATA[$F{id_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="0" width="100" height="20" uuid="54e645d7-2e7e-40cd-a511-fdeb972a15fe"/>
+				<textFieldExpression><![CDATA[$F{nome_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="0" width="100" height="20" uuid="0760ce9a-51bb-4745-836f-9f5f4ba9a292"/>
+				<textFieldExpression><![CDATA[$F{cpf_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="84" height="20" uuid="11d63954-c10b-40f0-a9bd-17926a31b6aa"/>
+				<textFieldExpression><![CDATA[$F{sexo_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="84" height="20" uuid="00ed1163-2ae0-4520-8a59-57216ad095a7"/>
+				<textFieldExpression><![CDATA[$F{rg_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="80" height="20" uuid="d3956813-781f-4e8b-8982-72f6db0f9c7e"/>
+				<textFieldExpression><![CDATA[$F{tel_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="0" width="98" height="20" uuid="36e4f63b-092e-466d-b17c-78f9a4298ee5"/>
+				<textFieldExpression><![CDATA[$F{email_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="592" y="0" width="98" height="20" uuid="c0497764-4a88-48fb-aec1-619ea0dccdd5"/>
+				<textFieldExpression><![CDATA[$F{end_cli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="690" y="0" width="96" height="20" uuid="fd9e3e4c-5fcf-48ba-a18a-f27709ead568"/>
+				<textFieldExpression><![CDATA[$F{dataNasc_cli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="787" height="21" uuid="2ea89464-2a0d-4bd6-9bbb-4cee6a98eabf"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHREK MOTOS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_compras" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd02439f-f153-43d8-b939-a3cdca79f645">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from Compra]]>
+	</queryString>
+	<field name="id_compra" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_compra" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_compra" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="formaPag_compra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="parcelas_compra" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="data_compra">
+		<groupExpression><![CDATA[$F{data_compra}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="156" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="156" height="156" uuid="378e62db-5345-44fd-8582-ebbb58eb2f9c"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="156" y="55" width="243" height="40" uuid="f2094a84-6206-4224-a60c-f9be716b6a28"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELÁTORIO DE COMPRAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="399" y="0" width="156" height="156" uuid="8931f43d-ec65-42de-b39e-8722f790385f"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="399" y="0" width="156" height="20" uuid="ba24cff9-8bb4-4d1e-8763-d692d7cb9e35"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMA DE PAGAMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="0" width="100" height="20" uuid="8889f09a-89df-463e-8ba8-520b1cb2b5f8"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARCELAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="e0871c1c-4bca-4ba3-8d3e-06d5f9d0fec0"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="75a794a4-25c4-4305-8638-f8749e94b97f"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4ab1c2d4-b57c-464d-bf0c-0d1b2160fd3b"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="3052af5f-b429-4bc9-9623-0a903172a4d8"/>
+				<textFieldExpression><![CDATA[$F{data_compra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="156" height="20" uuid="4ff9f04b-3058-4be7-8a16-1f1e7ea09708"/>
+				<textFieldExpression><![CDATA[$F{formaPag_compra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="61134072-d554-48a9-8495-388817ae4dba"/>
+				<textFieldExpression><![CDATA[$F{valor_compra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="61e26b3d-9aa2-4565-8fdf-bfd39884e40e"/>
+				<textFieldExpression><![CDATA[$F{parcelas_compra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="cc228276-6613-434a-915c-92d2a18a6fca"/>
+				<textFieldExpression><![CDATA[$F{id_compra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="555" height="30" uuid="d8e4d0c4-fddc-48d5-be23-f2ae2bc3cdb5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHREK MOTOS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

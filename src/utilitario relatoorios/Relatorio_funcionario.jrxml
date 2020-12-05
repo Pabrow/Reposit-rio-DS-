@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_funcionario" language="groovy" pageWidth="839" pageHeight="842" columnWidth="799" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ea56406-fbc4-41df-abaa-71c2013965d6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from Funcionario]]>
+	</queryString>
+	<field name="id_func" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="senha_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tel_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="funcao_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo_func" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salario_func" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nome_func">
+		<groupExpression><![CDATA[$F{nome_func}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="157" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="0" width="156" height="156" uuid="93f7e034-d1a5-4e48-921d-6193a2b5f81f"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="643" y="1" width="156" height="156" uuid="77c11c93-5c95-45d0-ad2e-976e8e208ba7"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="166" y="50" width="477" height="40" uuid="d4edffdf-b094-4089-a9a1-e09e0d996f84"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[RELÁTORIO DE FUNCIONÁRIOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="497" y="0" width="106" height="20" uuid="42909f95-29a5-48ad-88ca-e283aa12c0e3"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="84" height="20" uuid="4876f88d-76cb-47e5-baf3-1bfc7d03bf06"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="701" y="0" width="98" height="20" uuid="bb6dc78a-004c-47e2-8dfb-1d5bb9b5b62a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALÁRIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="49" y="0" width="100" height="20" uuid="cfd178e5-de5c-4b40-931f-37185fd3fbd8"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="0" width="84" height="20" uuid="1a8d4e88-7b0a-4a13-97b3-4ad2d590eb1f"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEXO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="603" y="0" width="98" height="20" uuid="27102130-c9a3-4ee9-befd-df05be05812e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FUNÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="0" width="100" height="20" uuid="49bcfacd-ac32-471c-a3c8-7fceaa5dd85a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="0" width="46" height="20" uuid="836518d9-4d60-479c-9d50-5d7b9dc2bf5a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="80" height="20" uuid="ed5fe0a6-45dc-4f34-a028-586095d2cc96"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="39" height="20" uuid="0ea3c2ef-6bad-4193-a0ff-62da5d3376ed"/>
+				<textFieldExpression><![CDATA[$F{id_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="0" width="100" height="20" uuid="8946494e-1d48-4c2c-b944-032dd26be3e7"/>
+				<textFieldExpression><![CDATA[$F{nome_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="0" width="100" height="20" uuid="bb286d1e-bf3e-4189-a3ed-ee10d13b870b"/>
+				<textFieldExpression><![CDATA[$F{cpf_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="0" width="84" height="20" uuid="71d63661-060e-4d46-a613-2a266e5022e3"/>
+				<textFieldExpression><![CDATA[$F{sexo_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="84" height="20" uuid="cf9e22ed-c42e-4086-a385-876219e21cac"/>
+				<textFieldExpression><![CDATA[$F{rg_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="80" height="20" uuid="b832ae5c-c9a3-4a20-92ba-a444161847e6"/>
+				<textFieldExpression><![CDATA[$F{tel_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="106" height="20" uuid="d79e7106-e833-4a38-86e8-2a9d6f57459b"/>
+				<textFieldExpression><![CDATA[$F{email_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="603" y="0" width="98" height="20" uuid="1c953cb9-a5ca-4995-aaab-a7f8115cdaec"/>
+				<textFieldExpression><![CDATA[$F{funcao_func}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="701" y="0" width="98" height="20" uuid="b2a2143a-5d85-438d-83f2-282e9f528b4d"/>
+				<textFieldExpression><![CDATA[$F{salario_func}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="794" height="21" uuid="47ccbdb4-6f11-4aa8-b237-96d334690dd1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHREK MOTOS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

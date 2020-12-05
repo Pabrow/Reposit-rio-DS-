@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_vendas" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="98c501b7-7e9f-4c2e-9420-4f175607b779">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from Venda]]>
+	</queryString>
+	<field name="id_venda" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_venda" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_venda" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_venda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="formaPag_venda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="data_venda">
+		<groupExpression><![CDATA[$F{data_venda}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="156" splitType="Stretch">
+			<image>
+				<reportElement x="-10" y="0" width="156" height="156" uuid="ba0517d9-d75d-42d4-ab54-966201cee029"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="399" y="0" width="156" height="152" uuid="dc609cc0-709a-485a-8a35-c16ee60874b3"/>
+				<imageExpression><![CDATA["C:\\Users\\Kreibin da gameplay\\Desktop\\shrek motos\\Logo shrek motos.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="146" y="57" width="253" height="40" uuid="7bea91f6-e1f9-428b-977b-de2db3ad1240"/>
+				<textElement textAlignment="Center">
+					<font size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELÁTORIO DE VENDAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20" uuid="0b4e300a-7739-4d31-9f6b-6243c24a5dc1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="10" width="100" height="20" uuid="e97be84f-9ba1-4dfc-a987-a3ea9ca401f9"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="10" width="100" height="20" uuid="88872d3f-ac3c-48c4-ab6b-b5f462d2c60a"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="10" width="100" height="20" uuid="94793b3a-b076-42db-82a9-e8a6c705ddd5"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="10" width="156" height="20" uuid="a74edd9f-0765-4fef-96f4-255c95f98777"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMA DE PAGAMENTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="30" width="100" height="20" uuid="2b5d6ea3-65ab-4a93-bb40-4ca7c838ee73"/>
+				<textFieldExpression><![CDATA[$F{id_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="30" width="100" height="20" uuid="7204d5aa-6a7e-49f4-aec6-89ce642eff32"/>
+				<textFieldExpression><![CDATA[$F{data_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="30" width="100" height="20" uuid="3eea9b55-a680-45a3-8d77-7354236e4cd2"/>
+				<textFieldExpression><![CDATA[$F{data_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="30" width="100" height="20" uuid="bd4ad372-9a8d-4f4d-af48-57eac59aae45"/>
+				<textFieldExpression><![CDATA[$F{hora_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="30" width="156" height="20" uuid="ecb6564b-22aa-49c0-9a4d-cbe3a457a9b8"/>
+				<textFieldExpression><![CDATA[$F{formaPag_venda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="7" splitType="Stretch"/>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="555" height="30" uuid="aff24ddd-b80d-477e-87b5-7eb61ef799dc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SHREK MOTOS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
