@@ -247,15 +247,15 @@ Mensagens m = new Mensagens();
         add(edDescricao);
         edDescricao.setBounds(130, 470, 368, 70);
 
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
         add(labelFuncionario);
-        labelFuncionario.setBounds(1210, 30, 88, 15);
+        labelFuncionario.setBounds(1250, 30, 140, 15);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Funcionário:");
         add(jLabel1);
-        jLabel1.setBounds(1140, 30, 65, 15);
+        jLabel1.setBounds(1140, 30, 100, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Forma Pagamento:");
@@ -289,7 +289,8 @@ Mensagens m = new Mensagens();
         edData.setBounds(280, 240, 120, 30);
 
         btCancelarEdicao.setVisible(false);
-        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btCancelarEdicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
         btCancelarEdicao.setText("Cancelar Edição");
         btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,7 +298,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btCancelarEdicao);
-        btCancelarEdicao.setBounds(270, 710, 129, 25);
+        btCancelarEdicao.setBounds(240, 670, 170, 50);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("Pesquisar:");
@@ -328,7 +329,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btDeletar);
-        btDeletar.setBounds(1040, 730, 109, 33);
+        btDeletar.setBounds(1050, 730, 120, 40);
 
         btAtualizar.setToolTipText("Atualiza a tabela");
         btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -340,7 +341,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btAtualizar);
-        btAtualizar.setBounds(900, 740, 127, 39);
+        btAtualizar.setBounds(900, 730, 127, 39);
 
         btAtualizar.setToolTipText("Edita a despesa selecionada");
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -352,7 +353,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btEditar);
-        btEditar.setBounds(750, 750, 109, 41);
+        btEditar.setBounds(770, 730, 109, 41);
 
         tabelaDespesa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

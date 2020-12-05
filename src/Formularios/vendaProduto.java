@@ -343,6 +343,7 @@ Mensagens m = new Mensagens();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lb1 = new javax.swing.JLabel();
@@ -394,22 +395,23 @@ Mensagens m = new Mensagens();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Realizar Venda");
-        add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 46, -1, -1));
+        add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1380, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         jLabel4.setText("Forma Pagamento:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 324, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 520, 170, -1));
 
         lb1.setVisible(false);
-        lb1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lb1.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb1.setText("Valor da Venda:");
-        add(lb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 377, -1, -1));
+        add(lb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 580, 140, -1));
 
         edValor.setVisible(false);
         edValor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        add(edValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 374, 279, -1));
+        add(edValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 580, 180, -1));
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE REALIZAR VENDA.png"))); // NOI18N
@@ -419,7 +421,7 @@ Mensagens m = new Mensagens();
                 btCadastrarActionPerformed(evt);
             }
         });
-        add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 507, -1, 33));
+        add(btCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 740, -1, 33));
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -429,12 +431,13 @@ Mensagens m = new Mensagens();
                 btLimparCamposActionPerformed(evt);
             }
         });
-        add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 546, 168, -1));
+        add(btLimparCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 740, 150, -1));
 
         labelId.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(421, 81, 43, 13));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 255));
         jLabel8.setText("Produto:");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 110, -1, -1));
 
@@ -448,7 +451,7 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane2.setViewportView(tabelaProdutos);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 420, 133));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 420, 300));
 
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -460,17 +463,18 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane4.setViewportView(tabelaClientes);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 136, 423, 133));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 423, 300));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 255));
         jLabel9.setText("Cliente:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 110, 44, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 70, -1));
 
         edPesquisaProduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        add(edPesquisaProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 107, 231, -1));
+        add(edPesquisaProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 107, 210, -1));
 
         edPesquisaCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        add(edPesquisaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 105, 238, 25));
+        add(edPesquisaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 110, 220, 25));
 
         btPesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btPesquisarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
@@ -480,7 +484,7 @@ Mensagens m = new Mensagens();
                 btPesquisarClienteActionPerformed(evt);
             }
         });
-        add(btPesquisarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 105, -1, 25));
+        add(btPesquisarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, -1, 25));
 
         btPesquisarProduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btPesquisarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
@@ -494,10 +498,10 @@ Mensagens m = new Mensagens();
 
         lb3.setVisible(false);
         lb3.setBackground(new java.awt.Color(255, 255, 255));
-        lb3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lb3.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb3.setText("Hora da Venda:");
         lb3.setOpaque(true);
-        add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 437, -1, -1));
+        add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 650, 130, -1));
 
         edData.setVisible(false);
         try {
@@ -505,21 +509,26 @@ Mensagens m = new Mensagens();
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        add(edData, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 404, 279, -1));
+        edData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edDataActionPerformed(evt);
+            }
+        });
+        add(edData, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 610, 180, -1));
 
         lb4.setVisible(false);
         lb4.setBackground(new java.awt.Color(255, 255, 255));
-        lb4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lb4.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb4.setText("Id do Funcionário:");
         lb4.setOpaque(true);
-        add(lb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 468, -1, -1));
+        add(lb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 690, 160, -1));
 
         edHora.setVisible(false);
         edHora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         edHora.setText("AUTOMÁTICA");
-        add(edHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 434, 279, -1));
+        add(edHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 650, 180, 20));
 
-        btAdicionarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btAdicionarItem.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btAdicionarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ADICIONAR ITEM.png"))); // NOI18N
         btAdicionarItem.setText("ADICIONAR ITEM");
         btAdicionarItem.addActionListener(new java.awt.event.ActionListener() {
@@ -527,22 +536,22 @@ Mensagens m = new Mensagens();
                 btAdicionarItemActionPerformed(evt);
             }
         });
-        add(btAdicionarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 275, -1, 33));
+        add(btAdicionarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, -1, 33));
 
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
-        add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(782, 29, -1, -1));
+        add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel13.setText("Funcionário:");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(711, 29, -1, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 20, -1, -1));
 
         lb2.setVisible(false);
         lb2.setBackground(new java.awt.Color(255, 255, 255));
-        lb2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lb2.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lb2.setText("Data da Venda:");
         lb2.setOpaque(true);
-        add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 406, -1, -1));
+        add(lb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 610, 130, -1));
 
         tabelaProdutosCarrinho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -554,7 +563,7 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane5.setViewportView(tabelaProdutosCarrinho);
 
-        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(462, 312, 423, 143));
+        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 423, 320));
 
         comboBoxFormaPag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista", "A Prazo" }));
         comboBoxFormaPag.addActionListener(new java.awt.event.ActionListener() {
@@ -562,11 +571,11 @@ Mensagens m = new Mensagens();
                 comboBoxFormaPagActionPerformed(evt);
             }
         });
-        add(comboBoxFormaPag, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 319, 153, -1));
+        add(comboBoxFormaPag, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 520, 160, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Carrinho do cliente:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 287, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
         btAlterarQtd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btAlterarQtd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ALTERAR QUANTIDADE.png"))); // NOI18N
@@ -576,7 +585,7 @@ Mensagens m = new Mensagens();
                 btAlterarQtdActionPerformed(evt);
             }
         });
-        add(btAlterarQtd, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, -1, 33));
+        add(btAlterarQtd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 890, 180, 33));
 
         btDeletarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btDeletarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
@@ -586,19 +595,19 @@ Mensagens m = new Mensagens();
                 btDeletarItemActionPerformed(evt);
             }
         });
-        add(btDeletarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, -1));
+        add(btDeletarItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 890, -1, -1));
 
         lbParcelas.setVisible(false);
-        lbParcelas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbParcelas.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         lbParcelas.setText("Parcelas:");
-        add(lbParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 352, -1, -1));
+        add(lbParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 550, 80, -1));
 
         edParcelas.setVisible(false);
         edParcelas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        add(edParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 347, 153, -1));
+        add(edParcelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 550, 220, -1));
 
         edFuncID.setVisible(false);
-        add(edFuncID, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 466, 90, 17));
+        add(edFuncID, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 690, 70, 17));
 
         btAtualizar.setToolTipText("Atualiza a tabela.");
         btAtualizar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -613,31 +622,34 @@ Mensagens m = new Mensagens();
         btAtualizar.setToolTipText("Atualiza a tabela.");
         btAtualizar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btAtualizar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
+        btAtualizar1.setText("Atualizar");
+        btAtualizar1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btAtualizar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btAtualizar1ActionPerformed(evt);
             }
         });
-        add(btAtualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, 50, 28));
+        add(btAtualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, 140, 40));
 
         btCancelarEdicao.setVisible(false);
-        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btCancelarEdicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
         btCancelarEdicao.setText("Cancelar Edição");
         btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCancelarEdicaoActionPerformed(evt);
             }
         });
-        add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 600, -1, -1));
+        add(btCancelarEdicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 790, 170, 40));
 
         jLabel1.setText("Valor Atual da Venda: ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 840, -1, -1));
 
         lbvalor.setText("R$ 0,00");
-        add(lbvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, 50, 20));
+        add(lbvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, 50, 20));
 
         btEditar.setToolTipText("Edita a venda selecionada");
-        btEditar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE EDITAR.png"))); // NOI18N
         btEditar.setText("Editar");
         btEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -645,10 +657,10 @@ Mensagens m = new Mensagens();
                 btEditarActionPerformed(evt);
             }
         });
-        add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 590, -1, -1));
+        add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 450, 120, -1));
 
         btDeletar.setToolTipText("Deleta a venda selecionada");
-        btDeletar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btDeletar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
         btDeletar.setText("Deletar");
         btDeletar.addActionListener(new java.awt.event.ActionListener() {
@@ -656,10 +668,10 @@ Mensagens m = new Mensagens();
                 btDeletarActionPerformed(evt);
             }
         });
-        add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 590, -1, -1));
+        add(btDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 450, -1, 40));
 
         btAtualizar.setToolTipText("Atualiza a tabela");
-        btAtualizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btAtualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ATUALIZAR.png"))); // NOI18N
         btAtualizar.setText("Atualizar");
         btAtualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -667,7 +679,7 @@ Mensagens m = new Mensagens();
                 btAtualizarActionPerformed(evt);
             }
         });
-        add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 600, -1, -1));
+        add(btAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 450, -1, -1));
 
         tabelaVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -679,7 +691,7 @@ Mensagens m = new Mensagens();
         ));
         jScrollPane1.setViewportView(tabelaVendas);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 160, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 140, -1, 300));
 
         edPesquisa.setToolTipText("Pesquisa nas datas");
         edPesquisa.addActionListener(new java.awt.event.ActionListener() {
@@ -687,7 +699,7 @@ Mensagens m = new Mensagens();
                 edPesquisaActionPerformed(evt);
             }
         });
-        add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 120, 200, -1));
+        add(edPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 110, 200, -1));
 
         btPesquisar.setToolTipText("Pesquisa nas datas");
         btPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -698,14 +710,15 @@ Mensagens m = new Mensagens();
                 btPesquisarActionPerformed(evt);
             }
         });
-        add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 110, -1, -1));
+        add(btPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 100, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 255));
         jLabel10.setText("Pesquisar:");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 120, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 110, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 1010));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 1020));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
@@ -907,6 +920,10 @@ Mensagens m = new Mensagens();
         trocarModo(p);
     }//GEN-LAST:event_btCancelarEdicaoActionPerformed
 
+    private void edDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edDataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edDataActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAdicionarItem;
@@ -940,6 +957,7 @@ Mensagens m = new Mensagens();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;

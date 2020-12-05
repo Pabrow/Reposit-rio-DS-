@@ -312,15 +312,15 @@ Mensagens m = new Mensagens();
         add(btCadastrar);
         btCadastrar.setBounds(150, 520, 202, 63);
 
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
         add(labelFuncionario);
-        labelFuncionario.setBounds(1170, 20, 98, 17);
+        labelFuncionario.setBounds(1250, 10, 132, 20);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Funcionário:");
         add(jLabel1);
-        jLabel1.setBounds(1190, 0, 75, 17);
+        jLabel1.setBounds(1120, 10, 110, 20);
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

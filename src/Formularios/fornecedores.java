@@ -163,33 +163,33 @@ Mensagens m = new Mensagens();
         add(labelTitulo);
         labelTitulo.setBounds(430, 60, 449, 29);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Nome:");
         add(jLabel2);
-        jLabel2.setBounds(410, 190, 41, 17);
+        jLabel2.setBounds(360, 270, 60, 17);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("CNPJ:");
         add(jLabel3);
-        jLabel3.setBounds(420, 240, 37, 17);
+        jLabel3.setBounds(360, 340, 50, 17);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Endereço:");
         add(jLabel4);
-        jLabel4.setBounds(400, 290, 63, 17);
+        jLabel4.setBounds(350, 400, 80, 17);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Telefone:");
         add(jLabel5);
-        jLabel5.setBounds(410, 340, 56, 17);
+        jLabel5.setBounds(350, 450, 70, 17);
 
         edNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edNome);
-        edNome.setBounds(360, 210, 165, 23);
+        edNome.setBounds(260, 300, 230, 23);
 
         edEndereco.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edEndereco);
-        edEndereco.setBounds(360, 310, 165, 23);
+        edEndereco.setBounds(260, 420, 230, 23);
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE CADASTRAR FORNECEDOR.png"))); // NOI18N
@@ -200,7 +200,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btCadastrar);
-        btCadastrar.setBounds(280, 420, 125, 31);
+        btCadastrar.setBounds(220, 530, 125, 40);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -211,29 +211,34 @@ Mensagens m = new Mensagens();
             }
         });
         add(btLimparCampos);
-        btLimparCampos.setBounds(430, 420, 155, 31);
+        btLimparCampos.setBounds(400, 530, 155, 40);
 
         labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(labelId);
         labelId.setBounds(410, 160, 43, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Funcionário:");
         add(jLabel1);
-        jLabel1.setBounds(350, 10, 65, 15);
+        jLabel1.setBounds(1140, 20, 100, 20);
 
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
         add(labelFuncionario);
-        labelFuncionario.setBounds(420, 10, 88, 15);
+        labelFuncionario.setBounds(1240, 20, 132, 20);
 
         try {
             edTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        edTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edTelefoneActionPerformed(evt);
+            }
+        });
         add(edTelefone);
-        edTelefone.setBounds(360, 370, 165, 23);
+        edTelefone.setBounds(260, 480, 230, 23);
 
         try {
             edCnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
@@ -241,10 +246,11 @@ Mensagens m = new Mensagens();
             ex.printStackTrace();
         }
         add(edCnpj);
-        edCnpj.setBounds(360, 260, 165, 20);
+        edCnpj.setBounds(260, 370, 230, 20);
 
         btCancelarEdicao.setVisible(false);
         btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
         btCancelarEdicao.setText("Cancelar Edição");
         btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,7 +258,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btCancelarEdicao);
-        btCancelarEdicao.setBounds(360, 520, 129, 25);
+        btCancelarEdicao.setBounds(300, 600, 170, 40);
 
         btEditar.setToolTipText("Edita o fornecedor selecionado");
         btEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -264,7 +270,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btEditar);
-        btEditar.setBounds(740, 630, 109, 41);
+        btEditar.setBounds(740, 660, 109, 41);
 
         tabelaFornecedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -277,12 +283,12 @@ Mensagens m = new Mensagens();
         jScrollPane1.setViewportView(tabelaFornecedores);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(690, 220, 452, 402);
+        jScrollPane1.setBounds(690, 222, 490, 430);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Pesquisar:");
         add(jLabel10);
-        jLabel10.setBounds(700, 180, 62, 17);
+        jLabel10.setBounds(700, 180, 80, 17);
 
         edPesquisa.setToolTipText("Pesquisa nos nomes e nos cnpj's");
         add(edPesquisa);
@@ -310,7 +316,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btDeletar);
-        btDeletar.setBounds(1020, 630, 109, 33);
+        btDeletar.setBounds(1020, 660, 120, 40);
 
         btAtualizar.setToolTipText("Atualiza a tabela");
         btAtualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -322,7 +328,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btAtualizar);
-        btAtualizar.setBounds(870, 630, 127, 39);
+        btAtualizar.setBounds(870, 660, 127, 39);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
         add(jLabel6);
@@ -418,6 +424,10 @@ Mensagens m = new Mensagens();
         Fornecedor p = new Fornecedor();
         trocarModo(p);
     }//GEN-LAST:event_btCancelarEdicaoActionPerformed
+
+    private void edTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edTelefoneActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -194,70 +194,71 @@ Mensagens m = new Mensagens();
 
         setLayout(null);
 
-        labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitulo.setText("Cadastrar Funcionario");
         add(labelTitulo);
-        labelTitulo.setBounds(450, 100, 262, 29);
+        labelTitulo.setBounds(0, 100, 1400, 44);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Nome:");
         add(jLabel2);
-        jLabel2.setBounds(290, 230, 41, 17);
+        jLabel2.setBounds(220, 230, 200, 20);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("CPF:");
         add(jLabel3);
-        jLabel3.setBounds(300, 280, 29, 17);
+        jLabel3.setBounds(220, 300, 200, 20);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("RG:");
         add(jLabel4);
-        jLabel4.setBounds(310, 330, 23, 17);
+        jLabel4.setBounds(220, 370, 200, 20);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Salário:");
         add(jLabel5);
-        jLabel5.setBounds(500, 330, 44, 17);
+        jLabel5.setBounds(460, 370, 200, 20);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Email:");
         add(jLabel6);
-        jLabel6.setBounds(300, 380, 36, 17);
+        jLabel6.setBounds(230, 440, 190, 20);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Função:");
         add(jLabel7);
-        jLabel7.setBounds(290, 430, 50, 17);
+        jLabel7.setBounds(220, 510, 200, 20);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Telefone:");
         add(jLabel8);
-        jLabel8.setBounds(500, 230, 56, 17);
+        jLabel8.setBounds(460, 230, 200, 20);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Sexo:");
         add(jLabel9);
-        jLabel9.setBounds(510, 280, 36, 17);
+        jLabel9.setBounds(490, 300, 150, 20);
 
         edNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edNome);
-        edNome.setBounds(240, 260, 165, 23);
+        edNome.setBounds(220, 260, 200, 30);
 
         edSalario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edSalario);
-        edSalario.setBounds(450, 350, 165, 23);
+        edSalario.setBounds(460, 400, 210, 30);
 
         edRg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edRg);
-        edRg.setBounds(240, 350, 165, 23);
+        edRg.setBounds(220, 400, 200, 30);
 
         edEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edEmail);
-        edEmail.setBounds(240, 400, 165, 23);
+        edEmail.setBounds(220, 470, 200, 30);
 
         comBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino"}));
         add(comBoxSexo);
-        comBoxSexo.setBounds(480, 300, 89, 20);
+        comBoxSexo.setBounds(490, 330, 150, 30);
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ADICIONAR PESSOA.png"))); // NOI18N
@@ -268,7 +269,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btCadastrar);
-        btCadastrar.setBounds(300, 530, 124, 36);
+        btCadastrar.setBounds(280, 620, 124, 36);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -279,7 +280,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btLimparCampos);
-        btLimparCampos.setBounds(440, 530, 139, 36);
+        btLimparCampos.setBounds(460, 620, 170, 36);
 
         labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(labelId);
@@ -291,16 +292,16 @@ Mensagens m = new Mensagens();
             ex.printStackTrace();
         }
         add(edTelefone);
-        edTelefone.setBounds(450, 260, 165, 20);
+        edTelefone.setBounds(460, 260, 210, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Senha:");
         add(jLabel1);
-        jLabel1.setBounds(510, 400, 43, 17);
+        jLabel1.setBounds(470, 440, 200, 20);
 
         edPassSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edPassSenha);
-        edPassSenha.setBounds(450, 430, 165, 23);
+        edPassSenha.setBounds(470, 470, 200, 30);
 
         edFuncao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         edFuncao.addActionListener(new java.awt.event.ActionListener() {
@@ -309,19 +310,19 @@ Mensagens m = new Mensagens();
             }
         });
         add(edFuncao);
-        edFuncao.setBounds(240, 450, 165, 23);
+        edFuncao.setBounds(220, 540, 200, 30);
         add(labelFuncionario);
         labelFuncionario.setBounds(1062, 103, 47, 23);
 
-        labelFuncionario1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        labelFuncionario1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelFuncionario1.setText("[FUNCIONARIO]");
         add(labelFuncionario1);
-        labelFuncionario1.setBounds(484, 76, 91, 16);
+        labelFuncionario1.setBounds(1260, 20, 132, 20);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel12.setText("Funcionário:");
         add(jLabel12);
-        jLabel12.setBounds(407, 76, 71, 16);
+        jLabel12.setBounds(1150, 20, 110, 16);
 
         try {
             edCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -334,10 +335,10 @@ Mensagens m = new Mensagens();
             }
         });
         add(edCpf);
-        edCpf.setBounds(240, 310, 165, 20);
+        edCpf.setBounds(220, 330, 200, 30);
 
         btAlterSenha.setVisible(false);
-        btAlterSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btAlterSenha.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btAlterSenha.setText("ALTERAR SENHA");
         btAlterSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -345,10 +346,11 @@ Mensagens m = new Mensagens();
             }
         });
         add(btAlterSenha);
-        btAlterSenha.setBounds(480, 450, 123, 23);
+        btAlterSenha.setBounds(470, 520, 200, 30);
 
         btCancelarEdicao.setVisible(false);
         btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
         btCancelarEdicao.setText("Cancelar Edição");
         btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,7 +358,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btCancelarEdicao);
-        btCancelarEdicao.setBounds(300, 610, 202, 63);
+        btCancelarEdicao.setBounds(340, 690, 200, 40);
 
         tabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -369,16 +371,16 @@ Mensagens m = new Mensagens();
         jScrollPane1.setViewportView(tabelaFuncionarios);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(660, 220, 566, 496);
+        jScrollPane1.setBounds(710, 220, 566, 496);
 
         edPesquisa.setToolTipText("Pesquisa nos nomes e nos cpf's");
         add(edPesquisa);
-        edPesquisa.setBounds(730, 190, 358, 20);
+        edPesquisa.setBounds(808, 190, 310, 20);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("Pesquisar:");
         add(jLabel10);
-        jLabel10.setBounds(660, 190, 62, 17);
+        jLabel10.setBounds(710, 190, 95, 22);
 
         btPesquisar.setToolTipText("Pesquisa nos nomes e nos cpf's");
         btPesquisar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -390,7 +392,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btPesquisar);
-        btPesquisar.setBounds(1090, 190, 139, 22);
+        btPesquisar.setBounds(1120, 190, 150, 22);
 
         btEditar.setToolTipText("Edita o funcionario selecionado");
         btEditar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -402,7 +404,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btEditar);
-        btEditar.setBounds(1040, 720, 105, 41);
+        btEditar.setBounds(1110, 730, 120, 50);
 
         btAtualizar.setToolTipText("Atualiza a tabela");
         btAtualizar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -414,7 +416,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btAtualizar);
-        btAtualizar.setBounds(880, 720, 123, 39);
+        btAtualizar.setBounds(930, 730, 140, 50);
 
         btDeletar.setToolTipText("Deleta o funcionario selecionado");
         btDeletar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -426,7 +428,7 @@ Mensagens m = new Mensagens();
             }
         });
         add(btDeletar);
-        btDeletar.setBounds(720, 720, 107, 41);
+        btDeletar.setBounds(770, 730, 120, 50);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/projeto menu.png"))); // NOI18N
         jLabel11.setText("jLabel11");

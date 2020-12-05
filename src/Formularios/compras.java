@@ -315,9 +315,9 @@ private List<Integer> listaIdsProdutos;
         lb2 = new javax.swing.JLabel();
         edValor = new javax.swing.JTextField();
         btCadastrar = new javax.swing.JButton();
+        labelFuncionario = new javax.swing.JLabel();
         btLimparCampos = new javax.swing.JButton();
         labelId = new javax.swing.JLabel();
-        labelFuncionario = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelaProdutos = new javax.swing.JTable();
@@ -367,13 +367,13 @@ private List<Integer> listaIdsProdutos;
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Forma Pagamento:");
         add(jLabel4);
-        jLabel4.setBounds(100, 310, 103, 20);
+        jLabel4.setBounds(120, 430, 103, 20);
 
         lb1.setVisible(false);
         lb1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lb1.setText("Valor da Compra:");
         add(lb1);
-        lb1.setBounds(100, 370, 93, 20);
+        lb1.setBounds(120, 490, 93, 20);
 
         lb2.setVisible(false);
         lb2.setBackground(new java.awt.Color(255, 255, 255));
@@ -381,12 +381,12 @@ private List<Integer> listaIdsProdutos;
         lb2.setText("Data da Compra:");
         lb2.setOpaque(true);
         add(lb2);
-        lb2.setBounds(100, 400, 91, 20);
+        lb2.setBounds(120, 520, 91, 20);
 
         edValor.setVisible(false);
         edValor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         add(edValor);
-        edValor.setBounds(210, 370, 170, 20);
+        edValor.setBounds(230, 490, 170, 20);
 
         btCadastrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE REALIZAR VENDA.png"))); // NOI18N
@@ -397,7 +397,9 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btCadastrar);
-        btCadastrar.setBounds(300, 540, 167, 33);
+        btCadastrar.setBounds(320, 660, 167, 33);
+        add(labelFuncionario);
+        labelFuncionario.setBounds(1300, 10, 90, 28);
 
         btLimparCampos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btLimparCampos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
@@ -408,18 +410,16 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btLimparCampos);
-        btLimparCampos.setBounds(500, 540, 167, 33);
+        btLimparCampos.setBounds(520, 660, 167, 33);
 
         labelId.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         add(labelId);
         labelId.setBounds(95, 46, 43, 13);
-        add(labelFuncionario);
-        labelFuncionario.setBounds(700, 0, 90, 28);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Produto:");
         add(jLabel8);
-        jLabel8.setBounds(30, 70, 80, 15);
+        jLabel8.setBounds(50, 190, 80, 15);
 
         tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -432,7 +432,7 @@ private List<Integer> listaIdsProdutos;
         jScrollPane2.setViewportView(tabelaProdutos);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(30, 100, 390, 133);
+        jScrollPane2.setBounds(50, 220, 390, 133);
 
         tabelaFornecedor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -445,20 +445,20 @@ private List<Integer> listaIdsProdutos;
         jScrollPane4.setViewportView(tabelaFornecedor);
 
         add(jScrollPane4);
-        jScrollPane4.setBounds(460, 100, 390, 133);
+        jScrollPane4.setBounds(480, 220, 390, 133);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Fornecedor:");
         add(jLabel9);
-        jLabel9.setBounds(460, 60, 90, 40);
+        jLabel9.setBounds(480, 180, 90, 40);
 
         edPesquisaProduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         add(edPesquisaProduto);
-        edPesquisaProduto.setBounds(80, 70, 210, 21);
+        edPesquisaProduto.setBounds(100, 190, 210, 21);
 
         edPesquisaCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         add(edPesquisaCliente);
-        edPesquisaCliente.setBounds(530, 70, 210, 23);
+        edPesquisaCliente.setBounds(550, 190, 210, 23);
 
         btPesquisarFornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btPesquisarFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
@@ -470,7 +470,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btPesquisarFornecedor);
-        btPesquisarFornecedor.setBounds(740, 70, 110, 23);
+        btPesquisarFornecedor.setBounds(760, 190, 110, 23);
 
         btPesquisarProduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btPesquisarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE PESQUISAR.png"))); // NOI18N
@@ -481,7 +481,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btPesquisarProduto);
-        btPesquisarProduto.setBounds(290, 70, 130, 22);
+        btPesquisarProduto.setBounds(310, 190, 130, 22);
 
         edData.setVisible(false);
         edData.setFont(new java.awt.Font("Tahoma", 0, 14));
@@ -491,7 +491,7 @@ private List<Integer> listaIdsProdutos;
             ex.printStackTrace();
         }
         add(edData);
-        edData.setBounds(240, 400, 90, 20);
+        edData.setBounds(260, 520, 90, 20);
 
         lb3.setVisible(false);
         lb3.setBackground(new java.awt.Color(255, 255, 255));
@@ -499,12 +499,12 @@ private List<Integer> listaIdsProdutos;
         lb3.setText("Id do Funcionário:");
         lb3.setOpaque(true);
         add(lb3);
-        lb3.setBounds(100, 430, 98, 20);
+        lb3.setBounds(120, 550, 98, 20);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Funcionário:");
         add(jLabel13);
-        jLabel13.setBounds(630, 0, 65, 15);
+        jLabel13.setBounds(1195, 10, 100, 17);
 
         btAdicionarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btAdicionarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ADICIONAR ITEM.png"))); // NOI18N
@@ -515,18 +515,18 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btAdicionarItem);
-        btAdicionarItem.setBounds(150, 240, 163, 28);
+        btAdicionarItem.setBounds(170, 360, 163, 28);
 
         lbParcelas.setVisible(false);
         lbParcelas.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lbParcelas.setText("Parcelas:");
         add(lbParcelas);
-        lbParcelas.setBounds(100, 340, 100, 20);
+        lbParcelas.setBounds(120, 460, 100, 20);
 
         edParcelas.setVisible(false);
         edParcelas.setText("1");
         add(edParcelas);
-        edParcelas.setBounds(270, 340, 90, 20);
+        edParcelas.setBounds(290, 460, 90, 20);
 
         comboBoxFormaPag.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         comboBoxFormaPag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A Vista", "A Prazo" }));
@@ -536,7 +536,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(comboBoxFormaPag);
-        comboBoxFormaPag.setBounds(210, 310, 170, 20);
+        comboBoxFormaPag.setBounds(230, 430, 170, 20);
 
         edFuncID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         add(edFuncID);
@@ -551,7 +551,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btAtualizar1);
-        btAtualizar1.setBounds(800, 240, 50, 28);
+        btAtualizar1.setBounds(820, 360, 50, 28);
 
         btAtualizar.setToolTipText("Atualiza a tabela.");
         btAtualizar2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -562,12 +562,12 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btAtualizar2);
-        btAtualizar2.setBounds(350, 240, 63, 28);
+        btAtualizar2.setBounds(370, 360, 63, 28);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Carrinho:");
         add(jLabel5);
-        jLabel5.setBounds(630, 280, 57, 17);
+        jLabel5.setBounds(650, 400, 57, 17);
 
         btDeletarItem.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btDeletarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE DELETAR.png"))); // NOI18N
@@ -578,7 +578,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btDeletarItem);
-        btDeletarItem.setBounds(530, 460, 129, 33);
+        btDeletarItem.setBounds(550, 580, 129, 33);
 
         btAlterarQtd.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btAlterarQtd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE ALTERAR QUANTIDADE.png"))); // NOI18N
@@ -589,10 +589,11 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btAlterarQtd);
-        btAlterarQtd.setBounds(670, 460, 171, 33);
+        btAlterarQtd.setBounds(690, 580, 171, 33);
 
         btCancelarEdicao.setVisible(false);
         btCancelarEdicao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btCancelarEdicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ICONE LIMPAR CAMPOS.png"))); // NOI18N
         btCancelarEdicao.setText("Cancelar Edição");
         btCancelarEdicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -600,7 +601,7 @@ private List<Integer> listaIdsProdutos;
             }
         });
         add(btCancelarEdicao);
-        btCancelarEdicao.setBounds(390, 610, 129, 25);
+        btCancelarEdicao.setBounds(420, 720, 160, 40);
 
         tabelaProdutosCarrinho.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -613,11 +614,11 @@ private List<Integer> listaIdsProdutos;
         jScrollPane5.setViewportView(tabelaProdutosCarrinho);
 
         add(jScrollPane5);
-        jScrollPane5.setBounds(470, 310, 390, 143);
+        jScrollPane5.setBounds(470, 420, 390, 143);
 
         jLabel1.setText("Valor Atual da Venda: ");
         add(jLabel1);
-        jLabel1.setBounds(200, 560, 107, 14);
+        jLabel1.setBounds(220, 680, 107, 14);
 
         lbvalor.setText("R$ 0,00");
         add(lbvalor);

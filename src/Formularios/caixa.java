@@ -241,13 +241,13 @@ Mensagens m = new Mensagens();
         labelTitulo.setText("Gerar Caixa");
         jPanel2.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 80, 1400, 90));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setText("Funcionário:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 80, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, 100, -1));
 
-        labelFuncionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelFuncionario.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         labelFuncionario.setText("[FUNCIONARIO]");
-        jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, 120, -1));
+        jPanel2.add(labelFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 10, 140, -1));
 
         labelId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel2.add(labelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 30, 20));

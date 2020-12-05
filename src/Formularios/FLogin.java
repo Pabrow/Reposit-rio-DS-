@@ -182,7 +182,10 @@ private int mode = 0;
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,14 +196,14 @@ private int mode = 0;
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(3, 3, 544, 50);
+        jPanel3.setBounds(3, 3, 530, 50);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo shrek motos.png"))); // NOI18N
         jPanel1.add(jLabel5);
         jLabel5.setBounds(190, 70, 200, 160);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 550, 450);
+        jPanel1.setBounds(0, 0, 540, 440);
 
         setSize(new java.awt.Dimension(556, 479));
         setLocationRelativeTo(null);
