@@ -1,9 +1,6 @@
-drop database BD_mecanica2;
-
 create database BD_mecanica2;
 
 use BD_mecanica2;
-
 
 create table Cliente(
 	id_cli int primary key auto_increment not null,
@@ -20,13 +17,18 @@ create table Cliente(
 create table Produto(
 	id_prod int primary key auto_increment not null,
 	desc_prod varchar(200) not null,
-	marca_prod varchar(50) not null,
-	tamanho_prod varchar(50) not null,
+	tamanho_prod varchar(10) not null,
 	qtd_prod int not null,
 	valor_prod double not null,
-	tipo_prod varchar(50) not null
+	tipo_prod varchar(50) not null,
+    id_marca_fk int not null,
+	foreign key (id_marca_fk) references Marca(id_marca)
 );
 
+create table Marca(
+	id_marca int primary key auto_increment not null,
+    nome_marca varchar(100)
+);
 
 create table Funcionario(
 	id_func int primary key auto_increment not null,
@@ -38,20 +40,16 @@ create table Funcionario(
 	email_func varchar (100),
 	funcao_func varchar(80) not null,
 	sexo_func varchar (20),
-	salario_func double not null
+	salario_func double not null,
+	id_funcao_fk int not null,
+	foreign key (id_funcao_fk) references Funcao(id_funcao)
 );
 
-create table Caixa(
-	id_caixa int primary key auto_increment not null,
-	dataIn_caixa date not null,
-	saldoIn_caixa double not null,
-	totalRec_caixa double not null,
-	totalPag_caixa double not null,
-    dataFin_caixa date not null,
-	saldoFin_caixa double not null,
-	id_funcionario_fk int not null,
-	foreign key (id_funcionario_fk) references funcionario (id_func)
+create table Funcao(
+	id_funcao int primary key auto_increment not null,
+    nome_funcao varchar(100)
 );
+
 create table Fornecedor(
 	id_forn int primary key auto_increment not null,
 	nome_forn varchar(100) not null,
@@ -98,6 +96,17 @@ create table Servico(
 	foreign key (id_funcionario_fk) references funcionario (id_func)
 );
 
+create table Caixa(
+	id_caixa int primary key auto_increment not null,
+	dataIn_caixa date not null,
+	saldoIn_caixa double not null,
+	totalRec_caixa double not null,
+	totalPag_caixa double not null,
+    dataFin_caixa date not null,
+	saldoFin_caixa double not null,
+	id_funcionario_fk int not null,
+	foreign key (id_funcionario_fk) references funcionario (id_func)
+);
 
 create table Pagamento(
 	id_pag int primary key auto_increment not null,
@@ -144,6 +153,8 @@ create table Venda_Prod(
 	foreign key (id_venda_fk) references venda (id_venda),
 	foreign key (id_produto_fk) references produto (id_prod)
 );
+Select MAX(id_venda) from Venda;
+select * from venda_serv;
 
 create table Recebimento (
 	id_receb int primary key auto_increment not null,
@@ -156,6 +167,9 @@ create table Recebimento (
 	foreign key (id_caixa_fk) references caixa (id_caixa),
 	foreign key (id_venda_fk) references Venda (id_venda)
 );
+
+select * from despesa;
+INSERT INTO FUNCIONARIO values('Funcionario auxiliar', '12345', '123', '0', '0', '0', '0', '0', '0', 0);
 
 
 /*GATILHO PARA ATUALIZAR O VALOR DO CAIXA APÓS UMA COMPRA*/
@@ -177,16 +191,31 @@ $$ delimiter ;
 
 /*GATILHO PARA ATUALIZAR AUTOMATICAMENTE O SALDO INICIAL DO CAIXA*/
 delimiter $$
-CREATE TRIGGER adicionarSaldoCaixaP AFTER INSERT ON venda
+CREATE TRIGGER adicionarSaldoCaixaP AFTER INSERT ON venda_prod
 FOR EACH ROW
 BEGIN
 	declare i int;
     set  i = (select max(id_caixa) from caixa);
 	UPDATE caixa set saldoIn_caixa = saldoIn_caixa + 
     new.valor_venda where id_caixa =
+    i and 
+    saldoIn_caixa >= 
+    new.valor_venda;
+END;
+$$ delimiter ;
+
+delimiter $$
+CREATE TRIGGER adicionarSaldoCaixaS AFTER INSERT ON venda_serv
+FOR EACH ROW
+BEGIN
+	declare i int;
+    set  i = (select max(id_caixa) from caixa);
+	UPDATE caixa set saldoIn_caixa = saldoIn_caixa + 
+    new.valor_serv where id_caixa =
     i;
 END;
 $$ delimiter ;
+
 
 /*quando realizar uma venda de produto baixar o estoque*/
 delimiter $$
@@ -211,44 +240,29 @@ BEGIN
 END;
 $$ delimiter ;
 
-drop procedure gerarCaixa
-/*PROCEDURE PARA O CAIXA*/
-delimiter $$
-create procedure gerarCaixa(dataIni date, id_func int)
-begin
-    declare i int;
-    declare count int;
-    declare saldoF double;
-    declare valor double;
-    set count = (select count(*) from caixa);
-    set i = (select max(id_caixa) from caixa);
-    if(count = 0) then
-		INSERT INTO caixa (dataIn_caixa, saldoIn_caixa, totalRec_caixa, totalPag_caixa, dataFin_caixa, saldoFin_caixa, id_funcionario_fk) values ( dataIni, 0, 0, 0, '1111/11/11', 0, id_func);
-    else
-		set saldoF = (select saldoFin_caixa from caixa where id_caixa = i);
-		set valor =  (select saldoIn_caixa from caixa where id_caixa = i);
-		select saldoIn_caixa from caixa where id_caixa = i;
-		update caixa set dataFin_caixa = dataIni, saldoFin_caixa = valor  where id_caixa=i;
-		INSERT INTO caixa (dataIn_caixa, saldoIn_caixa, totalRec_caixa, totalPag_caixa, dataFin_caixa, saldoFin_caixa, id_funcionario_fk) values ( dataIni, saldoF, 0, 0, '1111/11/11', 0, id_func);
-	end if;
-end;
-$$ delimiter ;
 
-
-/*PROCEDURE PARA A VENDA DE PRODUTOS
+/*PROCEDURE PARA A VENDA DE PRODUTOS*/
 delimiter $$
 create procedure inserirVendaProduto (valor float, dataV date, hora varchar(100), formaPag varchar(100), id_cliente int, id_funcionario int, id_produto int, quant int)
 begin
 	declare i int;
     declare valorUnit float;
-	Insert into Venda values(null, valor, dataV, hora, formaPag, id_cliente, id_funcionario);
-    set valorUnit = (select valor_prod from produto where id_prod = id_produto);
-    set i = (select max(id_venda) from venda);
-    Insert into Venda_Prod values(null, i, valorUnit, id_produto, quant );
-end;
-$$ delimiter ;*/
+    declare testeqtd varchar (100);
 
-/*PROCEDURE PARA A VENDA DE SERVIÇOS
+	set testeqtd = (select quant_vendaprod from Venda_Prod where (quant_vendaprod = quant));
+    
+    if(testeqtd <= qtd_prod)then
+		Insert into Venda values(null, valor, dataV, hora, formaPag, id_cliente, id_funcionario);
+		set valorUnit = (select valor_prod from produto where id_prod = id_produto);
+		set i = (select max(id_venda) from venda);
+		Insert into Venda_Prod values(null, i, valorUnit, id_produto, quant );
+	else
+		select('Quantidade de produtos é maior que a do estoque!') as Alerta;
+    end if;
+end;
+$$ delimiter ;
+
+/*PROCEDURE PARA A VENDA DE SERVIÇOS*/
 delimiter $$
 create procedure inserirVendaServico (valor float, dataV date, hora varchar(100), formaPag varchar(100), id_cliente int, id_funcionario int, id_servico int, quant int)
 begin
@@ -259,4 +273,75 @@ begin
     set i = (select max(id_venda) from venda);
     Insert into Venda_Prod values(null, i, valorUnit, id_produto, quant );
 end;
-$$ delimiter ;*/
+$$ delimiter ;
+
+
+/*procedure para não permitir cadastro com cpf repetidos*/
+delimiter $$
+create procedure inserirCliente (nome varchar(100), cpf varchar(14), sexo varchar(20), rg varchar(100), tel int, email varchar(100), 
+endereço varchar(100), dataNasc date)
+begin
+declare testecpf varchar (100);
+
+set testecpf = (select cpf_cli from cliente where (cpf_cli = cpf));
+
+if (testecpf is null) then
+	insert into cliente values (null, nome, cpf_cli, sexo, rg, tel, email, endereço, dataNasc);
+else
+	select concat('O cpf do ', cliente, ' digitado já existe! Favor informar outro cpf!') as Alerta;
+end if;
+end;
+$$ delimiter ;
+
+
+/*procedure para não permitir cadastro com cnpj repetidos*/
+delimiter $$
+create procedure inserirFornecedor (nome varchar(200), cnpj int, endereço varchar(100), tel int)
+begin
+declare testecnpj varchar (100);
+
+set testecnpj = (select cnpj_forn from fornecedor where (cnpj_forn = cnpj));
+
+if (testecnpj is null) then
+	insert into fornecedor values (null, nome, cnpj, endereço, tel);
+else
+	select concat('O cnpj do ', fornecedor, ' digitado já existe! Favor informar outro cnpj!') as Alerta;
+end if;
+end;
+$$ delimiter ;
+
+
+/*procedure para não permitir cadastro com cpf repetidos*/
+delimiter $$
+create procedure inserirFuncionario (nome varchar(100), senha varchar(100), cpf varchar(14), rg varchar(100), tel int, email varchar(100), 
+funcao varchar(100), sexo varchar(20), salario varchar(100))
+begin
+declare testecpf varchar (100);
+
+set testecpf = (select cpf_func from funcionario where (cpf_func = cpf));
+
+if (testecpf is null) then
+	insert into funcionario values (null, nome, senha, cpf, rg, tel, email, sexo, funcao, sexo, salario);
+else
+	select concat('O cpf do ', funcionario, ' digitado já existe! Favor informar outro cpf!') as Alerta;
+end if;
+end;
+$$ delimiter ;
+
+
+/*procedure para não permitir a venda com o numeros de produtos maior que o estoque*/
+delimiter $$
+create procedure inserirFuncionario (nome varchar(100), senha varchar(100), cpf varchar(14), rg varchar(100), tel int, email varchar(100), 
+funcao varchar(100), sexo varchar(20), salario varchar(100))
+begin
+declare testecpf varchar (100);
+
+set testecpf = (select cpf_func from funcionario where (cpf_func = cpf));
+
+if (testecpf is null) then
+	insert into funcionario values (null, nome, senha, cpf, rg, tel, email, sexo, funcao, sexo, salario);
+else
+	select concat('O cpf do ', funcionario, ' digitado já existe! Favor informar outro cpf!') as Alerta;
+end if;
+end;
+$$ delimiter ;
